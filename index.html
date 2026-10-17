@@ -208,7 +208,7 @@
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-5 text-xs font-medium" style="color: var(--text-secondary);">
                 <a href="#projects" class="hover:opacity-100 transition-opacity py-1">Live Projects</a>
-                <a href="#skills" class="hover:opacity-100 transition-opacity py-1">Skills &amp; Official Docs</a>
+                <a href="#skills" class="hover:opacity-100 transition-opacity py-1">Skills</a>
                 <a href="#spark-lounge" class="hover:opacity-100 transition-opacity py-1 flex items-center gap-1">
                     <span>✨ Daily Spark</span>
                 </a>
@@ -380,9 +380,6 @@
                     <button type="button" data-open-ai-twin="true" class="surface-elevated px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-all cursor-pointer">
                         <span>🤖 Open AI Twin</span>
                     </button>
-                    <a href="#spark-lounge" class="surface-elevated px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-all">
-                        <span>✨ Play Daily Spark Lounge</span>
-                    </a>
                 </div>
 
             </div>
@@ -533,13 +530,13 @@
         </section>
 
         <!-- ==========================================================================
-             5. SKILLS & VERIFIED OFFICIAL DOCUMENTATION HUB
+             5. SKILLS & OFFICIAL DOCUMENTATION HUB
              ========================================================================== -->
         <section id="skills" class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
                 <div>
                     <span class="font-mono text-xs uppercase tracking-wider accent-text">Verified Official Sources</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">Engineering Stack &amp; Official Documentation</h2>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">Technical Stack</h2>
                 </div>
                 <p class="text-xs sm:text-sm" style="color: var(--text-secondary);">
                     Every technology badge below links directly to its official specification or documentation.
@@ -565,6 +562,7 @@
                         <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Python 3 ↗</a>
                         <a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">C++ ↗</a>
                         <a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">SQL ↗</a>
+                        <a href="https://www.postgresql.org/docs/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">PostgreSQL ↗</a>
                         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">JavaScript (MDN) ↗</a>
                     </div>
                 </div>
@@ -587,7 +585,7 @@
                         <a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">MongoDB Atlas ↗</a>
                         <a href="https://react.dev/reference/react" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">React ↗</a>
                         <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Tailwind CSS ↗</a>
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">HTML5 &amp; CSS3 ↗</a>
+                        <a href="https://learning.postman.com/docs/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Postman ↗</a>
                     </div>
                 </div>
 
@@ -608,6 +606,7 @@
                         <a href="https://huggingface.co/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Hugging Face ↗</a>
                         <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">TF-IDF &amp; Cosine Sim ↗</a>
                         <a href="https://www.gradio.app/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Gradio ↗</a>
+                        <a href="https://github.features.copilot.com/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">GitHub Copilot ↗</a>
                         <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Git &amp; GitHub ↗</a>
                     </div>
                 </div>
@@ -616,172 +615,194 @@
         </section>
 
         <!-- ==========================================================================
-             6. ✨ THE DAILY SPARK LOUNGE (NON-REPEATING, MODE-ADAPTIVE MINI-GAMES)
+             6. ✨ THE DAILY SPARK LOUNGE (HIDDEN BY DEFAULT WITH ATTRACTIVE CALLOUT)
              ========================================================================== -->
-        <section id="spark-lounge" class="surface-card rounded-3xl p-6 sm:p-10 space-y-8">
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b pb-6" style="border-color: var(--border-subtle);">
-                <div class="space-y-1.5">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono accent-badge">
-                        <span>✨ Interactive Break · Non-Repeating Shuffle Engine</span>
-                        <span>·</span>
-                        <span id="spark-mode-indicator">✨ Overview Pack</span>
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">The Daily Spark Lounge</h2>
-                    <p class="text-xs sm:text-sm mode-text" style="color: var(--text-secondary);"
-                       data-overview="Take a 30-second break! Every visit and every perspective mode unlocks a fresh set of brainteasers, uplifting thoughts, and quick games."
-                       data-candid="Because scrolling portfolios can feel like reading a 40-page terms-of-service agreement. Enjoy fresh IT-life games that never repeat!"
-                       data-technical="Cryptographically shuffled client-side state machine with seen-history persistence—adapting challenges to CS, Web, and AI engineering.">
-                        Take a 30-second break! Every visit and every perspective mode unlocks a fresh set of brainteasers, uplifting thoughts, and quick games.
-                    </p>
-                </div>
-
-                <!-- Streak + Shuffle All Button + Share Button -->
-                <div class="flex flex-wrap items-center gap-2.5">
-                    <div class="surface-elevated px-3.5 py-2 rounded-xl text-xs font-mono flex items-center gap-2">
-                        <span>🔥 Streak:</span>
-                        <strong id="spark-streak-count" class="accent-text text-sm">0</strong>
-                    </div>
-                    <button id="shuffle-entire-lounge-btn"
-                            type="button"
-                            class="accent-btn px-4 py-2 rounded-xl text-xs font-mono inline-flex items-center gap-1.5 cursor-pointer">
-                        <span>🎲 Deal Fresh Unseen Set</span>
-                    </button>
-                    <button id="share-lounge-btn"
-                            type="button"
-                            class="surface-elevated px-3.5 py-2 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
-                        🔗 Share
-                    </button>
-                </div>
+        <section id="spark-lounge" class="surface-card rounded-3xl p-6 sm:p-10 text-center space-y-6">
+            <div class="max-w-xl mx-auto space-y-2">
+                <span class="font-mono text-xs uppercase tracking-wider accent-text">Interactive Lounge</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">The Daily Spark Lounge</h2>
+                <p class="text-xs sm:text-sm" style="color: var(--text-secondary);">
+                    Take a 30-second break! Play quick humor &amp; tech brainteasers to boost your mood and test your wit.
+                </p>
             </div>
 
-            <!-- Lounge Grid: Left (3 Mini-Games) | Right (Spin a Good Vibe + Reactions) -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <!-- Attractive Click-to-Open Trigger Button -->
+            <div>
+                <button id="toggle-spark-btn"
+                        type="button"
+                        aria-expanded="false"
+                        class="accent-btn px-7 py-3.5 rounded-2xl text-xs sm:text-sm inline-flex items-center gap-3 cursor-pointer shadow-sm">
+                    <span>✨ Play Daily Spark Lounge — Click to Open Games &amp; Trivia</span>
+                    <span id="spark-chevron" class="transition-transform duration-200">▼</span>
+                </button>
+            </div>
 
-                <!-- LEFT 7 COLS: 3 SWITCHABLE MINI-GAMES -->
-                <div class="lg:col-span-7 surface-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-5">
-
-                    <!-- Game Switcher Tabs -->
-                    <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-subtle);">
-                        <div class="flex flex-wrap gap-1.5" role="tablist">
-                            <button type="button" data-arcade-tab="unscramble" class="arcade-tab-btn mode-pill-active px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
-                                🎯 Word Unscramble
-                            </button>
-                            <button type="button" data-arcade-tab="impostor" class="arcade-tab-btn surface-card px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
-                                🕵️ Spot Impostor
-                            </button>
-                            <button type="button" data-arcade-tab="truths" class="arcade-tab-btn surface-card px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
-                                ⚡ 2 Truths &amp; 1 Lie
-                            </button>
+            <!-- Hidden-by-Default Lounge Drawer -->
+            <div id="spark-drawer" class="hidden pt-6 border-t text-left space-y-8" style="border-color: var(--border-subtle);">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b pb-6" style="border-color: var(--border-subtle);">
+                    <div class="space-y-1.5">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono accent-badge">
+                            <span>✨ Interactive Break · Perspective-Synced Engine</span>
+                            <span>·</span>
+                            <span id="spark-mode-indicator">✨ Overview Pack</span>
                         </div>
-                        <span id="unseen-counter-badge" class="font-mono text-[11px]" style="color: var(--text-muted);">
-                            Fresh Deck Active
-                        </span>
-                    </div>
-
-                    <!-- MINI-GAME 1: 30-SECOND WORD UNSCRAMBLE -->
-                    <div id="arcade-panel-unscramble" class="space-y-4">
-                        <div class="flex items-center justify-between gap-2">
-                            <span id="unscramble-category" class="font-mono text-xs accent-text">Category: Everyday Spark</span>
-                            <div class="flex items-center gap-2">
-                                <span id="unscramble-timer" class="font-mono text-xs px-2.5 py-1 rounded-lg surface-card">⏱️ 30s</span>
-                                <button id="unscramble-hint-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
-                                    💡 Hint
-                                </button>
-                                <button id="unscramble-skip-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
-                                    ↻ New Word
-                                </button>
-                            </div>
-                        </div>
-
-                        <p id="unscramble-clue" class="text-xs sm:text-sm font-medium leading-relaxed">
-                            Tap the scrambled letter tiles below (or type on your keyboard) to form the word:
+                        <h3 class="text-xl font-bold">Games, Quizzes &amp; Good Vibes</h3>
+                        <p class="text-xs sm:text-sm mode-text" style="color: var(--text-secondary);"
+                           data-overview="Enjoy perspective-aware mini-games, design tips, and fun interactive activities."
+                           data-candid="Because reading technical specs all day is exhausting. Enjoy funny developer reality checks and witty mini-games!"
+                           data-technical="Client-side state machine testing algorithms, database logic, and RAG architectures through interactive challenges.">
+                            Enjoy perspective-aware mini-games, design tips, and fun interactive activities.
                         </p>
-
-                        <!-- Answer Slots -->
-                        <div id="unscramble-answer-slots" class="flex flex-wrap gap-2 min-h-[44px] p-3 rounded-xl surface-card items-center justify-center"></div>
-
-                        <!-- Scrambled Letter Tiles -->
-                        <div id="unscramble-letter-tiles" class="flex flex-wrap gap-2 justify-center pt-1"></div>
-
-                        <div class="flex items-center justify-between pt-2">
-                            <button id="unscramble-clear-btn" type="button" class="text-xs font-mono underline cursor-pointer" style="color: var(--text-secondary);">
-                                Reset Letters
-                            </button>
-                            <span id="unscramble-feedback" class="text-xs font-mono font-semibold accent-text"></span>
-                        </div>
                     </div>
 
-                    <!-- MINI-GAME 2: SPOT THE IMPOSTOR -->
-                    <div id="arcade-panel-impostor" class="hidden space-y-4">
-                        <div class="flex items-center justify-between gap-2">
-                            <span class="font-mono text-xs accent-text">🕵️ 3 Belong Together · 1 is the Impostor</span>
-                            <button id="impostor-next-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
-                                ↻ Next Case
-                            </button>
+                    <!-- Streak + Shuffle All Button + Share Button -->
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <div class="surface-elevated px-3.5 py-2 rounded-xl text-xs font-mono flex items-center gap-2">
+                            <span>🔥 Streak:</span>
+                            <strong id="spark-streak-count" class="accent-text text-sm">0</strong>
                         </div>
-                        <p id="impostor-prompt" class="text-xs sm:text-sm font-medium"></p>
-                        <div id="impostor-options" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></div>
-                        <p id="impostor-feedback" class="text-xs font-mono leading-relaxed min-h-[24px]" style="color: var(--text-secondary);"></p>
-                    </div>
-
-                    <!-- MINI-GAME 3: 2 TRUTHS & 1 LIE -->
-                    <div id="arcade-panel-truths" class="hidden space-y-4">
-                        <div class="flex items-center justify-between gap-2">
-                            <span class="font-mono text-xs accent-text">⚡ Spot the 1 Lie Out of 3 Statements</span>
-                            <button id="truths-next-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
-                                ↻ Next Round
-                            </button>
-                        </div>
-                        <p id="truths-topic" class="text-xs sm:text-sm font-medium"></p>
-                        <div id="truths-options" class="space-y-2.5"></div>
-                        <p id="truths-feedback" class="text-xs font-mono leading-relaxed min-h-[24px]" style="color: var(--text-secondary);"></p>
-                    </div>
-
-                </div>
-
-                <!-- RIGHT 5 COLS: SPIN A GOOD VIBE + QUICK REACTIONS -->
-                <div class="lg:col-span-5 flex flex-col justify-between gap-6">
-
-                    <!-- 🎡 SPIN A GOOD VIBE -->
-                    <div class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-4">
-                        <div class="flex items-center justify-between gap-2">
-                            <h3 class="font-bold text-base">🎡 Spin a Good Vibe</h3>
-                            <div class="flex gap-1">
-                                <button type="button" data-vibe-cat="smile" class="vibe-cat-btn mode-pill-active px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">😊 Smile</button>
-                                <button type="button" data-vibe-cat="thought" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">💡 Thought</button>
-                                <button type="button" data-vibe-cat="trivia" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">⚡ Trivia</button>
-                            </div>
-                        </div>
-
-                        <div class="surface-card rounded-xl p-4 min-h-[115px] flex flex-col justify-between space-y-3">
-                            <p id="vibe-card-text" class="text-xs sm:text-sm leading-relaxed"></p>
-                            <div id="vibe-trivia-wrap" class="hidden pt-1 border-t" style="border-color: var(--border-subtle);">
-                                <button id="vibe-reveal-btn" type="button" class="text-xs font-mono accent-text underline cursor-pointer">
-                                    👀 Reveal Answer
-                                </button>
-                                <p id="vibe-trivia-answer" class="hidden text-xs font-mono mt-1.5 font-semibold accent-text"></p>
-                            </div>
-                        </div>
-
-                        <button id="spin-vibe-btn" type="button" class="surface-card w-full py-2.5 rounded-xl text-xs font-mono font-semibold hover:opacity-90 transition-all cursor-pointer">
-                            🔄 Spin Another Unseen Card
+                        <button id="shuffle-entire-lounge-btn"
+                                type="button"
+                                class="accent-btn px-4 py-2 rounded-xl text-xs font-mono inline-flex items-center gap-1.5 cursor-pointer">
+                            <span>🎲 Deal Fresh Unseen Set</span>
+                        </button>
+                        <button id="share-lounge-btn"
+                                type="button"
+                                class="surface-elevated px-3.5 py-2 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                            🔗 Share
                         </button>
                     </div>
+                </div>
 
-                    <!-- 👏 LEAVE A QUICK REACTION -->
-                    <div class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <h3 class="font-bold text-base">👏 Leave a Quick Reaction</h3>
-                                <p class="text-[11px]" style="color: var(--text-secondary);">Tap to send good vibes (saved in your browser)</p>
+                <!-- Lounge Grid: Left (3 Mini-Games) | Right (Spin a Good Vibe + Reactions) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                    <!-- LEFT 7 COLS: 3 SWITCHABLE PERSPECTIVE-SYNCED MINI-GAMES -->
+                    <div class="lg:col-span-7 surface-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-5">
+
+                        <!-- Game Switcher Tabs -->
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-subtle);">
+                            <div class="flex flex-wrap gap-1.5" role="tablist">
+                                <button type="button" data-arcade-tab="unscramble" class="arcade-tab-btn mode-pill-active px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
+                                    🎯 Word Unscramble
+                                </button>
+                                <button type="button" data-arcade-tab="impostor" class="arcade-tab-btn surface-card px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
+                                    🕵️ Spot Impostor
+                                </button>
+                                <button type="button" data-arcade-tab="truths" class="arcade-tab-btn surface-card px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
+                                    ⚡ 2 Truths &amp; 1 Lie
+                                </button>
                             </div>
-                            <span id="total-reactions-badge" class="font-mono text-xs accent-text"></span>
+                            <span id="unseen-counter-badge" class="font-mono text-[11px]" style="color: var(--text-muted);">
+                                Active Mode Pack Loaded
+                            </span>
                         </div>
-                        <div id="reaction-buttons-grid" class="grid grid-cols-2 gap-2.5"></div>
+
+                        <!-- MINI-GAME 1: PERSPECTIVE-SYNCED WORD UNSCRAMBLE -->
+                        <div id="arcade-panel-unscramble" class="space-y-4">
+                            <div class="flex items-center justify-between gap-2">
+                                <span id="unscramble-category" class="font-mono text-xs accent-text">Category: Core Values</span>
+                                <div class="flex items-center gap-2">
+                                    <span id="unscramble-timer" class="font-mono text-xs px-2.5 py-1 rounded-lg surface-card">⏱️ 30s</span>
+                                    <button id="unscramble-hint-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
+                                        💡 Hint
+                                    </button>
+                                    <button id="unscramble-skip-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
+                                        ↻ New Word
+                                    </button>
+                                </div>
+                            </div>
+
+                            <p id="unscramble-clue" class="text-xs sm:text-sm font-medium leading-relaxed">
+                                Tap the scrambled letter tiles below to form the word:
+                            </p>
+
+                            <!-- Answer Slots -->
+                            <div id="unscramble-answer-slots" class="flex flex-wrap gap-2 min-h-[44px] p-3 rounded-xl surface-card items-center justify-center"></div>
+
+                            <!-- Scrambled Letter Tiles -->
+                            <div id="unscramble-letter-tiles" class="flex flex-wrap gap-2 justify-center pt-1"></div>
+
+                            <div class="flex items-center justify-between pt-2">
+                                <button id="unscramble-clear-btn" type="button" class="text-xs font-mono underline cursor-pointer" style="color: var(--text-secondary);">
+                                    Reset Letters
+                                </button>
+                                <span id="unscramble-feedback" class="text-xs font-mono font-semibold accent-text"></span>
+                            </div>
+                        </div>
+
+                        <!-- MINI-GAME 2: PERSPECTIVE-SYNCED SPOT THE IMPOSTOR -->
+                        <div id="arcade-panel-impostor" class="hidden space-y-4">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono text-xs accent-text">🕵️ 3 Belong Together · 1 is the Impostor</span>
+                                <button id="impostor-next-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
+                                    ↻ Next Case
+                                </button>
+                            </div>
+                            <p id="impostor-prompt" class="text-xs sm:text-sm font-medium"></p>
+                            <div id="impostor-options" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></div>
+                            <p id="impostor-feedback" class="text-xs font-mono leading-relaxed min-h-[24px]" style="color: var(--text-secondary);"></p>
+                        </div>
+
+                        <!-- MINI-GAME 3: PERSPECTIVE-SYNCED 2 TRUTHS & 1 LIE -->
+                        <div id="arcade-panel-truths" class="hidden space-y-4">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="font-mono text-xs accent-text">⚡ Spot the 1 Lie Out of 3 Statements</span>
+                                <button id="truths-next-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
+                                    ↻ Next Round
+                                </button>
+                            </div>
+                            <p id="truths-topic" class="text-xs sm:text-sm font-medium"></p>
+                            <div id="truths-options" class="space-y-2.5"></div>
+                            <p id="truths-feedback" class="text-xs font-mono leading-relaxed min-h-[24px]" style="color: var(--text-secondary);"></p>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT 5 COLS: SPIN A GOOD VIBE + QUICK REACTIONS -->
+                    <div class="lg:col-span-5 flex flex-col justify-between gap-6">
+
+                        <!-- 🎡 SPIN A GOOD VIBE -->
+                        <div class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-4">
+                            <div class="flex items-center justify-between gap-2">
+                                <h3 class="font-bold text-base">🎡 Spin a Good Vibe</h3>
+                                <div class="flex gap-1">
+                                    <button type="button" data-vibe-cat="smile" class="vibe-cat-btn mode-pill-active px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">😊 Smile</button>
+                                    <button type="button" data-vibe-cat="thought" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">💡 Thought</button>
+                                    <button type="button" data-vibe-cat="trivia" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">⚡ Trivia</button>
+                                </div>
+                            </div>
+
+                            <div class="surface-card rounded-xl p-4 min-h-[115px] flex flex-col justify-between space-y-3">
+                                <p id="vibe-card-text" class="text-xs sm:text-sm leading-relaxed"></p>
+                                <div id="vibe-trivia-wrap" class="hidden pt-1 border-t" style="border-color: var(--border-subtle);">
+                                    <button id="vibe-reveal-btn" type="button" class="text-xs font-mono accent-text underline cursor-pointer">
+                                        👀 Reveal Answer
+                                    </button>
+                                    <p id="vibe-trivia-answer" class="hidden text-xs font-mono mt-1.5 font-semibold accent-text"></p>
+                                </div>
+                            </div>
+
+                            <button id="spin-vibe-btn" type="button" class="surface-card w-full py-2.5 rounded-xl text-xs font-mono font-semibold hover:opacity-90 transition-all cursor-pointer">
+                                🔄 Spin Another Unseen Card
+                            </button>
+                        </div>
+
+                        <!-- 👏 LEAVE A QUICK REACTION -->
+                        <div class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-base">👏 Leave a Quick Reaction</h3>
+                                    <p class="text-[11px]" style="color: var(--text-secondary);">Tap to send good vibes (saved in your browser)</p>
+                                </div>
+                                <span id="total-reactions-badge" class="font-mono text-xs accent-text"></span>
+                            </div>
+                            <div id="reaction-buttons-grid" class="grid grid-cols-2 gap-2.5"></div>
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
         </section>
 
@@ -1053,7 +1074,7 @@
     </main>
 
     <!-- ==========================================================================
-         9. CLEAN PROFESSIONAL FOOTER (NO LOCATION, NO B.TECH '25, NO PROJECT LINKS)
+         9. CLEAN PROFESSIONAL FOOTER
          ========================================================================== -->
     <footer class="border-t mt-12 py-10" style="border-color: var(--border-subtle);">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -1103,15 +1124,12 @@
     </div>
 
     <!-- ==========================================================================
-         10. 100% ERROR-FREE APPLICATION ENGINE (ZERO EXTERNAL API FAILURES)
+         10. 100% ERROR-FREE APPLICATION ENGINE
          ========================================================================== -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             'use strict';
 
-            // ----------------------------------------------------------------------
-            // 1. SAFE STORAGE & CRYPTO RANDOM HELPERS (NEVER THROWS)
-            // ----------------------------------------------------------------------
             function safeGetStorage(key, fallbackJson) {
                 try {
                     const raw = window.localStorage.getItem(key);
@@ -1124,9 +1142,7 @@
             function safeSetStorage(key, value) {
                 try {
                     window.localStorage.setItem(key, JSON.stringify(value));
-                } catch (e) {
-                    // Ignore private-browsing quota restrictions safely
-                }
+                } catch (e) {}
             }
 
             function cryptoRandomInt(max) {
@@ -1153,9 +1169,7 @@
                 }, 2600);
             }
 
-            // ----------------------------------------------------------------------
-            // 2. SURFACE THEME TOGGLE ("LIGHT BLACK" DEFAULT <-> "WARM PAPER")
-            // ----------------------------------------------------------------------
+            // Surface Theme Toggle
             const htmlEl = document.documentElement;
             const surfaceBtn = document.getElementById('surface-toggle-btn');
             const surfaceIcon = document.getElementById('surface-toggle-icon');
@@ -1185,9 +1199,7 @@
                 });
             }
 
-            // ----------------------------------------------------------------------
-            // 3. 3-WAY PERSPECTIVE SWITCHER (OVERVIEW | CANDID | TECHNICAL SPECS)
-            // ----------------------------------------------------------------------
+            // Perspective Switcher
             let currentMode = 'overview';
             const modeCaptions = {
                 overview: 'Clear, welcoming & impact-focused',
@@ -1204,13 +1216,11 @@
                 currentMode = mode;
                 htmlEl.setAttribute('data-mode', mode);
 
-                // Update buttons
                 document.querySelectorAll('.mode-btn').forEach(function (btn) {
                     const isMatch = btn.getAttribute('data-mode-btn') === mode;
                     btn.classList.toggle('mode-pill-active', isMatch);
                 });
 
-                // Update all mode-text elements
                 document.querySelectorAll('.mode-text').forEach(function (el) {
                     const nextCopy = el.getAttribute('data-' + mode);
                     if (nextCopy) el.innerHTML = nextCopy;
@@ -1227,7 +1237,6 @@
                 if (aiBadge) aiBadge.textContent = modeBadges[mode];
                 if (aiLabel) aiLabel.textContent = modeBadges[mode];
 
-                // Refresh Daily Spark Lounge items to match the newly selected mode!
                 loadNewUnscrambleWord();
                 loadNewImpostorChallenge();
                 loadNewTruthsChallenge();
@@ -1241,9 +1250,7 @@
                 });
             });
 
-            // ----------------------------------------------------------------------
-            // 4. PROJECT QUICK PEEK & INTERACTIVE LENSES
-            // ----------------------------------------------------------------------
+            // Project Lenses
             const lensCopy = {
                 'edulib-analogy': '🎬 Analogy: Imagine a personal digital library where every shelf labels itself and your notes sync across every device like magic.',
                 'edulib-impact': '🚀 Real-World Value: Eliminates scattered PDFs and messy bookmarks by combining cloud media storage with a clean rich-text notebook.',
@@ -1272,61 +1279,68 @@
                 });
             });
 
-            // ----------------------------------------------------------------------
-            // 5. NON-REPEATING "THE DAILY SPARK LOUNGE" DATA POOLS (MODE-SPECIFIC)
-            // ----------------------------------------------------------------------
-            const seenTracker = safeGetStorage('zubair_spark_seen_v5', {
-                unscramble: [],
-                impostor: [],
-                truths: [],
-                vibe: []
-            });
+            // Fisher-Yates Deck Shuffler
+            function getShuffledDeck(poolKey, poolArray) {
+                const storageKey = 'zubair_deck_v6_' + poolKey + '_' + currentMode;
+                try {
+                    const saved = window.sessionStorage.getItem(storageKey);
+                    if (saved) {
+                        const deck = JSON.parse(saved);
+                        if (deck && deck.length > 0) return deck;
+                    }
+                } catch (e) {}
+
+                const deck = poolArray.slice();
+                for (let i = deck.length - 1; i > 0; i--) {
+                    const j = cryptoRandomInt(i + 1);
+                    const temp = deck[i];
+                    deck[i] = deck[j];
+                    deck[j] = temp;
+                }
+                try {
+                    window.sessionStorage.setItem(storageKey, JSON.stringify(deck));
+                } catch (e) {}
+                return deck;
+            }
 
             function pickUnseenItem(pool, categoryKey) {
                 if (!pool || pool.length === 0) return null;
-                const seenIds = seenTracker[categoryKey] || [];
-                let unseen = pool.filter(function (item) {
-                    return seenIds.indexOf(item.id) === -1;
-                });
-                if (unseen.length === 0) {
-                    seenTracker[categoryKey] = [];
-                    unseen = pool.slice();
+                let deck = getShuffledDeck(categoryKey, pool);
+                if (deck.length === 0) {
+                    window.sessionStorage.removeItem('zubair_deck_v6_' + categoryKey + '_' + currentMode);
+                    deck = getShuffledDeck(categoryKey, pool);
                 }
-                const chosen = unseen[cryptoRandomInt(unseen.length)];
-                seenTracker[categoryKey].push(chosen.id);
-                safeSetStorage('zubair_spark_seen_v5', seenTracker);
+                const chosen = deck.shift();
+                try {
+                    window.sessionStorage.setItem('zubair_deck_v6_' + categoryKey + '_' + currentMode, JSON.stringify(deck));
+                } catch (e) {}
                 return chosen;
             }
 
-            // A. Word Unscramble Pools (Overview, Candid IT Fun, Technical CS/AI)
             const unscramblePools = {
                 overview: [
                     { id: 'ov1', word: 'CLARITY', cat: 'Design Value', clue: 'Making complex ideas simple and easy to understand at a glance.' },
                     { id: 'ov2', word: 'CREATIVE', cat: 'Everyday Spark', clue: 'Turning a blank page into something genuinely useful and original.' },
                     { id: 'ov3', word: 'LIBRARY', cat: 'EduLib Hub', clue: 'A calm, organized home for books, notes, and knowledge.' },
                     { id: 'ov4', word: 'TRUSTED', cat: 'Quality', clue: 'Dependable and reliable when it matters most.' },
-                    { id: 'ov5', word: 'INSIGHT', cat: 'Discovery', clue: 'A helpful realization that solves a puzzling question.' },
-                    { id: 'ov6', word: 'HARMONY', cat: 'User Experience', clue: 'When design and function work together smoothly.' }
+                    { id: 'ov5', word: 'INSIGHT', cat: 'Discovery', clue: 'A helpful realization that solves a puzzling question.' }
                 ],
                 candid: [
-                    { id: 'ca1', word: 'SHERLOCK', cat: 'Bug Detective', clue: 'What every developer becomes when a semicolon goes missing.' },
-                    { id: 'ca2', word: 'DEPLOYED', cat: 'Ship It!', clue: 'When the app leaves the laptop and goes live on the real internet.' },
-                    { id: 'ca3', word: 'DEADLINE', cat: 'IT Life', clue: 'The magical force that turns "someday" into "finished today".' },
-                    { id: 'ca4', word: 'WEEKEND', cat: ' Sacred Time', clue: 'Two glorious days why we never push untested code on Friday at 4:59 PM.' },
-                    { id: 'ca5', word: 'HOTFIX', cat: 'Pit Crew', clue: 'A Formula-1 speed repair while the race car is already on the track.' },
-                    { id: 'ca6', word: 'FEATURE', cat: 'Plot Twist', clue: 'What a clever developer calls an unexpected behavior that users actually love.' }
+                    { id: 'ca1', word: 'SHERLOCK', cat: 'Bug Detective', clue: 'What every developer becomes when a semicolon goes missing at 2 AM.' },
+                    { id: 'ca2', word: 'DEPLOYED', cat: 'Ship It!', clue: 'When the app leaves the laptop and goes live on the internet without crashing.' },
+                    { id: 'ca3', word: 'DEADLINE', cat: 'IT Life', clue: 'The magical force that turns "someday" into "finished right now".' },
+                    { id: 'ca4', word: 'HOTFIX', cat: 'Pit Crew', clue: 'A Formula-1 speed repair while the application is already running in production.' },
+                    { id: 'ca5', word: 'CAFFEINE', cat: 'Developer Fuel', clue: 'The chemical compound legally required to convert raw coffee into clean code.' }
                 ],
                 technical: [
                     { id: 'te1', word: 'MONGODB', cat: 'NoSQL Database', clue: 'Document database powering EduLib Hub cloud storage.' },
                     { id: 'te2', word: 'PYTHON', cat: 'AI & Backend', clue: 'Core language behind the Hospital Review RAG pipeline.' },
-                    { id: 'te3', word: 'EXPRESS', cat: 'Node.js Framework', clue: 'Fast minimalist web framework used for REST APIs.' },
+                    { id: 'te3', word: 'EXPRESS', cat: 'Node.js Framework', clue: 'Fast minimalist web framework used for robust REST APIs.' },
                     { id: 'te4', word: 'VECTOR', cat: 'RAG Retrieval', clue: 'Mathematical representation used in TF-IDF and Cosine Similarity.' },
-                    { id: 'te5', word: 'BACKEND', cat: 'Architecture', clue: 'Server-side logic, authentication, and database orchestration.' },
-                    { id: 'te6', word: 'GRADIO', cat: 'AI Interface', clue: 'Python framework hosting the interactive Hospital Review Bot.' }
+                    { id: 'te5', word: 'GRADIO', cat: 'AI Interface', clue: 'Python framework hosting the interactive Hospital Review Bot.' }
                 ]
             };
 
-            // B. Spot the Impostor Pools
             const impostorPools = {
                 overview: [
                     {
@@ -1338,17 +1352,10 @@
                     },
                     {
                         id: 'imp_ov2',
-                        prompt: 'Three of these make a website great for every visitor. Spot the 1 impostor:',
+                        prompt: 'Three of these make a website great for recruiters. Spot the 1 impostor:',
                         options: ['Fast Loading Speed', 'Clear Plain-English Copy', 'Mobile-Friendly Layout', '47 Pop-up Ads Per Minute'],
                         impostorIndex: 3,
                         explanation: 'Spot on! Pop-up ads ruin the experience—clean, calm design always wins.'
-                    },
-                    {
-                        id: 'imp_ov3',
-                        prompt: 'Three of these belong to Zubair’s verified background. Spot the 1 impostor:',
-                        options: ['B.Tech CSE (JNTU Kakinada)', 'Class of April 2025', 'Full-Stack & AI Applications', '19th-Century Steam Locomotive Repair'],
-                        impostorIndex: 3,
-                        explanation: 'Correct! Steam locomotives are cool, but Zubair engineers modern Full-Stack & AI software.'
                     }
                 ],
                 candid: [
@@ -1361,7 +1368,7 @@
                     },
                     {
                         id: 'imp_ca2',
-                        prompt: 'Three of these happen in a real IT software sprint. Spot the impostor:',
+                        prompt: 'Three of these happen in a real software sprint. Spot the impostor:',
                         options: ['Code Review on GitHub', 'Deploying to Render Cloud', 'Writing Automated Logic', 'Training Carrier Pigeons for Wi-Fi'],
                         impostorIndex: 3,
                         explanation: 'Carrier pigeons have terrible ping times! Cloud deployment is much faster.'
@@ -1385,7 +1392,6 @@
                 ]
             };
 
-            // C. 2 Truths & 1 Lie Pools
             const truthsPools = {
                 overview: [
                     {
@@ -1398,17 +1404,6 @@
                         ],
                         lieIndex: 2,
                         explanation: 'You nailed it! Both apps are 100% live in the cloud—no floppy disks required.'
-                    },
-                    {
-                        id: 'tr_ov2',
-                        topic: 'About Zubair’s Education & Focus:',
-                        statements: [
-                            'He graduated with a B.Tech in Computer Science & Engineering in April 2025.',
-                            'He studied at JNTU Kakinada.',
-                            'He only builds websites that work on 1998 flip phones.'
-                        ],
-                        lieIndex: 2,
-                        explanation: 'Correct! Every project is responsive across modern phones, tablets, and desktops.'
                     }
                 ],
                 candid: [
@@ -1439,31 +1434,25 @@
                 ]
             };
 
-            // D. Spin a Good Vibe Pools (Smile, Thought, Trivia)
             const vibePools = {
                 smile: [
                     { id: 'vs1', text: 'A great day starts with curiosity: every complex app in the world began as a single empty folder and a good idea.' },
                     { id: 'vs2', text: 'Why do programmers love nature documentaries? Because watching a beaver build a dam with zero syntax errors is pure inspiration.' },
-                    { id: 'vs3', text: 'Friendly reminder: You just navigated a portfolio that adapts to three reading styles—your curiosity is officially top-tier!' },
-                    { id: 'vs4', text: 'Software engineering rule #1: If it works on the first try, double-check that you actually saved the file.' }
+                    { id: 'vs3', text: 'Friendly reminder: You just navigated a portfolio that adapts to three reading styles—your curiosity is officially top-tier!' }
                 ],
                 thought: [
                     { id: 'vt1', text: '“Simplicity is about subtracting the obvious and adding the meaningful.” — John Maeda' },
                     { id: 'vt2', text: 'The best technology doesn’t ask people to think like computers; it teaches computers to be helpful to people.' },
-                    { id: 'vt3', text: 'Clear documentation and clean code are kindness to your future self and every teammate you work with.' },
-                    { id: 'vt4', text: 'Great products happen at the intersection of dependable backend engineering and calm, intuitive design.' }
+                    { id: 'vt3', text: 'Clear documentation and clean code are kindness to your future self and every teammate you work with.' }
                 ],
                 trivia: [
                     { id: 'vq1', text: 'What does "RAG" stand for in modern AI systems like Zubair’s Hospital Review Assistant?', answer: 'Retrieval-Augmented Generation — looking up verified facts before answering!' },
                     { id: 'vq2', text: 'Which programming language was named after the British comedy troupe Monty Python rather than a snake?', answer: 'Python!' },
-                    { id: 'vq3', text: 'In web development, what does "JSON" stand for?', answer: 'JavaScript Object Notation.' },
-                    { id: 'vq4', text: 'What mathematical measure checks how closely two text vectors point in the same direction?', answer: 'Cosine Similarity!' }
+                    { id: 'vq3', text: 'What mathematical measure checks how closely two text vectors point in the same direction?', answer: 'Cosine Similarity!' }
                 ]
             };
 
-            // ----------------------------------------------------------------------
-            // 6. MINI-GAME 1: WORD UNSCRAMBLE ENGINE
-            // ----------------------------------------------------------------------
+            // Word Unscramble Engine
             let currentWordObj = null;
             let scrambledChars = [];
             let selectedIndices = [];
@@ -1522,7 +1511,6 @@
                 slotsEl.innerHTML = '';
                 tilesEl.innerHTML = '';
 
-                // Render answer slots
                 for (let i = 0; i < currentWordObj.word.length; i++) {
                     const slot = document.createElement('button');
                     slot.type = 'button';
@@ -1541,7 +1529,6 @@
                     slotsEl.appendChild(slot);
                 }
 
-                // Render scrambled letter tiles
                 scrambledChars.forEach(function (ch, idx) {
                     const isUsed = selectedIndices.indexOf(idx) !== -1;
                     const tile = document.createElement('button');
@@ -1627,9 +1614,7 @@
                 });
             }
 
-            // ----------------------------------------------------------------------
-            // 7. MINI-GAME 2: SPOT THE IMPOSTOR ENGINE
-            // ----------------------------------------------------------------------
+            // Spot the Impostor Engine
             function loadNewImpostorChallenge() {
                 const pool = impostorPools[currentMode] || impostorPools.overview;
                 const item = pickUnseenItem(pool, 'impostor');
@@ -1664,9 +1649,7 @@
             const impostorNextBtn = document.getElementById('impostor-next-btn');
             if (impostorNextBtn) impostorNextBtn.addEventListener('click', loadNewImpostorChallenge);
 
-            // ----------------------------------------------------------------------
-            // 8. MINI-GAME 3: 2 TRUTHS & 1 LIE ENGINE
-            // ----------------------------------------------------------------------
+            // 2 Truths & 1 Lie Engine
             function loadNewTruthsChallenge() {
                 const pool = truthsPools[currentMode] || truthsPools.overview;
                 const item = pickUnseenItem(pool, 'truths');
@@ -1721,9 +1704,7 @@
                 });
             });
 
-            // ----------------------------------------------------------------------
-            // 9. SPIN A GOOD VIBE + QUICK REACTIONS ENGINE
-            // ----------------------------------------------------------------------
+            // Vibe Wheel & Reactions
             let currentVibeCategory = 'smile';
 
             function loadNewVibeCard() {
@@ -1773,11 +1754,12 @@
             const shuffleEntireBtn = document.getElementById('shuffle-entire-lounge-btn');
             if (shuffleEntireBtn) {
                 shuffleEntireBtn.addEventListener('click', function () {
+                    window.sessionStorage.clear();
                     loadNewUnscrambleWord();
                     loadNewImpostorChallenge();
                     loadNewTruthsChallenge();
                     loadNewVibeCard();
-                    showToast('🎲 Dealt a fresh unseen set of challenges!');
+                    showToast('🎲 Dealt a fresh unseen deck of challenges!');
                 });
             }
 
@@ -1833,7 +1815,6 @@
                 if (totalBadge) totalBadge.textContent = total + ' good vibes';
             }
 
-            // Share Lounge Button
             const shareLoungeBtn = document.getElementById('share-lounge-btn');
             if (shareLoungeBtn) {
                 shareLoungeBtn.addEventListener('click', function () {
@@ -1843,9 +1824,32 @@
                 });
             }
 
-            // ----------------------------------------------------------------------
-            // 10. HIDDEN-BY-DEFAULT AI TWIN & ROLE FIT STUDIO (OPENS ONLY ON CLICK)
-            // ----------------------------------------------------------------------
+            // Daily Spark Lounge Toggle Drawer
+            const toggleSparkBtn = document.getElementById('toggle-spark-btn');
+            const sparkDrawer = document.getElementById('spark-drawer');
+            const sparkChevron = document.getElementById('spark-chevron');
+
+            function setSparkOpen(openState, shouldScroll) {
+                if (!sparkDrawer || !toggleSparkBtn) return;
+                sparkDrawer.classList.toggle('hidden', !openState);
+                toggleSparkBtn.setAttribute('aria-expanded', String(openState));
+                if (sparkChevron) {
+                    sparkChevron.style.transform = openState ? 'rotate(180deg)' : 'rotate(0deg)';
+                }
+                if (openState && shouldScroll) {
+                    const sec = document.getElementById('spark-lounge');
+                    if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            if (toggleSparkBtn) {
+                toggleSparkBtn.addEventListener('click', function () {
+                    const isHidden = sparkDrawer.classList.contains('hidden');
+                    setSparkOpen(isHidden, false);
+                });
+            }
+
+            // AI Twin Drawer & Logic
             const toggleAiTwinBtn = document.getElementById('toggle-ai-twin-btn');
             const closeAiTwinBtn = document.getElementById('close-ai-twin-btn');
             const aiStudioDrawer = document.getElementById('ai-studio-drawer');
@@ -1883,7 +1887,6 @@
                 });
             });
 
-            // Perspective-Aware AI Twin Knowledge Base
             const aiTwinKnowledge = {
                 tour: {
                     overview: '🚀 45-Second Tour:\n1. EduLib Hub (Live on Render): A digital library and workspace where users upload resources and write formatted notes.\n2. Hospital Review Assistant (Live on Hugging Face): An AI assistant that reads patient hospital reviews and answers your questions clearly.',
@@ -1898,7 +1901,7 @@
                 architecture: {
                     overview: '🧠 Zubair builds complete applications from end to end—combining clean, mobile-friendly web screens with smart AI tools that search real data accurately.',
                     candid: '🧠 Most apps either look good or think smart. Zubair wires the MERN web stack and Python AI pipelines together so the screen and the brain actually get along.',
-                    technical: '🧠 Full-Stack + AI Stack: Java, Python, C++, SQL, Node.js, Express.js, MongoDB Atlas, Tailwind CSS, LangChain, TF-IDF, Cosine Similarity, and Gradio.'
+                    technical: '🧠 Full-Stack + AI Stack: Java, Python, C++, SQL, PostgreSQL, Node.js, Express.js, MongoDB Atlas, Tailwind CSS, Postman, LangChain, TF-IDF, Cosine Similarity, and Gradio.'
                 },
                 team: {
                     overview: '🤝 Zubair focuses on clear communication, clean documentation, and building features that solve real user problems without unnecessary complexity.',
@@ -1949,7 +1952,7 @@
                 });
             }
 
-            // Native Web Speech Synthesis Readout (100% Offline/Online Safe)
+            // Speech Synthesis
             const ttsBtn = document.getElementById('ai-tts-btn');
             const ttsIcon = document.getElementById('ai-tts-icon');
             const ttsLabel = document.getElementById('ai-tts-label');
@@ -1990,12 +1993,12 @@
                 });
             }
 
-            // Role Fit Matcher Presets & Custom Input
+            // Role Fit Matcher
             const rolePresets = {
                 fullstack: {
                     score: '98% Full-Stack Match',
                     project: 'Verified by: EduLib Hub (Render)',
-                    summary: 'Strong production fit: Node.js, Express.js, MongoDB Atlas, JWT security, Cloudinary media pipelines, and responsive Tailwind CSS interfaces.'
+                    summary: 'Strong production fit: Node.js, Express.js, MongoDB Atlas, JWT security, PostgreSQL, Postman, Cloudinary media pipelines, and responsive Tailwind CSS interfaces.'
                 },
                 ai: {
                     score: '97% AI / RAG Match',
@@ -2005,7 +2008,7 @@
                 swe: {
                     score: '98% Core SWE Match',
                     project: 'B.Tech CSE (JNTUK, April 2025)',
-                    summary: 'Solid Computer Science foundation in Java, Python, C++, SQL, OOP, and Data Structures & Algorithms backed by two live cloud deployments.'
+                    summary: 'Solid Computer Science foundation in Java, Python, C++, SQL, PostgreSQL, OOP, and Data Structures & Algorithms backed by two live cloud deployments.'
                 }
             };
 
@@ -2040,9 +2043,7 @@
                 });
             }
 
-            // ----------------------------------------------------------------------
-            // 11. HIDDEN-BY-DEFAULT CONNECT DRAWER & OWNER CUSTOMIZER
-            // ----------------------------------------------------------------------
+            // Connect Drawer & Customizer
             const toggleConnectBtn = document.getElementById('toggle-connect-btn');
             const connectDrawer = document.getElementById('connect-details-drawer');
             const connectChevron = document.getElementById('connect-chevron');
@@ -2073,7 +2074,6 @@
                 });
             });
 
-            // Copy Helper
             function copyTextSafe(text) {
                 try {
                     const ta = document.createElement('textarea');
@@ -2098,7 +2098,6 @@
                 });
             });
 
-            // Owner Customizer Drawer
             const toggleCustomizerBtn = document.getElementById('toggle-customizer-btn');
             const customizerDrawer = document.getElementById('owner-customizer-drawer');
             if (toggleCustomizerBtn && customizerDrawer) {
@@ -2157,9 +2156,7 @@
                 });
             }
 
-            // ----------------------------------------------------------------------
-            // 12. INITIALIZE NON-REPEATING SESSION ON PAGE LOAD
-            // ----------------------------------------------------------------------
+            // Initialize Session
             const startingGames = ['unscramble', 'impostor', 'truths'];
             switchArcadeTab(startingGames[cryptoRandomInt(startingGames.length)]);
             loadNewUnscrambleWord();
