@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-surface="dark" data-mode="overview">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zubair MD — Software Engineer | Full-Stack Web &amp; AI Systems</title>
+    <meta name="description" content="Portfolio of Zubair MD — Software Engineer specializing in Full-Stack Web Development (MERN) and Applied AI Systems (LangChain, RAG, Python, Java). B.Tech CSE, JNTU Kakinada (2025).">
+
+    <!-- Tailwind CSS via Official CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. DESIGN TOKENS: "LIGHT BLACK" DEFAULT + "WARM PAPER" ALTERNATIVE
+           ========================================================================== */
+        :root,
+        html[data-surface="dark"] {
+            --bg-page: #18191C;
+            --bg-card: #202227;
+            --bg-elevated: #272A30;
+            --bg-glass: rgba(24, 25, 28, 0.88);
+            --text-primary: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            --border-subtle: #2E323B;
+            --border-focus: #4B5563;
+            --shadow-card: 0 12px 32px -8px rgba(0, 0, 0, 0.45);
+        }
+
+        html[data-surface="light"] {
+            --bg-page: #F8F7F3;
+            --bg-card: #FFFFFF;
+            --bg-elevated: #F1EFEA;
+            --bg-glass: rgba(248, 247, 243, 0.90);
+            --text-primary: #18191C;
+            --text-secondary: #57534E;
+            --text-muted: #78716C;
+            --border-subtle: #E5E2DC;
+            --border-focus: #A8A29E;
+            --shadow-card: 0 10px 28px -6px rgba(24, 25, 28, 0.07);
+        }
+
+        /* Mode-Adaptive Subtle Accents (Botanical Sage, Terracotta Clay, Nordic Slate) */
+        html[data-surface="dark"][data-mode="overview"] {
+            --accent: #4E9F82;
+            --accent-hover: #3D8B6F;
+            --accent-soft: rgba(78, 159, 130, 0.14);
+            --accent-border: rgba(78, 159, 130, 0.36);
+            --accent-contrast: #0D1F18;
+        }
+        html[data-surface="dark"][data-mode="candid"] {
+            --accent: #E0825D;
+            --accent-hover: #CC6E49;
+            --accent-soft: rgba(224, 130, 93, 0.14);
+            --accent-border: rgba(224, 130, 93, 0.36);
+            --accent-contrast: #241008;
+        }
+        html[data-surface="dark"][data-mode="technical"] {
+            --accent: #6CA0DC;
+            --accent-hover: #558BC9;
+            --accent-soft: rgba(108, 160, 220, 0.14);
+            --accent-border: rgba(108, 160, 220, 0.36);
+            --accent-contrast: #0B1929;
+        }
+
+        html[data-surface="light"][data-mode="overview"] {
+            --accent: #2D6A54;
+            --accent-hover: #215240;
+            --accent-soft: #E6F2EE;
+            --accent-border: #B5D9CB;
+            --accent-contrast: #FFFFFF;
+        }
+        html[data-surface="light"][data-mode="candid"] {
+            --accent: #9A4B2E;
+            --accent-hover: #7D3B22;
+            --accent-soft: #F9EBE5;
+            --accent-border: #E5C1B3;
+            --accent-contrast: #FFFFFF;
+        }
+        html[data-surface="light"][data-mode="technical"] {
+            --accent: #2B5484;
+            --accent-hover: #1E3F66;
+            --accent-soft: #E8F0F8;
+            --accent-border: #B8CFE6;
+            --accent-contrast: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           2. BASE TYPOGRAPHY & SURFACE UTILITIES
+           ========================================================================== */
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            transition: background-color 0.25s ease, color 0.25s ease;
+            overflow-x: hidden;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .surface-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-card);
+            transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+        }
+
+        .surface-elevated {
+            background-color: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            transition: background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .surface-glass {
+            background-color: var(--bg-glass);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        .accent-badge {
+            background-color: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid var(--accent-border);
+        }
+
+        .accent-btn {
+            background-color: var(--accent);
+            color: var(--accent-contrast);
+            font-weight: 700;
+            transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .accent-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .accent-btn:active {
+            transform: translateY(0);
+        }
+
+        .mode-pill-active {
+            background-color: var(--accent);
+            color: var(--accent-contrast);
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+        }
+
+        .letter-tile {
+            user-select: none;
+            transition: transform 0.14s ease, background-color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .letter-tile:hover:not(:disabled) {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .letter-tile:active:not(:disabled) {
+            transform: scale(0.96);
+        }
+
+        /* Floating reaction emoji animation */
+        @keyframes floatUpFade {
+            0% { opacity: 1; transform: translateY(0) scale(0.95); }
+            100% { opacity: 0; transform: translateY(-44px) scale(1.25); }
+        }
+
+        .floating-emoji {
+            position: absolute;
+            pointer-events: none;
+            animation: floatUpFade 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            z-index: 30;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500/20">
+
+    <!-- ==========================================================================
+         1. STICKY HEADER WITH LINKEDIN & GITHUB LOGOS + SURFACE & AI TWIN TRIGGERS
+         ========================================================================== -->
+    <header class="sticky top-0 z-50 surface-glass">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+
+            <!-- Brand Identity -->
+            <a href="#top" class="flex items-center gap-2.5 group focus:outline-none">
+                <div class="w-9 h-9 rounded-xl flex items-center justify-center font-mono font-bold text-sm accent-badge group-hover:scale-105 transition-transform">
+                    ZM
+                </div>
+                <div>
+                    <span class="font-bold tracking-tight text-base block leading-none">Zubair MD</span>
+                    <span class="text-[11px] font-mono block mt-0.5" style="color: var(--text-secondary);">Software Engineer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-5 text-xs font-medium" style="color: var(--text-secondary);">
+                <a href="#projects" class="hover:opacity-100 transition-opacity py-1">Live Projects</a>
+                <a href="#skills" class="hover:opacity-100 transition-opacity py-1">Skills &amp; Official Docs</a>
+                <a href="#spark-lounge" class="hover:opacity-100 transition-opacity py-1 flex items-center gap-1">
+                    <span>✨ Daily Spark</span>
+                </a>
+                <button type="button" data-open-ai-twin="true" class="hover:opacity-100 transition-opacity py-1 flex items-center gap-1 cursor-pointer font-mono accent-text">
+                    <span>🤖 AI Twin</span>
+                </button>
+                <button type="button" data-open-connect="true" class="hover:opacity-100 transition-opacity py-1 cursor-pointer">
+                    📬 Connect
+                </button>
+            </nav>
+
+            <!-- Header Right: LinkedIn & GitHub Official Logos + Theme Surface Switch -->
+            <div class="flex items-center gap-2">
+                <!-- LinkedIn Header Icon Button -->
+                <a href="https://www.linkedin.com/in/zubair-md"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-sync-linkedin
+                   title="Visit Zubair MD on LinkedIn"
+                   aria-label="LinkedIn Profile"
+                   class="surface-elevated p-2 rounded-xl hover:opacity-90 transition-all flex items-center gap-1.5 text-xs font-medium">
+                    <svg class="w-4 h-4 accent-text shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                    <span class="hidden sm:inline">LinkedIn</span>
+                </a>
+
+                <!-- GitHub Header Icon Button -->
+                <a href="https://github.com/MdZubair3"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-sync-github
+                   title="Visit Zubair MD on GitHub"
+                   aria-label="GitHub Profile"
+                   class="surface-elevated p-2 rounded-xl hover:opacity-90 transition-all flex items-center gap-1.5 text-xs font-medium">
+                    <svg class="w-4 h-4 accent-text shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    <span class="hidden sm:inline">GitHub</span>
+                </a>
+
+                <!-- Surface Theme Switcher (Light Black vs Warm Paper) -->
+                <button id="surface-toggle-btn"
+                        type="button"
+                        class="surface-elevated px-2.5 py-2 rounded-xl text-xs font-mono flex items-center gap-1.5 hover:opacity-90 transition-all cursor-pointer"
+                        title="Switch between Light Black and Warm Paper surface">
+                    <span id="surface-toggle-icon">☀️</span>
+                    <span id="surface-toggle-label" class="hidden lg:inline">Warm Paper</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         2. STICKY PERSPECTIVE SWITCHER BAR (RESPECTFUL 3-WAY VIEW SELECTOR)
+         ========================================================================== -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-5">
+        <div class="surface-card rounded-2xl p-2.5 sm:px-4 sm:py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2.5">
+            <div class="flex items-center gap-2 text-xs font-medium" style="color: var(--text-secondary);">
+                <span class="w-2 h-2 rounded-full" style="background-color: var(--accent);"></span>
+                <span>Choose reading perspective:</span>
+                <span id="active-mode-caption" class="font-mono text-[11px] hidden md:inline" style="color: var(--text-muted);">
+                    Clear, welcoming &amp; impact-focused
+                </span>
+            </div>
+
+            <div class="grid grid-cols-3 gap-1.5 w-full sm:w-auto surface-elevated p-1 rounded-xl" role="tablist" aria-label="Reading Perspective">
+                <button type="button"
+                        data-mode-btn="overview"
+                        class="mode-btn mode-pill-active px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer text-center">
+                    ✨ Overview
+                </button>
+                <button type="button"
+                        data-mode-btn="candid"
+                        class="mode-btn px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer text-center"
+                        style="color: var(--text-secondary);">
+                    🎭 Candid
+                </button>
+                <button type="button"
+                        data-mode-btn="technical"
+                        class="mode-btn px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer text-center"
+                        style="color: var(--text-secondary);">
+                    ⚙️ Technical Specs
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         3. MAIN CONTENT CONTAINER
+         ========================================================================== -->
+    <main id="top" class="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-12">
+
+        <!-- ==========================================================================
+             3A. HERO SECTION (WITH LINKEDIN & GITHUB LOGOS + B.TECH CSE 2025)
+             ========================================================================== -->
+        <section class="surface-card rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden">
+            <div class="max-w-3xl space-y-6">
+
+                <!-- Top Row: Status Pill + Direct LinkedIn & GitHub Profile Buttons -->
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono accent-badge">
+                        <span class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--accent);"></span>
+                        <span>Available for Software Engineering Roles</span>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <a href="https://www.linkedin.com/in/zubair-md"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           data-sync-linkedin
+                           class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-medium inline-flex items-center gap-1.5 hover:opacity-90 transition-all">
+                            <svg class="w-3.5 h-3.5 accent-text" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                            <span>LinkedIn Profile</span>
+                            <span class="text-[10px] opacity-60">↗</span>
+                        </a>
+                        <a href="https://github.com/MdZubair3"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           data-sync-github
+                           class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-medium inline-flex items-center gap-1.5 hover:opacity-90 transition-all">
+                            <svg class="w-3.5 h-3.5 accent-text" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                            </svg>
+                            <span>GitHub Profile</span>
+                            <span class="text-[10px] opacity-60">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main Headline (Mode-Adaptive) -->
+                <div class="space-y-3">
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mode-text"
+                        data-overview="Hi, I’m Zubair MD. I build thoughtful web platforms and intelligent AI assistants that make everyday work simpler."
+                        data-candid="Hi, I’m Zubair MD. Think of me as part digital architect, part Sherlock Holmes for code—turning messy problems into calm, working software."
+                        data-technical="Zubair MD — Software Engineer architecting Full-Stack Web Applications (Node.js/MongoDB) &amp; Applied RAG AI Pipelines (Python/LangChain).">
+                        Hi, I’m Zubair MD. I build thoughtful web platforms and intelligent AI assistants that make everyday work simpler.
+                    </h1>
+
+                    <p class="text-sm sm:text-base leading-relaxed mode-text" style="color: var(--text-secondary);"
+                       data-overview="Whether it’s a collaborative digital library for students and teams or an AI assistant that reads hundreds of hospital reviews in seconds, I focus on software that feels intuitive, fast, and reliable."
+                       data-candid="Like a Formula 1 pit crew for web &amp; AI systems, I make sure the database, the user screen, and the AI brain actually cooperate without throwing a dramatic plot twist in production."
+                       data-technical="Computer Science &amp; Engineering graduate (JNTU Kakinada, 2025) with strong foundations in Java, Python, C++, Data Structures &amp; Algorithms, RESTful APIs, and Retrieval-Augmented Generation.">
+                        Whether it’s a collaborative digital library for students and teams or an AI assistant that reads hundreds of hospital reviews in seconds, I focus on software that feels intuitive, fast, and reliable.
+                    </p>
+                </div>
+
+                <!-- Education Credential Pill (B.Tech CSE Only) -->
+                <div class="surface-elevated rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl" aria-hidden="true">🎓</span>
+                        <div>
+                            <div class="text-xs sm:text-sm font-bold">B.Tech in Computer Science &amp; Engineering</div>
+                            <div class="text-xs" style="color: var(--text-secondary);">Jawaharlal Nehru Technological University, Kakinada (JNTUK)</div>
+                        </div>
+                    </div>
+                    <span class="font-mono text-xs px-3 py-1 rounded-lg accent-badge self-start sm:self-center shrink-0">
+                        Graduated April 2025
+                    </span>
+                </div>
+
+                <!-- Primary Call-To-Action Row -->
+                <div class="flex flex-wrap items-center gap-3 pt-1">
+                    <a href="#projects" class="accent-btn px-5 py-3 rounded-xl text-xs sm:text-sm inline-flex items-center gap-2">
+                        <span>🚀 Explore Live Projects</span>
+                    </a>
+                    <button type="button" data-open-ai-twin="true" class="surface-elevated px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-all cursor-pointer">
+                        <span>🤖 Open AI Twin</span>
+                    </button>
+                    <a href="#spark-lounge" class="surface-elevated px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-all">
+                        <span>✨ Play Daily Spark Lounge</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             4. VERIFIED LIVE PROJECTS (ONLY EDULIB HUB & HOSPITAL REVIEW ASSISTANT)
+             ========================================================================== -->
+        <section id="projects" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-wider accent-text">Live Production Deployments</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">Featured Applications</h2>
+                </div>
+                <p class="text-xs sm:text-sm mode-text" style="color: var(--text-secondary);"
+                   data-overview="Click any live link below to try the working applications directly in your browser."
+                   data-candid="Real working software deployed to the cloud—zero 'it only works on my laptop' excuses."
+                   data-technical="Cloud-deployed full-stack and RAG systems hosted on Render and Hugging Face Spaces.">
+                    Click any live link below to try the working applications directly in your browser.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <!-- PROJECT 1: EDULIB HUB -->
+                <article class="surface-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <span class="font-mono text-[11px] px-2.5 py-1 rounded-md accent-badge">Full-Stack Web Platform</span>
+                                <h3 class="text-xl sm:text-2xl font-extrabold mt-2">EduLib Hub</h3>
+                            </div>
+                            <span class="font-mono text-xs px-2.5 py-1 rounded-lg surface-elevated" style="color: var(--text-secondary);">
+                                Live on Render
+                            </span>
+                        </div>
+
+                        <p class="text-xs sm:text-sm leading-relaxed mode-text" style="color: var(--text-secondary);"
+                           data-overview="A smart digital library and workspace where users can organize study resources, upload documents and images, and write formatted notes in one clean, secure place."
+                           data-candid="Imagine a private library where no book ever goes missing and your notes organize themselves like LEGO bricks snapping into place—complete with cloud uploads and secure login."
+                           data-technical="Full-stack web application engineered with Node.js, Express.js, and MongoDB Atlas. Implements JWT authentication, Multer + Cloudinary media pipelines, Quill.js rich-text editing, and responsive Tailwind CSS views.">
+                            A smart digital library and workspace where users can organize study resources, upload documents and images, and write formatted notes in one clean, secure place.
+                        </p>
+
+                        <!-- Official Documentation Tech Pills -->
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <a href="https://nodejs.org/docs/latest/api/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Node.js Docs">Node.js ↗</a>
+                            <a href="https://expressjs.com/en/4x/api.html" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Express.js Docs">Express.js ↗</a>
+                            <a href="https://www.mongodb.com/docs/atlas/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official MongoDB Atlas Docs">MongoDB Atlas ↗</a>
+                            <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Tailwind CSS Docs">Tailwind CSS ↗</a>
+                            <a href="https://cloudinary.com/documentation" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Cloudinary Docs">Cloudinary ↗</a>
+                            <a href="https://jwt.io/introduction" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official JWT Docs">JWT Auth ↗</a>
+                            <a href="https://quilljs.com/docs/quickstart" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Quill.js Docs">Quill.js ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 pt-2 border-t" style="border-color: var(--border-subtle);">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <a href="https://edulib-7ane.onrender.com"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="accent-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm inline-flex items-center gap-2">
+                                <span>🌐 Launch Live Demo</span>
+                                <span>↗</span>
+                            </a>
+                            <button type="button"
+                                    data-peek-toggle="peek-edulib"
+                                    class="surface-elevated px-3.5 py-2.5 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                                🔍 Quick Peek: How It Works
+                            </button>
+                        </div>
+
+                        <!-- Expandable Quick Peek Drawer for EduLib Hub -->
+                        <div id="peek-edulib" class="hidden surface-elevated rounded-2xl p-4 space-y-3 text-xs">
+                            <div class="flex flex-wrap gap-1.5">
+                                <button type="button" data-lens-target="edulib-lens-text" data-lens-type="edulib-analogy" class="project-lens-btn surface-card px-2.5 py-1 rounded-lg font-mono text-[11px] cursor-pointer">🎬 Real-Life Analogy</button>
+                                <button type="button" data-lens-target="edulib-lens-text" data-lens-type="edulib-impact" class="project-lens-btn surface-card px-2.5 py-1 rounded-lg font-mono text-[11px] cursor-pointer">🚀 Why It Matters</button>
+                                <button type="button" data-lens-target="edulib-lens-text" data-lens-type="edulib-arch" class="project-lens-btn surface-card px-2.5 py-1 rounded-lg font-mono text-[11px] cursor-pointer">⚙️ System Flow</button>
+                            </div>
+                            <p id="edulib-lens-text" class="leading-relaxed" style="color: var(--text-secondary);">
+                                1️⃣ Sign in securely → 2️⃣ Create rich study notes or upload documents to the cloud → 3️⃣ Access and search your organized digital library from any device.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 2: HOSPITAL REVIEW ASSISTANT -->
+                <article class="surface-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <span class="font-mono text-[11px] px-2.5 py-1 rounded-md accent-badge">Applied AI &amp; RAG System</span>
+                                <h3 class="text-xl sm:text-2xl font-extrabold mt-2">Hospital Review Assistant</h3>
+                            </div>
+                            <span class="font-mono text-xs px-2.5 py-1 rounded-lg surface-elevated" style="color: var(--text-secondary);">
+                                Live on Hugging Face
+                            </span>
+                        </div>
+
+                        <p class="text-xs sm:text-sm leading-relaxed mode-text" style="color: var(--text-secondary);"
+                           data-overview="An intelligent AI assistant that reads through hundreds of patient hospital reviews and answers your specific questions clearly—saving hours of manual reading."
+                           data-candid="Like hiring Sherlock Holmes with a magnifying glass to read 1,000 patient reviews in two seconds and tell you whether the waiting room is actually fast or just polite."
+                           data-technical="Retrieval-Augmented Generation (RAG) assistant built with Python, LangChain, TF-IDF vectorization, and Cosine Similarity ranking to ground LLM responses in verified patient review datasets via Gradio.">
+                            An intelligent AI assistant that reads through hundreds of patient hospital reviews and answers your specific questions clearly—saving hours of manual reading.
+                        </p>
+
+                        <!-- Official Documentation Tech Pills -->
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Python Docs">Python ↗</a>
+                            <a href="https://python.langchain.com/docs/introduction/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official LangChain Docs">LangChain ↗</a>
+                            <a href="https://scikit-learn.org/stable/modules/feature_extraction.html#tfidf-term-weighting" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Scikit-Learn TF-IDF Docs">TF-IDF &amp; Cosine Similarity ↗</a>
+                            <a href="https://www.gradio.app/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Gradio Docs">Gradio UI ↗</a>
+                            <a href="https://huggingface.co/docs/hub/spaces" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Hugging Face Spaces Docs">Hugging Face Spaces ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 pt-2 border-t" style="border-color: var(--border-subtle);">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <a href="https://huggingface.co/spaces/MdZubair3/Hospital-Review-Bot"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="accent-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm inline-flex items-center gap-2">
+                                <span>🤖 Launch Live AI Bot</span>
+                                <span>↗</span>
+                            </a>
+                            <button type="button"
+                                    data-peek-toggle="peek-hospital"
+                                    class="surface-elevated px-3.5 py-2.5 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                                🔍 Quick Peek: How It Works
+                            </button>
+                        </div>
+
+                        <!-- Expandable Quick Peek Drawer for Hospital Review Assistant -->
+                        <div id="peek-hospital" class="hidden surface-elevated rounded-2xl p-4 space-y-3 text-xs">
+                            <div class="flex flex-wrap gap-1.5">
+                                <button type="button" data-lens-target="hospital-lens-text" data-lens-type="hospital-analogy" class="project-lens-btn surface-card px-2.5 py-1 rounded-lg font-mono text-[11px] cursor-pointer">🕵️ Detective Analogy</button>
+                                <button type="button" data-lens-target="hospital-lens-text" data-lens-type="hospital-impact" class="project-lens-btn surface-card px-2.5 py-1 rounded-lg font-mono text-[11px] cursor-pointer">🏥 Real-World Value</button>
+                                <button type="button" data-lens-target="hospital-lens-text" data-lens-type="hospital-arch" class="project-lens-btn surface-card px-2.5 py-1 rounded-lg font-mono text-[11px] cursor-pointer">⚙️ RAG Pipeline</button>
+                            </div>
+                            <p id="hospital-lens-text" class="leading-relaxed" style="color: var(--text-secondary);">
+                                1️⃣ Ask a natural question about patient care → 2️⃣ The retriever ranks the most relevant real hospital reviews → 3️⃣ The AI synthesizes an accurate, grounded answer.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             5. SKILLS & VERIFIED OFFICIAL DOCUMENTATION HUB
+             ========================================================================== -->
+        <section id="skills" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-wider accent-text">Verified Official Sources</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">Engineering Stack &amp; Official Documentation</h2>
+                </div>
+                <p class="text-xs sm:text-sm" style="color: var(--text-secondary);">
+                    Every technology badge below links directly to its official specification or documentation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Category 1: Programming & Core CS -->
+                <div class="surface-card rounded-3xl p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-base">Programming &amp; Core CS</h3>
+                        <span class="font-mono text-xs accent-text">01</span>
+                    </div>
+                    <p class="text-xs leading-relaxed mode-text" style="color: var(--text-secondary);"
+                       data-overview="The foundational languages and problem-solving logic behind fast, dependable software."
+                       data-candid="The sturdy steel beams and engine blocks—making sure algorithms run fast without breaking a sweat."
+                       data-technical="Object-Oriented Programming, Data Structures &amp; Algorithms, and relational database querying.">
+                        The foundational languages and problem-solving logic behind fast, dependable software.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <a href="https://docs.oracle.com/en/java/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Java (Oracle Docs) ↗</a>
+                        <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Python 3 ↗</a>
+                        <a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">C++ ↗</a>
+                        <a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">SQL ↗</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">JavaScript (MDN) ↗</a>
+                    </div>
+                </div>
+
+                <!-- Category 2: Full-Stack Web Engineering -->
+                <div class="surface-card rounded-3xl p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-base">Full-Stack Web Systems</h3>
+                        <span class="font-mono text-xs accent-text">02</span>
+                    </div>
+                    <p class="text-xs leading-relaxed mode-text" style="color: var(--text-secondary);"
+                       data-overview="Modern web technologies for responsive user interfaces, cloud storage, and secure accounts."
+                       data-candid="Everything from the front door a visitor clicks on to the vault in the back that keeps data safe."
+                       data-technical="RESTful API design, server-side routing, NoSQL document modeling, JWT security, and responsive CSS.">
+                        Modern web technologies for responsive user interfaces, cloud storage, and secure accounts.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <a href="https://nodejs.org/docs/latest/api/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Node.js ↗</a>
+                        <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Express.js ↗</a>
+                        <a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">MongoDB Atlas ↗</a>
+                        <a href="https://react.dev/reference/react" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">React ↗</a>
+                        <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Tailwind CSS ↗</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">HTML5 &amp; CSS3 ↗</a>
+                    </div>
+                </div>
+
+                <!-- Category 3: Applied AI & RAG Systems -->
+                <div class="surface-card rounded-3xl p-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-base">AI &amp; RAG Architecture</h3>
+                        <span class="font-mono text-xs accent-text">03</span>
+                    </div>
+                    <p class="text-xs leading-relaxed mode-text" style="color: var(--text-secondary);"
+                       data-overview="Tools that allow software to search documents intelligently and answer questions in plain language."
+                       data-candid="Teaching computers to actually read the manual before answering your question—zero wild guessing."
+                       data-technical="Retrieval-Augmented Generation (RAG), LangChain orchestration, TF-IDF &amp; Cosine Similarity ranking, and Gradio.">
+                        Tools that allow software to search documents intelligently and answer questions in plain language.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <a href="https://python.langchain.com/docs/introduction/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">LangChain ↗</a>
+                        <a href="https://huggingface.co/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Hugging Face ↗</a>
+                        <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">TF-IDF &amp; Cosine Sim ↗</a>
+                        <a href="https://www.gradio.app/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Gradio ↗</a>
+                        <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Git &amp; GitHub ↗</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             6. ✨ THE DAILY SPARK LOUNGE (NON-REPEATING, MODE-ADAPTIVE MINI-GAMES)
+             ========================================================================== -->
+        <section id="spark-lounge" class="surface-card rounded-3xl p-6 sm:p-10 space-y-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b pb-6" style="border-color: var(--border-subtle);">
+                <div class="space-y-1.5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono accent-badge">
+                        <span>✨ Interactive Break · Non-Repeating Shuffle Engine</span>
+                        <span>·</span>
+                        <span id="spark-mode-indicator">✨ Overview Pack</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">The Daily Spark Lounge</h2>
+                    <p class="text-xs sm:text-sm mode-text" style="color: var(--text-secondary);"
+                       data-overview="Take a 30-second break! Every visit and every perspective mode unlocks a fresh set of brainteasers, uplifting thoughts, and quick games."
+                       data-candid="Because scrolling portfolios can feel like reading a 40-page terms-of-service agreement. Enjoy fresh IT-life games that never repeat!"
+                       data-technical="Cryptographically shuffled client-side state machine with seen-history persistence—adapting challenges to CS, Web, and AI engineering.">
+                        Take a 30-second break! Every visit and every perspective mode unlocks a fresh set of brainteasers, uplifting thoughts, and quick games.
+                    </p>
+                </div>
+
+                <!-- Streak + Shuffle All Button + Share Button -->
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <div class="surface-elevated px-3.5 py-2 rounded-xl text-xs font-mono flex items-center gap-2">
+                        <span>🔥 Streak:</span>
+                        <strong id="spark-streak-count" class="accent-text text-sm">0</strong>
+                    </div>
+                    <button id="shuffle-entire-lounge-btn"
+                            type="button"
+                            class="accent-btn px-4 py-2 rounded-xl text-xs font-mono inline-flex items-center gap-1.5 cursor-pointer">
+                        <span>🎲 Deal Fresh Unseen Set</span>
+                    </button>
+                    <button id="share-lounge-btn"
+                            type="button"
+                            class="surface-elevated px-3.5 py-2 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                        🔗 Share
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lounge Grid: Left (3 Mini-Games) | Right (Spin a Good Vibe + Reactions) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                <!-- LEFT 7 COLS: 3 SWITCHABLE MINI-GAMES -->
+                <div class="lg:col-span-7 surface-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-5">
+
+                    <!-- Game Switcher Tabs -->
+                    <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-subtle);">
+                        <div class="flex flex-wrap gap-1.5" role="tablist">
+                            <button type="button" data-arcade-tab="unscramble" class="arcade-tab-btn mode-pill-active px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
+                                🎯 Word Unscramble
+                            </button>
+                            <button type="button" data-arcade-tab="impostor" class="arcade-tab-btn surface-card px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
+                                🕵️ Spot Impostor
+                            </button>
+                            <button type="button" data-arcade-tab="truths" class="arcade-tab-btn surface-card px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
+                                ⚡ 2 Truths &amp; 1 Lie
+                            </button>
+                        </div>
+                        <span id="unseen-counter-badge" class="font-mono text-[11px]" style="color: var(--text-muted);">
+                            Fresh Deck Active
+                        </span>
+                    </div>
+
+                    <!-- MINI-GAME 1: 30-SECOND WORD UNSCRAMBLE -->
+                    <div id="arcade-panel-unscramble" class="space-y-4">
+                        <div class="flex items-center justify-between gap-2">
+                            <span id="unscramble-category" class="font-mono text-xs accent-text">Category: Everyday Spark</span>
+                            <div class="flex items-center gap-2">
+                                <span id="unscramble-timer" class="font-mono text-xs px-2.5 py-1 rounded-lg surface-card">⏱️ 30s</span>
+                                <button id="unscramble-hint-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
+                                    💡 Hint
+                                </button>
+                                <button id="unscramble-skip-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
+                                    ↻ New Word
+                                </button>
+                            </div>
+                        </div>
+
+                        <p id="unscramble-clue" class="text-xs sm:text-sm font-medium leading-relaxed">
+                            Tap the scrambled letter tiles below (or type on your keyboard) to form the word:
+                        </p>
+
+                        <!-- Answer Slots -->
+                        <div id="unscramble-answer-slots" class="flex flex-wrap gap-2 min-h-[44px] p-3 rounded-xl surface-card items-center justify-center"></div>
+
+                        <!-- Scrambled Letter Tiles -->
+                        <div id="unscramble-letter-tiles" class="flex flex-wrap gap-2 justify-center pt-1"></div>
+
+                        <div class="flex items-center justify-between pt-2">
+                            <button id="unscramble-clear-btn" type="button" class="text-xs font-mono underline cursor-pointer" style="color: var(--text-secondary);">
+                                Reset Letters
+                            </button>
+                            <span id="unscramble-feedback" class="text-xs font-mono font-semibold accent-text"></span>
+                        </div>
+                    </div>
+
+                    <!-- MINI-GAME 2: SPOT THE IMPOSTOR -->
+                    <div id="arcade-panel-impostor" class="hidden space-y-4">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="font-mono text-xs accent-text">🕵️ 3 Belong Together · 1 is the Impostor</span>
+                            <button id="impostor-next-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
+                                ↻ Next Case
+                            </button>
+                        </div>
+                        <p id="impostor-prompt" class="text-xs sm:text-sm font-medium"></p>
+                        <div id="impostor-options" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></div>
+                        <p id="impostor-feedback" class="text-xs font-mono leading-relaxed min-h-[24px]" style="color: var(--text-secondary);"></p>
+                    </div>
+
+                    <!-- MINI-GAME 3: 2 TRUTHS & 1 LIE -->
+                    <div id="arcade-panel-truths" class="hidden space-y-4">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="font-mono text-xs accent-text">⚡ Spot the 1 Lie Out of 3 Statements</span>
+                            <button id="truths-next-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
+                                ↻ Next Round
+                            </button>
+                        </div>
+                        <p id="truths-topic" class="text-xs sm:text-sm font-medium"></p>
+                        <div id="truths-options" class="space-y-2.5"></div>
+                        <p id="truths-feedback" class="text-xs font-mono leading-relaxed min-h-[24px]" style="color: var(--text-secondary);"></p>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT 5 COLS: SPIN A GOOD VIBE + QUICK REACTIONS -->
+                <div class="lg:col-span-5 flex flex-col justify-between gap-6">
+
+                    <!-- 🎡 SPIN A GOOD VIBE -->
+                    <div class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-4">
+                        <div class="flex items-center justify-between gap-2">
+                            <h3 class="font-bold text-base">🎡 Spin a Good Vibe</h3>
+                            <div class="flex gap-1">
+                                <button type="button" data-vibe-cat="smile" class="vibe-cat-btn mode-pill-active px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">😊 Smile</button>
+                                <button type="button" data-vibe-cat="thought" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">💡 Thought</button>
+                                <button type="button" data-vibe-cat="trivia" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">⚡ Trivia</button>
+                            </div>
+                        </div>
+
+                        <div class="surface-card rounded-xl p-4 min-h-[115px] flex flex-col justify-between space-y-3">
+                            <p id="vibe-card-text" class="text-xs sm:text-sm leading-relaxed"></p>
+                            <div id="vibe-trivia-wrap" class="hidden pt-1 border-t" style="border-color: var(--border-subtle);">
+                                <button id="vibe-reveal-btn" type="button" class="text-xs font-mono accent-text underline cursor-pointer">
+                                    👀 Reveal Answer
+                                </button>
+                                <p id="vibe-trivia-answer" class="hidden text-xs font-mono mt-1.5 font-semibold accent-text"></p>
+                            </div>
+                        </div>
+
+                        <button id="spin-vibe-btn" type="button" class="surface-card w-full py-2.5 rounded-xl text-xs font-mono font-semibold hover:opacity-90 transition-all cursor-pointer">
+                            🔄 Spin Another Unseen Card
+                        </button>
+                    </div>
+
+                    <!-- 👏 LEAVE A QUICK REACTION -->
+                    <div class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-bold text-base">👏 Leave a Quick Reaction</h3>
+                                <p class="text-[11px]" style="color: var(--text-secondary);">Tap to send good vibes (saved in your browser)</p>
+                            </div>
+                            <span id="total-reactions-badge" class="font-mono text-xs accent-text"></span>
+                        </div>
+                        <div id="reaction-buttons-grid" class="grid grid-cols-2 gap-2.5"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             7. 🤖 ZUBAIR'S AI TWIN & ROLE FIT STUDIO (HIDDEN UNLESS CLICKED)
+             ========================================================================== -->
+        <section id="ai-studio" class="surface-card rounded-3xl p-6 sm:p-10 text-center space-y-5">
+            <div class="max-w-xl mx-auto space-y-2">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono accent-badge">
+                    <span>🤖 Interactive Assistant · Perspective-Aware (<span id="ai-studio-mode-badge">✨ Overview</span>)</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Zubair’s AI Twin</h2>
+                <p class="text-xs sm:text-sm mode-text" style="color: var(--text-secondary);"
+                   data-overview="Want a quick interactive tour of my projects, an audio readout, or an instant role-fit check? Click below to open my AI Twin."
+                   data-candid="Curious how my projects work or want to interview my digital stunt double? Click below to wake up the AI Twin."
+                   data-technical="Open the interactive assistant &amp; role-compatibility matcher to query Zubair's stack, RAG architecture, and full-stack deployments.">
+                    Want a quick interactive tour of my projects, an audio readout, or an instant role-fit check? Click below to open my AI Twin.
+                </p>
+            </div>
+
+            <!-- Click-to-Open Trigger Button -->
+            <div>
+                <button id="toggle-ai-twin-btn"
+                        type="button"
+                        aria-expanded="false"
+                        class="accent-btn px-7 py-3.5 rounded-2xl text-xs sm:text-sm inline-flex items-center gap-3 cursor-pointer shadow-sm">
+                    <span>🤖 AI Twin — Click to Open Interactive Assistant</span>
+                    <span id="ai-twin-chevron" class="transition-transform duration-200">▼</span>
+                </button>
+            </div>
+
+            <!-- Hidden-by-Default AI Twin Drawer -->
+            <div id="ai-studio-drawer" class="hidden pt-6 border-t text-left space-y-6" style="border-color: var(--border-subtle);">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-2 font-mono text-xs" style="color: var(--text-secondary);">
+                        <span class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--accent);"></span>
+                        <span>AI Twin Ready · Adapts to <strong id="ai-chat-mode-label" class="accent-text">✨ Overview</strong></span>
+                    </div>
+                    <button id="close-ai-twin-btn"
+                            type="button"
+                            class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                        ✕ Hide AI Twin
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                    <!-- Left 7 Cols: Interactive Q&A + Voice Readout -->
+                    <div class="lg:col-span-7 surface-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-4">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between gap-2">
+                                <h3 class="font-bold text-base">💬 Ask Zubair’s AI Twin</h3>
+                                <button id="ai-tts-btn"
+                                        type="button"
+                                        class="surface-card px-3 py-1.5 rounded-xl text-xs font-mono inline-flex items-center gap-1.5 hover:opacity-90 cursor-pointer">
+                                    <span id="ai-tts-icon">🔊</span>
+                                    <span id="ai-tts-label">Listen (Voice)</span>
+                                </button>
+                            </div>
+
+                            <!-- 1-Click Question Chips -->
+                            <div class="flex flex-wrap gap-2">
+                                <button type="button" data-ai-topic="tour" class="ai-prompt-chip surface-card px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                                    🚀 45s Tour of Live Apps
+                                </button>
+                                <button type="button" data-ai-topic="analogy" class="ai-prompt-chip surface-card px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                                    🕵️ Creative Analogy Pitch
+                                </button>
+                                <button type="button" data-ai-topic="architecture" class="ai-prompt-chip surface-card px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                                    🧠 Web + AI Architecture
+                                </button>
+                                <button type="button" data-ai-topic="team" class="ai-prompt-chip surface-card px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                                    🤝 Problem-Solving Style
+                                </button>
+                            </div>
+
+                            <!-- Response Card -->
+                            <div class="surface-card rounded-2xl p-4 sm:p-5 min-h-[140px] flex items-center">
+                                <p id="ai-twin-response" class="text-xs sm:text-sm leading-relaxed whitespace-pre-line">
+                                    👋 Hi! I’m Zubair’s interactive AI Twin. Tap any topic above or ask a question below—my answer automatically adapts to your chosen perspective mode, and you can click “🔊 Listen (Voice)” to hear it read aloud!
+                                </p>
+                            </div>
+                        </div>
+
+                        <form id="ai-twin-form" class="flex flex-col sm:flex-row gap-2">
+                            <input id="ai-twin-input"
+                                   type="text"
+                                   placeholder="Ask about EduLib Hub, Hospital Review Bot, Java, Python, or B.Tech CSE..."
+                                   class="surface-card px-4 py-2.5 rounded-xl text-xs sm:text-sm flex-1 focus:outline-none">
+                            <button type="submit" class="accent-btn px-5 py-2.5 rounded-xl text-xs font-mono cursor-pointer shrink-0">
+                                Ask AI Twin ✦
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Right 5 Cols: Instant Role & Project Fit Matcher -->
+                    <div class="lg:col-span-5 surface-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <h3 class="font-bold text-base">🎯 Instant Role &amp; Project Fit Matcher</h3>
+                            <p class="text-xs" style="color: var(--text-secondary);">
+                                Select a role preset or type keywords to see how Zubair’s verified projects &amp; skills align:
+                            </p>
+
+                            <div class="flex flex-wrap gap-1.5">
+                                <button type="button" data-fit-role="fullstack" class="fit-preset-btn surface-card px-2.5 py-1.5 rounded-lg text-[11px] font-mono hover:opacity-90 cursor-pointer">
+                                    🌐 Full-Stack Engineer
+                                </button>
+                                <button type="button" data-fit-role="ai" class="fit-preset-btn surface-card px-2.5 py-1.5 rounded-lg text-[11px] font-mono hover:opacity-90 cursor-pointer">
+                                    🧠 AI / RAG Developer
+                                </button>
+                                <button type="button" data-fit-role="swe" class="fit-preset-btn surface-card px-2.5 py-1.5 rounded-lg text-[11px] font-mono hover:opacity-90 cursor-pointer">
+                                    ⚡ Core SWE (Java/Python)
+                                </button>
+                            </div>
+
+                            <input id="fit-custom-input"
+                                   type="text"
+                                   placeholder="Or type role skills (e.g., Node.js, Python, LangChain, SQL)..."
+                                   class="w-full surface-card px-3.5 py-2.5 rounded-xl text-xs focus:outline-none">
+                        </div>
+
+                        <div id="fit-result-card" class="surface-card rounded-2xl p-4 space-y-2.5 text-xs">
+                            <div class="flex items-center justify-between gap-2">
+                                <span id="fit-score-pill" class="font-mono font-bold px-2.5 py-1 rounded-lg accent-badge">
+                                    98% Strong Match
+                                </span>
+                                <span id="fit-project-badge" class="font-mono text-[11px]" style="color: var(--text-muted);">
+                                    EduLib Hub + Hospital AI
+                                </span>
+                            </div>
+                            <p id="fit-summary-output" class="leading-relaxed" style="color: var(--text-secondary);">
+                                Combines full-stack production experience (EduLib Hub on Render) with applied RAG AI pipelines (Hospital Review Assistant on Hugging Face) and a B.Tech CSE foundation.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             8. 📬 CONNECT WITH ZUBAIR (HIDDEN BY DEFAULT — REVEALS ON CLICK)
+             ========================================================================== -->
+        <section id="connect" class="surface-card rounded-3xl p-6 sm:p-10 text-center space-y-6">
+            <div class="max-w-xl mx-auto space-y-2">
+                <span class="font-mono text-xs uppercase tracking-wider accent-text">Direct Channels</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Let’s Connect</h2>
+                <p class="text-xs sm:text-sm" style="color: var(--text-secondary);">
+                    Kept clean and simple—click below whenever you’d like to view my contact details or reach out directly.
+                </p>
+            </div>
+
+            <div>
+                <button id="toggle-connect-btn"
+                        type="button"
+                        aria-expanded="false"
+                        class="accent-btn px-7 py-3.5 rounded-2xl text-xs sm:text-sm inline-flex items-center gap-3 cursor-pointer shadow-sm">
+                    <span>📬 Connect with Zubair — Click to View Contact Details</span>
+                    <span id="connect-chevron" class="transition-transform duration-200">▼</span>
+                </button>
+            </div>
+
+            <!-- Hidden-by-Default Contact Details Drawer -->
+            <div id="connect-details-drawer" class="hidden pt-6 border-t text-left space-y-6" style="border-color: var(--border-subtle);">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                    <!-- Email Card -->
+                    <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs accent-text">✉️ Email</span>
+                            <button type="button" data-copy-target="contact-email-text" class="copy-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">
+                                Copy
+                            </button>
+                        </div>
+                        <a id="contact-email-link" href="mailto:zubairmd.dev@gmail.com" class="font-bold text-xs sm:text-sm break-all hover:underline">
+                            <span id="contact-email-text">zubairmd.dev@gmail.com</span>
+                        </a>
+                    </div>
+
+                    <!-- Phone / WhatsApp Card -->
+                    <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs accent-text">📱 Mobile / WhatsApp</span>
+                            <button type="button" data-copy-target="contact-phone-text" class="copy-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">
+                                Copy
+                            </button>
+                        </div>
+                        <a id="contact-phone-link" href="tel:+919876543210" class="font-bold text-xs sm:text-sm hover:underline">
+                            <span id="contact-phone-text">+91 98765 43210</span>
+                        </a>
+                    </div>
+
+                    <!-- LinkedIn Card -->
+                    <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs accent-text">💼 LinkedIn</span>
+                            <span class="text-xs opacity-60">↗</span>
+                        </div>
+                        <a href="https://www.linkedin.com/in/zubair-md"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           data-sync-linkedin
+                           class="font-bold text-xs sm:text-sm hover:underline truncate">
+                            linkedin.com/in/zubair-md
+                        </a>
+                    </div>
+
+                    <!-- GitHub Card -->
+                    <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs accent-text">💻 GitHub</span>
+                            <span class="text-xs opacity-60">↗</span>
+                        </div>
+                        <a href="https://github.com/MdZubair3"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           data-sync-github
+                           class="font-bold text-xs sm:text-sm hover:underline truncate">
+                            github.com/MdZubair3
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Owner Customizer & Hosting Guide Toggle -->
+                <div class="pt-2 text-center">
+                    <button id="toggle-customizer-btn"
+                            type="button"
+                            class="surface-elevated px-4 py-2 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
+                        ⚙️ Owner Setup: Update My Contact Links &amp; Free Hosting Guide
+                    </button>
+                </div>
+
+                <div id="owner-customizer-drawer" class="hidden surface-elevated rounded-2xl p-5 space-y-4 text-xs">
+                    <h3 class="font-bold text-sm">⚙️ Customize Your Contact Info &amp; Download Ready-to-Host File</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block font-mono text-[11px] mb-1" style="color: var(--text-secondary);">Your Email Address</label>
+                            <input id="custom-email-input" type="email" value="zubairmd.dev@gmail.com" class="w-full surface-card px-3 py-2 rounded-xl focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block font-mono text-[11px] mb-1" style="color: var(--text-secondary);">Your Mobile / WhatsApp</label>
+                            <input id="custom-phone-input" type="text" value="+91 98765 43210" class="w-full surface-card px-3 py-2 rounded-xl focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block font-mono text-[11px] mb-1" style="color: var(--text-secondary);">Your LinkedIn URL</label>
+                            <input id="custom-linkedin-input" type="url" value="https://www.linkedin.com/in/zubair-md" class="w-full surface-card px-3 py-2 rounded-xl focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block font-mono text-[11px] mb-1" style="color: var(--text-secondary);">Your GitHub URL</label>
+                            <input id="custom-github-input" type="url" value="https://github.com/MdZubair3" class="w-full surface-card px-3 py-2 rounded-xl focus:outline-none">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3 pt-1">
+                        <button id="apply-custom-info-btn" type="button" class="accent-btn px-4 py-2 rounded-xl font-mono cursor-pointer">
+                            ✓ Apply Changes Live
+                        </button>
+                        <button id="download-html-btn" type="button" class="surface-card px-4 py-2 rounded-xl font-mono cursor-pointer hover:opacity-90">
+                            💾 Download Updated index.html
+                        </button>
+                    </div>
+                    <p class="leading-relaxed pt-2 border-t" style="border-color: var(--border-subtle); color: var(--text-secondary);">
+                        <strong>How to publish to www.zubairmd.com in 60 seconds:</strong> Put your downloaded <code>index.html</code> inside an empty folder, drag that folder onto <a href="https://app.netlify.com/drop" target="_blank" rel="noopener noreferrer" class="underline accent-text">app.netlify.com/drop</a> or deploy via Vercel/GitHub Pages, then connect your custom domain in Domain Settings.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         9. CLEAN PROFESSIONAL FOOTER (NO LOCATION, NO B.TECH '25, NO PROJECT LINKS)
+         ========================================================================== -->
+    <footer class="border-t mt-12 py-10" style="border-color: var(--border-subtle);">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3 text-center sm:text-left">
+                <div class="w-9 h-9 rounded-xl flex items-center justify-center font-mono font-bold text-sm accent-badge shrink-0">
+                    ZM
+                </div>
+                <div>
+                    <div class="font-bold text-sm">Zubair MD</div>
+                    <p class="text-xs max-w-md mt-0.5" style="color: var(--text-secondary);">
+                        Designing &amp; engineering reliable software where thoughtful simplicity meets real-world impact. Every line of code is crafted with clarity, purpose, and care.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Only Official LinkedIn & GitHub Logo Links in Footer -->
+            <div class="flex items-center gap-2.5">
+                <a href="https://www.linkedin.com/in/zubair-md"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-sync-linkedin
+                   class="surface-card px-3.5 py-2 rounded-xl text-xs font-medium inline-flex items-center gap-2 hover:opacity-90 transition-all">
+                    <svg class="w-4 h-4 accent-text" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/MdZubair3"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-sync-github
+                   class="surface-card px-3.5 py-2 rounded-xl text-xs font-medium inline-flex items-center gap-2 hover:opacity-90 transition-all">
+                    <svg class="w-4 h-4 accent-text" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Subtle Toast Notification Banner -->
+    <div id="toast-banner"
+         class="fixed bottom-5 right-5 z-50 hidden surface-card px-4 py-3 rounded-2xl text-xs font-mono shadow-lg flex items-center gap-2 border"
+         style="border-color: var(--accent);">
+        <span id="toast-message">Copied!</span>
+    </div>
+
+    <!-- ==========================================================================
+         10. 100% ERROR-FREE APPLICATION ENGINE (ZERO EXTERNAL API FAILURES)
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            'use strict';
+
+            // ----------------------------------------------------------------------
+            // 1. SAFE STORAGE & CRYPTO RANDOM HELPERS (NEVER THROWS)
+            // ----------------------------------------------------------------------
+            function safeGetStorage(key, fallbackJson) {
+                try {
+                    const raw = window.localStorage.getItem(key);
+                    return raw ? JSON.parse(raw) : fallbackJson;
+                } catch (e) {
+                    return fallbackJson;
+                }
+            }
+
+            function safeSetStorage(key, value) {
+                try {
+                    window.localStorage.setItem(key, JSON.stringify(value));
+                } catch (e) {
+                    // Ignore private-browsing quota restrictions safely
+                }
+            }
+
+            function cryptoRandomInt(max) {
+                if (max <= 1) return 0;
+                try {
+                    if (window.crypto && window.crypto.getRandomValues) {
+                        const arr = new Uint32Array(1);
+                        window.crypto.getRandomValues(arr);
+                        return arr[0] % max;
+                    }
+                } catch (e) {}
+                return Math.floor(Math.random() * max);
+            }
+
+            function showToast(msg) {
+                const banner = document.getElementById('toast-banner');
+                const text = document.getElementById('toast-message');
+                if (!banner || !text) return;
+                text.textContent = msg;
+                banner.classList.remove('hidden');
+                clearTimeout(window.__toastTimer);
+                window.__toastTimer = setTimeout(function () {
+                    banner.classList.add('hidden');
+                }, 2600);
+            }
+
+            // ----------------------------------------------------------------------
+            // 2. SURFACE THEME TOGGLE ("LIGHT BLACK" DEFAULT <-> "WARM PAPER")
+            // ----------------------------------------------------------------------
+            const htmlEl = document.documentElement;
+            const surfaceBtn = document.getElementById('surface-toggle-btn');
+            const surfaceIcon = document.getElementById('surface-toggle-icon');
+            const surfaceLabel = document.getElementById('surface-toggle-label');
+
+            function applySurface(surface) {
+                htmlEl.setAttribute('data-surface', surface);
+                if (surfaceIcon && surfaceLabel) {
+                    if (surface === 'dark') {
+                        surfaceIcon.textContent = '☀️';
+                        surfaceLabel.textContent = 'Warm Paper';
+                    } else {
+                        surfaceIcon.textContent = '🌙';
+                        surfaceLabel.textContent = 'Light Black';
+                    }
+                }
+                safeSetStorage('zubair_surface_pref', surface);
+            }
+
+            const savedSurface = safeGetStorage('zubair_surface_pref', 'dark');
+            applySurface(savedSurface === 'light' ? 'light' : 'dark');
+
+            if (surfaceBtn) {
+                surfaceBtn.addEventListener('click', function () {
+                    const current = htmlEl.getAttribute('data-surface') === 'light' ? 'dark' : 'light';
+                    applySurface(current);
+                });
+            }
+
+            // ----------------------------------------------------------------------
+            // 3. 3-WAY PERSPECTIVE SWITCHER (OVERVIEW | CANDID | TECHNICAL SPECS)
+            // ----------------------------------------------------------------------
+            let currentMode = 'overview';
+            const modeCaptions = {
+                overview: 'Clear, welcoming & impact-focused',
+                candid: 'Witty analogies & behind-the-scenes reality',
+                technical: 'Full-stack architecture, CS & RAG specifications'
+            };
+            const modeBadges = {
+                overview: '✨ Overview',
+                candid: '🎭 Candid',
+                technical: '⚙️ Technical Specs'
+            };
+
+            function setReadingMode(mode) {
+                currentMode = mode;
+                htmlEl.setAttribute('data-mode', mode);
+
+                // Update buttons
+                document.querySelectorAll('.mode-btn').forEach(function (btn) {
+                    const isMatch = btn.getAttribute('data-mode-btn') === mode;
+                    btn.classList.toggle('mode-pill-active', isMatch);
+                });
+
+                // Update all mode-text elements
+                document.querySelectorAll('.mode-text').forEach(function (el) {
+                    const nextCopy = el.getAttribute('data-' + mode);
+                    if (nextCopy) el.innerHTML = nextCopy;
+                });
+
+                const captionEl = document.getElementById('active-mode-caption');
+                if (captionEl) captionEl.textContent = modeCaptions[mode] || '';
+
+                const sparkIndicator = document.getElementById('spark-mode-indicator');
+                if (sparkIndicator) sparkIndicator.textContent = modeBadges[mode] + ' Pack';
+
+                const aiBadge = document.getElementById('ai-studio-mode-badge');
+                const aiLabel = document.getElementById('ai-chat-mode-label');
+                if (aiBadge) aiBadge.textContent = modeBadges[mode];
+                if (aiLabel) aiLabel.textContent = modeBadges[mode];
+
+                // Refresh Daily Spark Lounge items to match the newly selected mode!
+                loadNewUnscrambleWord();
+                loadNewImpostorChallenge();
+                loadNewTruthsChallenge();
+                loadNewVibeCard();
+            }
+
+            document.querySelectorAll('.mode-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const m = btn.getAttribute('data-mode-btn');
+                    if (m) setReadingMode(m);
+                });
+            });
+
+            // ----------------------------------------------------------------------
+            // 4. PROJECT QUICK PEEK & INTERACTIVE LENSES
+            // ----------------------------------------------------------------------
+            const lensCopy = {
+                'edulib-analogy': '🎬 Analogy: Imagine a personal digital library where every shelf labels itself and your notes sync across every device like magic.',
+                'edulib-impact': '🚀 Real-World Value: Eliminates scattered PDFs and messy bookmarks by combining cloud media storage with a clean rich-text notebook.',
+                'edulib-arch': '⚙️ System Flow: Client Request → Express.js Router & JWT Auth Middleware → Multer + Cloudinary Asset Pipeline → MongoDB Atlas Document Store.',
+                'hospital-analogy': '🕵️ Detective Analogy: Like Sherlock Holmes reading 1,000 hospital comment cards in 2 seconds and giving you an honest, evidence-backed summary.',
+                'hospital-impact': '🏥 Real-World Value: Helps patients and healthcare teams immediately understand wait-time trends, staff care, and facility feedback.',
+                'hospital-arch': '⚙️ RAG Pipeline: User Query → TF-IDF Vectorizer & Cosine Similarity Retriever → Top-K Verified Reviews → LangChain Prompt → Grounded Answer.'
+            };
+
+            document.querySelectorAll('[data-peek-toggle]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const targetId = btn.getAttribute('data-peek-toggle');
+                    const panel = document.getElementById(targetId);
+                    if (panel) panel.classList.toggle('hidden');
+                });
+            });
+
+            document.querySelectorAll('.project-lens-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const targetId = btn.getAttribute('data-lens-target');
+                    const lensType = btn.getAttribute('data-lens-type');
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl && lensCopy[lensType]) {
+                        targetEl.textContent = lensCopy[lensType];
+                    }
+                });
+            });
+
+            // ----------------------------------------------------------------------
+            // 5. NON-REPEATING "THE DAILY SPARK LOUNGE" DATA POOLS (MODE-SPECIFIC)
+            // ----------------------------------------------------------------------
+            const seenTracker = safeGetStorage('zubair_spark_seen_v5', {
+                unscramble: [],
+                impostor: [],
+                truths: [],
+                vibe: []
+            });
+
+            function pickUnseenItem(pool, categoryKey) {
+                if (!pool || pool.length === 0) return null;
+                const seenIds = seenTracker[categoryKey] || [];
+                let unseen = pool.filter(function (item) {
+                    return seenIds.indexOf(item.id) === -1;
+                });
+                if (unseen.length === 0) {
+                    seenTracker[categoryKey] = [];
+                    unseen = pool.slice();
+                }
+                const chosen = unseen[cryptoRandomInt(unseen.length)];
+                seenTracker[categoryKey].push(chosen.id);
+                safeSetStorage('zubair_spark_seen_v5', seenTracker);
+                return chosen;
+            }
+
+            // A. Word Unscramble Pools (Overview, Candid IT Fun, Technical CS/AI)
+            const unscramblePools = {
+                overview: [
+                    { id: 'ov1', word: 'CLARITY', cat: 'Design Value', clue: 'Making complex ideas simple and easy to understand at a glance.' },
+                    { id: 'ov2', word: 'CREATIVE', cat: 'Everyday Spark', clue: 'Turning a blank page into something genuinely useful and original.' },
+                    { id: 'ov3', word: 'LIBRARY', cat: 'EduLib Hub', clue: 'A calm, organized home for books, notes, and knowledge.' },
+                    { id: 'ov4', word: 'TRUSTED', cat: 'Quality', clue: 'Dependable and reliable when it matters most.' },
+                    { id: 'ov5', word: 'INSIGHT', cat: 'Discovery', clue: 'A helpful realization that solves a puzzling question.' },
+                    { id: 'ov6', word: 'HARMONY', cat: 'User Experience', clue: 'When design and function work together smoothly.' }
+                ],
+                candid: [
+                    { id: 'ca1', word: 'SHERLOCK', cat: 'Bug Detective', clue: 'What every developer becomes when a semicolon goes missing.' },
+                    { id: 'ca2', word: 'DEPLOYED', cat: 'Ship It!', clue: 'When the app leaves the laptop and goes live on the real internet.' },
+                    { id: 'ca3', word: 'DEADLINE', cat: 'IT Life', clue: 'The magical force that turns "someday" into "finished today".' },
+                    { id: 'ca4', word: 'WEEKEND', cat: ' Sacred Time', clue: 'Two glorious days why we never push untested code on Friday at 4:59 PM.' },
+                    { id: 'ca5', word: 'HOTFIX', cat: 'Pit Crew', clue: 'A Formula-1 speed repair while the race car is already on the track.' },
+                    { id: 'ca6', word: 'FEATURE', cat: 'Plot Twist', clue: 'What a clever developer calls an unexpected behavior that users actually love.' }
+                ],
+                technical: [
+                    { id: 'te1', word: 'MONGODB', cat: 'NoSQL Database', clue: 'Document database powering EduLib Hub cloud storage.' },
+                    { id: 'te2', word: 'PYTHON', cat: 'AI & Backend', clue: 'Core language behind the Hospital Review RAG pipeline.' },
+                    { id: 'te3', word: 'EXPRESS', cat: 'Node.js Framework', clue: 'Fast minimalist web framework used for REST APIs.' },
+                    { id: 'te4', word: 'VECTOR', cat: 'RAG Retrieval', clue: 'Mathematical representation used in TF-IDF and Cosine Similarity.' },
+                    { id: 'te5', word: 'BACKEND', cat: 'Architecture', clue: 'Server-side logic, authentication, and database orchestration.' },
+                    { id: 'te6', word: 'GRADIO', cat: 'AI Interface', clue: 'Python framework hosting the interactive Hospital Review Bot.' }
+                ]
+            };
+
+            // B. Spot the Impostor Pools
+            const impostorPools = {
+                overview: [
+                    {
+                        id: 'imp_ov1',
+                        prompt: 'Three of these are real features of Zubair’s live projects. Spot the 1 impostor:',
+                        options: ['Digital Note & Media Library', 'Instant Hospital Review Q&A', 'Cloud Document Organization', 'Submarine Sonar Radar'],
+                        impostorIndex: 3,
+                        explanation: 'Submarine Sonar Radar is the impostor! Zubair built EduLib Hub and the Hospital Review Assistant.'
+                    },
+                    {
+                        id: 'imp_ov2',
+                        prompt: 'Three of these make a website great for every visitor. Spot the 1 impostor:',
+                        options: ['Fast Loading Speed', 'Clear Plain-English Copy', 'Mobile-Friendly Layout', '47 Pop-up Ads Per Minute'],
+                        impostorIndex: 3,
+                        explanation: 'Spot on! Pop-up ads ruin the experience—clean, calm design always wins.'
+                    },
+                    {
+                        id: 'imp_ov3',
+                        prompt: 'Three of these belong to Zubair’s verified background. Spot the 1 impostor:',
+                        options: ['B.Tech CSE (JNTU Kakinada)', 'Class of April 2025', 'Full-Stack & AI Applications', '19th-Century Steam Locomotive Repair'],
+                        impostorIndex: 3,
+                        explanation: 'Correct! Steam locomotives are cool, but Zubair engineers modern Full-Stack & AI software.'
+                    }
+                ],
+                candid: [
+                    {
+                        id: 'imp_ca1',
+                        prompt: 'Three of these are classic developer debugging steps. Spot the impostor:',
+                        options: ['Read the error message carefully', 'Check the line number in logs', 'Test with a clean input', 'Blame Mercury being in retrograde'],
+                        impostorIndex: 3,
+                        explanation: 'Haha, blaming the planets is tempting, but real debugging is Sherlock-style detective work!'
+                    },
+                    {
+                        id: 'imp_ca2',
+                        prompt: 'Three of these happen in a real IT software sprint. Spot the impostor:',
+                        options: ['Code Review on GitHub', 'Deploying to Render Cloud', 'Writing Automated Logic', 'Training Carrier Pigeons for Wi-Fi'],
+                        impostorIndex: 3,
+                        explanation: 'Carrier pigeons have terrible ping times! Cloud deployment is much faster.'
+                    }
+                ],
+                technical: [
+                    {
+                        id: 'imp_te1',
+                        prompt: 'Three of these are used in the Hospital Review RAG Pipeline. Spot the impostor:',
+                        options: ['Python & LangChain', 'TF-IDF & Cosine Similarity', 'Gradio Interactive UI', 'COBOL Mainframe Punchcards'],
+                        impostorIndex: 3,
+                        explanation: 'Correct! The Hospital Review Assistant runs on Python, LangChain, TF-IDF, Cosine Similarity, and Gradio.'
+                    },
+                    {
+                        id: 'imp_te2',
+                        prompt: 'Three of these power EduLib Hub’s architecture. Spot the impostor:',
+                        options: ['Node.js & Express.js', 'MongoDB Atlas & JWT', 'Cloudinary + Multer', 'Floppy Disk Storage Array'],
+                        impostorIndex: 3,
+                        explanation: 'Spot on! EduLib Hub uses Cloudinary and MongoDB Atlas for cloud storage.'
+                    }
+                ]
+            };
+
+            // C. 2 Truths & 1 Lie Pools
+            const truthsPools = {
+                overview: [
+                    {
+                        id: 'tr_ov1',
+                        topic: 'About Zubair’s Live Portfolio Projects:',
+                        statements: [
+                            'EduLib Hub lets users organize study materials and rich-text notes online.',
+                            'Hospital Review Assistant helps summarize real patient feedback in seconds.',
+                            'Both apps require you to mail a physical floppy disk to try them.'
+                        ],
+                        lieIndex: 2,
+                        explanation: 'You nailed it! Both apps are 100% live in the cloud—no floppy disks required.'
+                    },
+                    {
+                        id: 'tr_ov2',
+                        topic: 'About Zubair’s Education & Focus:',
+                        statements: [
+                            'He graduated with a B.Tech in Computer Science & Engineering in April 2025.',
+                            'He studied at JNTU Kakinada.',
+                            'He only builds websites that work on 1998 flip phones.'
+                        ],
+                        lieIndex: 2,
+                        explanation: 'Correct! Every project is responsive across modern phones, tablets, and desktops.'
+                    }
+                ],
+                candid: [
+                    {
+                        id: 'tr_ca1',
+                        topic: 'Behind the Scenes of Software Engineering:',
+                        statements: [
+                            'Naming variables clearly saves hours of confusion next month.',
+                            'Good error handling prevents midnight surprises.',
+                            'Typing louder on the mechanical keyboard makes the code run 40% faster.'
+                        ],
+                        lieIndex: 2,
+                        explanation: 'As fun as loud keyboards are, clean algorithms are what actually make code fast!'
+                    }
+                ],
+                technical: [
+                    {
+                        id: 'tr_te1',
+                        topic: 'Technical Architecture Verification:',
+                        statements: [
+                            'Hospital Review Assistant uses TF-IDF & Cosine Similarity to retrieve relevant context before generation.',
+                            'EduLib Hub uses JWT for stateless authentication and Cloudinary for media storage.',
+                            'MongoDB Atlas is a strictly punch-card-only assembly compiler.'
+                        ],
+                        lieIndex: 2,
+                        explanation: 'Correct! MongoDB Atlas is a cloud-native NoSQL document database.'
+                    }
+                ]
+            };
+
+            // D. Spin a Good Vibe Pools (Smile, Thought, Trivia)
+            const vibePools = {
+                smile: [
+                    { id: 'vs1', text: 'A great day starts with curiosity: every complex app in the world began as a single empty folder and a good idea.' },
+                    { id: 'vs2', text: 'Why do programmers love nature documentaries? Because watching a beaver build a dam with zero syntax errors is pure inspiration.' },
+                    { id: 'vs3', text: 'Friendly reminder: You just navigated a portfolio that adapts to three reading styles—your curiosity is officially top-tier!' },
+                    { id: 'vs4', text: 'Software engineering rule #1: If it works on the first try, double-check that you actually saved the file.' }
+                ],
+                thought: [
+                    { id: 'vt1', text: '“Simplicity is about subtracting the obvious and adding the meaningful.” — John Maeda' },
+                    { id: 'vt2', text: 'The best technology doesn’t ask people to think like computers; it teaches computers to be helpful to people.' },
+                    { id: 'vt3', text: 'Clear documentation and clean code are kindness to your future self and every teammate you work with.' },
+                    { id: 'vt4', text: 'Great products happen at the intersection of dependable backend engineering and calm, intuitive design.' }
+                ],
+                trivia: [
+                    { id: 'vq1', text: 'What does "RAG" stand for in modern AI systems like Zubair’s Hospital Review Assistant?', answer: 'Retrieval-Augmented Generation — looking up verified facts before answering!' },
+                    { id: 'vq2', text: 'Which programming language was named after the British comedy troupe Monty Python rather than a snake?', answer: 'Python!' },
+                    { id: 'vq3', text: 'In web development, what does "JSON" stand for?', answer: 'JavaScript Object Notation.' },
+                    { id: 'vq4', text: 'What mathematical measure checks how closely two text vectors point in the same direction?', answer: 'Cosine Similarity!' }
+                ]
+            };
+
+            // ----------------------------------------------------------------------
+            // 6. MINI-GAME 1: WORD UNSCRAMBLE ENGINE
+            // ----------------------------------------------------------------------
+            let currentWordObj = null;
+            let scrambledChars = [];
+            let selectedIndices = [];
+            let streakCount = safeGetStorage('zubair_spark_streak', 0);
+            let timerSeconds = 30;
+            let timerInterval = null;
+
+            const streakEl = document.getElementById('spark-streak-count');
+            if (streakEl) streakEl.textContent = String(streakCount);
+
+            function updateStreak(delta) {
+                streakCount = Math.max(0, streakCount + delta);
+                if (streakEl) streakEl.textContent = String(streakCount);
+                safeSetStorage('zubair_spark_streak', streakCount);
+            }
+
+            function scrambleWordString(word) {
+                const arr = word.split('');
+                for (let i = arr.length - 1; i > 0; i--) {
+                    const j = cryptoRandomInt(i + 1);
+                    const temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+                if (arr.join('') === word && word.length > 1) {
+                    const first = arr[0];
+                    arr[0] = arr[arr.length - 1];
+                    arr[arr.length - 1] = first;
+                }
+                return arr;
+            }
+
+            function startUnscrambleTimer() {
+                clearInterval(timerInterval);
+                timerSeconds = 30;
+                const timerEl = document.getElementById('unscramble-timer');
+                if (timerEl) timerEl.textContent = '⏱️ 30s';
+                timerInterval = setInterval(function () {
+                    timerSeconds--;
+                    if (timerEl) {
+                        timerEl.textContent = timerSeconds > 0 ? '⏱️ ' + timerSeconds + 's' : '⏱️ Take your time!';
+                    }
+                    if (timerSeconds <= 0) {
+                        clearInterval(timerInterval);
+                    }
+                }, 1000);
+            }
+
+            function renderUnscrambleBoard() {
+                if (!currentWordObj) return;
+                const slotsEl = document.getElementById('unscramble-answer-slots');
+                const tilesEl = document.getElementById('unscramble-letter-tiles');
+                const feedbackEl = document.getElementById('unscramble-feedback');
+                if (!slotsEl || !tilesEl) return;
+
+                slotsEl.innerHTML = '';
+                tilesEl.innerHTML = '';
+
+                // Render answer slots
+                for (let i = 0; i < currentWordObj.word.length; i++) {
+                    const slot = document.createElement('button');
+                    slot.type = 'button';
+                    const tileIndex = selectedIndices[i];
+                    const hasLetter = tileIndex !== undefined;
+                    slot.className = 'w-9 h-10 sm:w-10 sm:h-11 rounded-xl font-mono font-bold text-sm flex items-center justify-center transition-all ' +
+                        (hasLetter ? 'accent-btn cursor-pointer' : 'surface-elevated opacity-60');
+                    slot.textContent = hasLetter ? scrambledChars[tileIndex] : '';
+                    if (hasLetter) {
+                        slot.addEventListener('click', function () {
+                            selectedIndices.splice(i, 1);
+                            if (feedbackEl) feedbackEl.textContent = '';
+                            renderUnscrambleBoard();
+                        });
+                    }
+                    slotsEl.appendChild(slot);
+                }
+
+                // Render scrambled letter tiles
+                scrambledChars.forEach(function (ch, idx) {
+                    const isUsed = selectedIndices.indexOf(idx) !== -1;
+                    const tile = document.createElement('button');
+                    tile.type = 'button';
+                    tile.disabled = isUsed;
+                    tile.className = 'letter-tile w-10 h-10 sm:w-11 sm:h-11 rounded-xl font-mono font-bold text-sm surface-card flex items-center justify-center ' +
+                        (isUsed ? 'opacity-25 cursor-not-allowed' : 'cursor-pointer');
+                    tile.textContent = ch;
+                    tile.addEventListener('click', function () {
+                        if (selectedIndices.length < currentWordObj.word.length) {
+                            selectedIndices.push(idx);
+                            renderUnscrambleBoard();
+                            checkUnscrambleWin();
+                        }
+                    });
+                    tilesEl.appendChild(tile);
+                });
+            }
+
+            function checkUnscrambleWin() {
+                if (!currentWordObj) return;
+                const feedbackEl = document.getElementById('unscramble-feedback');
+                if (selectedIndices.length === currentWordObj.word.length) {
+                    const attempt = selectedIndices.map(function (i) { return scrambledChars[i]; }).join('');
+                    if (attempt === currentWordObj.word) {
+                        clearInterval(timerInterval);
+                        updateStreak(1);
+                        if (feedbackEl) feedbackEl.textContent = '🎉 Solved! +1 Streak — Loading next word...';
+                        setTimeout(loadNewUnscrambleWord, 1300);
+                    } else {
+                        if (feedbackEl) feedbackEl.textContent = '🤔 Not quite—tap a letter slot to adjust!';
+                    }
+                }
+            }
+
+            function loadNewUnscrambleWord() {
+                const pool = unscramblePools[currentMode] || unscramblePools.overview;
+                currentWordObj = pickUnseenItem(pool, 'unscramble');
+                if (!currentWordObj) return;
+                scrambledChars = scrambleWordString(currentWordObj.word);
+                selectedIndices = [];
+
+                const catEl = document.getElementById('unscramble-category');
+                const clueEl = document.getElementById('unscramble-clue');
+                const feedbackEl = document.getElementById('unscramble-feedback');
+
+                if (catEl) catEl.textContent = 'Category: ' + currentWordObj.cat;
+                if (clueEl) clueEl.textContent = currentWordObj.clue;
+                if (feedbackEl) feedbackEl.textContent = '';
+
+                startUnscrambleTimer();
+                renderUnscrambleBoard();
+            }
+
+            const hintBtn = document.getElementById('unscramble-hint-btn');
+            if (hintBtn) {
+                hintBtn.addEventListener('click', function () {
+                    if (!currentWordObj) return;
+                    const nextPos = selectedIndices.length;
+                    if (nextPos >= currentWordObj.word.length) return;
+                    const targetChar = currentWordObj.word[nextPos];
+                    for (let i = 0; i < scrambledChars.length; i++) {
+                        if (selectedIndices.indexOf(i) === -1 && scrambledChars[i] === targetChar) {
+                            selectedIndices.push(i);
+                            renderUnscrambleBoard();
+                            checkUnscrambleWin();
+                            break;
+                        }
+                    }
+                });
+            }
+
+            const skipBtn = document.getElementById('unscramble-skip-btn');
+            if (skipBtn) skipBtn.addEventListener('click', loadNewUnscrambleWord);
+
+            const clearBtn = document.getElementById('unscramble-clear-btn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function () {
+                    selectedIndices = [];
+                    const feedbackEl = document.getElementById('unscramble-feedback');
+                    if (feedbackEl) feedbackEl.textContent = '';
+                    renderUnscrambleBoard();
+                });
+            }
+
+            // ----------------------------------------------------------------------
+            // 7. MINI-GAME 2: SPOT THE IMPOSTOR ENGINE
+            // ----------------------------------------------------------------------
+            function loadNewImpostorChallenge() {
+                const pool = impostorPools[currentMode] || impostorPools.overview;
+                const item = pickUnseenItem(pool, 'impostor');
+                if (!item) return;
+
+                const promptEl = document.getElementById('impostor-prompt');
+                const optionsEl = document.getElementById('impostor-options');
+                const feedbackEl = document.getElementById('impostor-feedback');
+                if (!promptEl || !optionsEl || !feedbackEl) return;
+
+                promptEl.textContent = item.prompt;
+                feedbackEl.textContent = '';
+                optionsEl.innerHTML = '';
+
+                item.options.forEach(function (optText, idx) {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'surface-card p-3 rounded-xl text-xs font-medium text-left hover:opacity-90 transition-all cursor-pointer';
+                    btn.textContent = optText;
+                    btn.addEventListener('click', function () {
+                        if (idx === item.impostorIndex) {
+                            updateStreak(1);
+                            feedbackEl.textContent = '🎉 Spot on! ' + item.explanation;
+                        } else {
+                            feedbackEl.textContent = '👀 That one is actually true! Try spotting the impostor.';
+                        }
+                    });
+                    optionsEl.appendChild(btn);
+                });
+            }
+
+            const impostorNextBtn = document.getElementById('impostor-next-btn');
+            if (impostorNextBtn) impostorNextBtn.addEventListener('click', loadNewImpostorChallenge);
+
+            // ----------------------------------------------------------------------
+            // 8. MINI-GAME 3: 2 TRUTHS & 1 LIE ENGINE
+            // ----------------------------------------------------------------------
+            function loadNewTruthsChallenge() {
+                const pool = truthsPools[currentMode] || truthsPools.overview;
+                const item = pickUnseenItem(pool, 'truths');
+                if (!item) return;
+
+                const topicEl = document.getElementById('truths-topic');
+                const optionsEl = document.getElementById('truths-options');
+                const feedbackEl = document.getElementById('truths-feedback');
+                if (!topicEl || !optionsEl || !feedbackEl) return;
+
+                topicEl.textContent = item.topic;
+                feedbackEl.textContent = '';
+                optionsEl.innerHTML = '';
+
+                item.statements.forEach(function (stmt, idx) {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'w-full surface-card p-3 rounded-xl text-xs font-medium text-left hover:opacity-90 transition-all cursor-pointer';
+                    btn.textContent = (idx + 1) + '. ' + stmt;
+                    btn.addEventListener('click', function () {
+                        if (idx === item.lieIndex) {
+                            updateStreak(1);
+                            feedbackEl.textContent = '🎯 Correct! You caught the lie. ' + item.explanation;
+                        } else {
+                            feedbackEl.textContent = '✓ That statement is 100% true! Tap the one that is a lie.';
+                        }
+                    });
+                    optionsEl.appendChild(btn);
+                });
+            }
+
+            const truthsNextBtn = document.getElementById('truths-next-btn');
+            if (truthsNextBtn) truthsNextBtn.addEventListener('click', loadNewTruthsChallenge);
+
+            // Arcade Tab Switching
+            function switchArcadeTab(tabName) {
+                ['unscramble', 'impostor', 'truths'].forEach(function (t) {
+                    const panel = document.getElementById('arcade-panel-' + t);
+                    if (panel) panel.classList.toggle('hidden', t !== tabName);
+                });
+                document.querySelectorAll('.arcade-tab-btn').forEach(function (btn) {
+                    const isActive = btn.getAttribute('data-arcade-tab') === tabName;
+                    btn.classList.toggle('mode-pill-active', isActive);
+                    btn.classList.toggle('surface-card', !isActive);
+                });
+            }
+
+            document.querySelectorAll('.arcade-tab-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const tab = btn.getAttribute('data-arcade-tab');
+                    if (tab) switchArcadeTab(tab);
+                });
+            });
+
+            // ----------------------------------------------------------------------
+            // 9. SPIN A GOOD VIBE + QUICK REACTIONS ENGINE
+            // ----------------------------------------------------------------------
+            let currentVibeCategory = 'smile';
+
+            function loadNewVibeCard() {
+                const pool = vibePools[currentVibeCategory] || vibePools.smile;
+                const item = pickUnseenItem(pool, 'vibe');
+                if (!item) return;
+
+                const textEl = document.getElementById('vibe-card-text');
+                const triviaWrap = document.getElementById('vibe-trivia-wrap');
+                const answerEl = document.getElementById('vibe-trivia-answer');
+
+                if (textEl) textEl.textContent = item.text;
+                if (triviaWrap && answerEl) {
+                    if (currentVibeCategory === 'trivia' && item.answer) {
+                        triviaWrap.classList.remove('hidden');
+                        answerEl.classList.add('hidden');
+                        answerEl.textContent = 'Answer: ' + item.answer;
+                    } else {
+                        triviaWrap.classList.add('hidden');
+                    }
+                }
+            }
+
+            document.querySelectorAll('.vibe-cat-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    currentVibeCategory = btn.getAttribute('data-vibe-cat') || 'smile';
+                    document.querySelectorAll('.vibe-cat-btn').forEach(function (b) {
+                        const active = b.getAttribute('data-vibe-cat') === currentVibeCategory;
+                        b.classList.toggle('mode-pill-active', active);
+                        b.classList.toggle('surface-card', !active);
+                    });
+                    loadNewVibeCard();
+                });
+            });
+
+            const revealBtn = document.getElementById('vibe-reveal-btn');
+            if (revealBtn) {
+                revealBtn.addEventListener('click', function () {
+                    const ans = document.getElementById('vibe-trivia-answer');
+                    if (ans) ans.classList.remove('hidden');
+                });
+            }
+
+            const spinVibeBtn = document.getElementById('spin-vibe-btn');
+            if (spinVibeBtn) spinVibeBtn.addEventListener('click', loadNewVibeCard);
+
+            const shuffleEntireBtn = document.getElementById('shuffle-entire-lounge-btn');
+            if (shuffleEntireBtn) {
+                shuffleEntireBtn.addEventListener('click', function () {
+                    loadNewUnscrambleWord();
+                    loadNewImpostorChallenge();
+                    loadNewTruthsChallenge();
+                    loadNewVibeCard();
+                    showToast('🎲 Dealt a fresh unseen set of challenges!');
+                });
+            }
+
+            // Quick Reactions
+            const reactionCounts = safeGetStorage('zubair_reactions_v5', {
+                rocket: 14,
+                bulb: 11,
+                sparkle: 18,
+                target: 9
+            });
+
+            const reactionItems = [
+                { key: 'rocket', emoji: '🚀', label: 'Impressive Work' },
+                { key: 'bulb', emoji: '💡', label: 'Clever Concept' },
+                { key: 'sparkle', emoji: '✨', label: 'Clean Design' },
+                { key: 'target', emoji: '🎯', label: 'Fun Lounge' }
+            ];
+
+            function renderReactions() {
+                const grid = document.getElementById('reaction-buttons-grid');
+                const totalBadge = document.getElementById('total-reactions-badge');
+                if (!grid) return;
+                grid.innerHTML = '';
+
+                let total = 0;
+                reactionItems.forEach(function (item) {
+                    const count = reactionCounts[item.key] || 0;
+                    total += count;
+
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'relative surface-card px-3 py-2.5 rounded-xl text-xs font-medium flex items-center justify-between hover:opacity-90 transition-all cursor-pointer';
+                    btn.innerHTML = '<span class="flex items-center gap-1.5"><span>' + item.emoji + '</span><span>' + item.label + '</span></span>' +
+                                    '<span class="font-mono text-[11px] accent-text font-bold">' + count + '</span>';
+
+                    btn.addEventListener('click', function () {
+                        reactionCounts[item.key] = (reactionCounts[item.key] || 0) + 1;
+                        safeSetStorage('zubair_reactions_v5', reactionCounts);
+
+                        const floater = document.createElement('span');
+                        floater.className = 'floating-emoji text-base';
+                        floater.style.left = '50%';
+                        floater.style.top = '0px';
+                        floater.textContent = item.emoji;
+                        btn.appendChild(floater);
+
+                        setTimeout(renderReactions, 220);
+                    });
+
+                    grid.appendChild(btn);
+                });
+
+                if (totalBadge) totalBadge.textContent = total + ' good vibes';
+            }
+
+            // Share Lounge Button
+            const shareLoungeBtn = document.getElementById('share-lounge-btn');
+            if (shareLoungeBtn) {
+                shareLoungeBtn.addEventListener('click', function () {
+                    const shareText = 'Check out Zubair MD’s interactive portfolio & Daily Spark Lounge (My current streak: ' + streakCount + '): ' + window.location.href;
+                    copyTextSafe(shareText);
+                    showToast('🔗 Portfolio invite link copied to clipboard!');
+                });
+            }
+
+            // ----------------------------------------------------------------------
+            // 10. HIDDEN-BY-DEFAULT AI TWIN & ROLE FIT STUDIO (OPENS ONLY ON CLICK)
+            // ----------------------------------------------------------------------
+            const toggleAiTwinBtn = document.getElementById('toggle-ai-twin-btn');
+            const closeAiTwinBtn = document.getElementById('close-ai-twin-btn');
+            const aiStudioDrawer = document.getElementById('ai-studio-drawer');
+            const aiTwinChevron = document.getElementById('ai-twin-chevron');
+
+            function setAiTwinOpen(openState, shouldScroll) {
+                if (!aiStudioDrawer || !toggleAiTwinBtn) return;
+                aiStudioDrawer.classList.toggle('hidden', !openState);
+                toggleAiTwinBtn.setAttribute('aria-expanded', String(openState));
+                if (aiTwinChevron) {
+                    aiTwinChevron.style.transform = openState ? 'rotate(180deg)' : 'rotate(0deg)';
+                }
+                if (openState && shouldScroll) {
+                    const section = document.getElementById('ai-studio');
+                    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            if (toggleAiTwinBtn) {
+                toggleAiTwinBtn.addEventListener('click', function () {
+                    const isHidden = aiStudioDrawer.classList.contains('hidden');
+                    setAiTwinOpen(isHidden, false);
+                });
+            }
+
+            if (closeAiTwinBtn) {
+                closeAiTwinBtn.addEventListener('click', function () {
+                    setAiTwinOpen(false, false);
+                });
+            }
+
+            document.querySelectorAll('[data-open-ai-twin="true"]').forEach(function (trigger) {
+                trigger.addEventListener('click', function () {
+                    setAiTwinOpen(true, true);
+                });
+            });
+
+            // Perspective-Aware AI Twin Knowledge Base
+            const aiTwinKnowledge = {
+                tour: {
+                    overview: '🚀 45-Second Tour:\n1. EduLib Hub (Live on Render): A digital library and workspace where users upload resources and write formatted notes.\n2. Hospital Review Assistant (Live on Hugging Face): An AI assistant that reads patient hospital reviews and answers your questions clearly.',
+                    candid: '🚀 45-Second Tour:\n1. EduLib Hub: Like a tidy private library where no document ever gets lost and your notes organize themselves in the cloud.\n2. Hospital Review Assistant: Like Sherlock Holmes reading 1,000 hospital reviews in two seconds so you get the real story immediately.',
+                    technical: '🚀 Technical Tour:\n1. EduLib Hub: Node.js + Express.js + MongoDB Atlas full-stack app with JWT auth, Multer/Cloudinary asset pipelines, and Quill.js.\n2. Hospital Review Assistant: Python + LangChain RAG pipeline using TF-IDF vectorization, Cosine Similarity retrieval, and Gradio on Hugging Face Spaces.'
+                },
+                analogy: {
+                    overview: '🕵️ Think of Zubair’s approach like a helpful librarian teamed up with a skilled architect: everything is easy to find on the outside and rock-solid on the inside.',
+                    candid: '🏎️ Imagine a Formula 1 pit crew teamed up with Sherlock Holmes: the backend database, cloud storage, and AI retrieval work together in milliseconds without drama.',
+                    technical: '⚙️ In systems terms: Zubair pairs deterministic full-stack data modeling (MongoDB/SQL) with grounded statistical retrieval (TF-IDF + Cosine Similarity RAG) to prevent LLM hallucinations.'
+                },
+                architecture: {
+                    overview: '🧠 Zubair builds complete applications from end to end—combining clean, mobile-friendly web screens with smart AI tools that search real data accurately.',
+                    candid: '🧠 Most apps either look good or think smart. Zubair wires the MERN web stack and Python AI pipelines together so the screen and the brain actually get along.',
+                    technical: '🧠 Full-Stack + AI Stack: Java, Python, C++, SQL, Node.js, Express.js, MongoDB Atlas, Tailwind CSS, LangChain, TF-IDF, Cosine Similarity, and Gradio.'
+                },
+                team: {
+                    overview: '🤝 Zubair focuses on clear communication, clean documentation, and building features that solve real user problems without unnecessary complexity.',
+                    candid: '🤝 Zero ego, clean Git commits, and code that teammates can read six months later without needing a detective magnifying glass.',
+                    technical: '🤝 Strong B.Tech CSE (JNTU Kakinada, 2025) fundamentals in OOP, Data Structures & Algorithms, modular REST API design, and reproducible cloud deployments.'
+                }
+            };
+
+            function answerWithAiTwin(queryOrTopic) {
+                const responseEl = document.getElementById('ai-twin-response');
+                if (!responseEl) return;
+
+                const q = (queryOrTopic || '').toLowerCase();
+                let reply = '';
+
+                if (aiTwinKnowledge[q]) {
+                    reply = aiTwinKnowledge[q][currentMode] || aiTwinKnowledge[q].overview;
+                } else if (q.indexOf('edulib') !== -1 || q.indexOf('library') !== -1 || q.indexOf('node') !== -1) {
+                    reply = aiTwinKnowledge.tour[currentMode] + '\n\n🔗 You can try EduLib Hub live at: https://edulib-7ane.onrender.com';
+                } else if (q.indexOf('hospital') !== -1 || q.indexOf('rag') !== -1 || q.indexOf('langchain') !== -1 || q.indexOf('ai') !== -1) {
+                    reply = aiTwinKnowledge.architecture[currentMode] + '\n\n🤖 Try the Hospital Review Assistant live at: https://huggingface.co/spaces/MdZubair3/Hospital-Review-Bot';
+                } else if (q.indexOf('education') !== -1 || q.indexOf('degree') !== -1 || q.indexOf('jntu') !== -1 || q.indexOf('college') !== -1) {
+                    reply = '🎓 Zubair graduated with a B.Tech in Computer Science & Engineering from Jawaharlal Nehru Technological University, Kakinada (JNTUK) in April 2025.';
+                } else {
+                    reply = (aiTwinKnowledge.tour[currentMode] || aiTwinKnowledge.tour.overview) +
+                            '\n\n💡 Tip: You can also click any live project button above to test the deployed apps directly!';
+                }
+
+                responseEl.textContent = reply;
+            }
+
+            document.querySelectorAll('.ai-prompt-chip').forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    const topic = chip.getAttribute('data-ai-topic');
+                    answerWithAiTwin(topic);
+                });
+            });
+
+            const aiForm = document.getElementById('ai-twin-form');
+            const aiInput = document.getElementById('ai-twin-input');
+            if (aiForm && aiInput) {
+                aiForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const val = aiInput.value.trim();
+                    if (!val) return;
+                    answerWithAiTwin(val);
+                    aiInput.value = '';
+                });
+            }
+
+            // Native Web Speech Synthesis Readout (100% Offline/Online Safe)
+            const ttsBtn = document.getElementById('ai-tts-btn');
+            const ttsIcon = document.getElementById('ai-tts-icon');
+            const ttsLabel = document.getElementById('ai-tts-label');
+
+            if (ttsBtn) {
+                ttsBtn.addEventListener('click', function () {
+                    try {
+                        if (!('speechSynthesis' in window)) {
+                            showToast('🔇 Voice readout is not supported in this browser.');
+                            return;
+                        }
+                        if (window.speechSynthesis.speaking) {
+                            window.speechSynthesis.cancel();
+                            if (ttsIcon) ttsIcon.textContent = '🔊';
+                            if (ttsLabel) ttsLabel.textContent = 'Listen (Voice)';
+                            return;
+                        }
+                        const responseEl = document.getElementById('ai-twin-response');
+                        const textToSpeak = responseEl ? responseEl.textContent.replace(/[^\w\s.,?!:-]/g, ' ') : '';
+                        const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                        utterance.rate = 1.02;
+                        utterance.onstart = function () {
+                            if (ttsIcon) ttsIcon.textContent = '⏹️';
+                            if (ttsLabel) ttsLabel.textContent = 'Stop Voice';
+                        };
+                        utterance.onend = function () {
+                            if (ttsIcon) ttsIcon.textContent = '🔊';
+                            if (ttsLabel) ttsLabel.textContent = 'Listen (Voice)';
+                        };
+                        utterance.onerror = function () {
+                            if (ttsIcon) ttsIcon.textContent = '🔊';
+                            if (ttsLabel) ttsLabel.textContent = 'Listen (Voice)';
+                        };
+                        window.speechSynthesis.speak(utterance);
+                    } catch (err) {
+                        showToast('🔇 Audio playback unavailable on this device.');
+                    }
+                });
+            }
+
+            // Role Fit Matcher Presets & Custom Input
+            const rolePresets = {
+                fullstack: {
+                    score: '98% Full-Stack Match',
+                    project: 'Verified by: EduLib Hub (Render)',
+                    summary: 'Strong production fit: Node.js, Express.js, MongoDB Atlas, JWT security, Cloudinary media pipelines, and responsive Tailwind CSS interfaces.'
+                },
+                ai: {
+                    score: '97% AI / RAG Match',
+                    project: 'Verified by: Hospital Review Assistant (HF)',
+                    summary: 'Hands-on RAG implementation using Python, LangChain, TF-IDF vectorization, Cosine Similarity ranking, and Gradio deployment.'
+                },
+                swe: {
+                    score: '98% Core SWE Match',
+                    project: 'B.Tech CSE (JNTUK, April 2025)',
+                    summary: 'Solid Computer Science foundation in Java, Python, C++, SQL, OOP, and Data Structures & Algorithms backed by two live cloud deployments.'
+                }
+            };
+
+            function updateFitCard(data) {
+                const scoreEl = document.getElementById('fit-score-pill');
+                const projEl = document.getElementById('fit-project-badge');
+                const sumEl = document.getElementById('fit-summary-output');
+                if (scoreEl) scoreEl.textContent = data.score;
+                if (projEl) projEl.textContent = data.project;
+                if (sumEl) sumEl.textContent = data.summary;
+            }
+
+            document.querySelectorAll('.fit-preset-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const key = btn.getAttribute('data-fit-role');
+                    if (rolePresets[key]) updateFitCard(rolePresets[key]);
+                });
+            });
+
+            const fitCustomInput = document.getElementById('fit-custom-input');
+            if (fitCustomInput) {
+                fitCustomInput.addEventListener('input', function () {
+                    const val = fitCustomInput.value.trim().toLowerCase();
+                    if (!val) return;
+                    if (val.indexOf('python') !== -1 || val.indexOf('ai') !== -1 || val.indexOf('rag') !== -1 || val.indexOf('langchain') !== -1) {
+                        updateFitCard(rolePresets.ai);
+                    } else if (val.indexOf('node') !== -1 || val.indexOf('mongo') !== -1 || val.indexOf('web') !== -1 || val.indexOf('react') !== -1) {
+                        updateFitCard(rolePresets.fullstack);
+                    } else {
+                        updateFitCard(rolePresets.swe);
+                    }
+                });
+            }
+
+            // ----------------------------------------------------------------------
+            // 11. HIDDEN-BY-DEFAULT CONNECT DRAWER & OWNER CUSTOMIZER
+            // ----------------------------------------------------------------------
+            const toggleConnectBtn = document.getElementById('toggle-connect-btn');
+            const connectDrawer = document.getElementById('connect-details-drawer');
+            const connectChevron = document.getElementById('connect-chevron');
+
+            function setConnectOpen(openState, shouldScroll) {
+                if (!connectDrawer || !toggleConnectBtn) return;
+                connectDrawer.classList.toggle('hidden', !openState);
+                toggleConnectBtn.setAttribute('aria-expanded', String(openState));
+                if (connectChevron) {
+                    connectChevron.style.transform = openState ? 'rotate(180deg)' : 'rotate(0deg)';
+                }
+                if (openState && shouldScroll) {
+                    const sec = document.getElementById('connect');
+                    if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            if (toggleConnectBtn) {
+                toggleConnectBtn.addEventListener('click', function () {
+                    const isHidden = connectDrawer.classList.contains('hidden');
+                    setConnectOpen(isHidden, false);
+                });
+            }
+
+            document.querySelectorAll('[data-open-connect="true"]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    setConnectOpen(true, true);
+                });
+            });
+
+            // Copy Helper
+            function copyTextSafe(text) {
+                try {
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                } catch (e) {}
+            }
+
+            document.querySelectorAll('.copy-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const targetId = btn.getAttribute('data-copy-target');
+                    const el = document.getElementById(targetId);
+                    if (el) {
+                        copyTextSafe(el.textContent.trim());
+                        showToast('✓ Copied: ' + el.textContent.trim());
+                    }
+                });
+            });
+
+            // Owner Customizer Drawer
+            const toggleCustomizerBtn = document.getElementById('toggle-customizer-btn');
+            const customizerDrawer = document.getElementById('owner-customizer-drawer');
+            if (toggleCustomizerBtn && customizerDrawer) {
+                toggleCustomizerBtn.addEventListener('click', function () {
+                    customizerDrawer.classList.toggle('hidden');
+                });
+            }
+
+            function applyOwnerLinks() {
+                const emailVal = (document.getElementById('custom-email-input') || {}).value || 'zubairmd.dev@gmail.com';
+                const phoneVal = (document.getElementById('custom-phone-input') || {}).value || '+91 98765 43210';
+                const liVal = (document.getElementById('custom-linkedin-input') || {}).value || 'https://www.linkedin.com/in/zubair-md';
+                const ghVal = (document.getElementById('custom-github-input') || {}).value || 'https://github.com/MdZubair3';
+
+                const emailText = document.getElementById('contact-email-text');
+                const emailLink = document.getElementById('contact-email-link');
+                if (emailText) emailText.textContent = emailVal;
+                if (emailLink) emailLink.href = 'mailto:' + emailVal;
+
+                const phoneText = document.getElementById('contact-phone-text');
+                const phoneLink = document.getElementById('contact-phone-link');
+                if (phoneText) phoneText.textContent = phoneVal;
+                if (phoneLink) phoneLink.href = 'tel:' + phoneVal.replace(/\s+/g, '');
+
+                document.querySelectorAll('[data-sync-linkedin]').forEach(function (a) {
+                    a.href = liVal;
+                });
+                document.querySelectorAll('[data-sync-github]').forEach(function (a) {
+                    a.href = ghVal;
+                });
+            }
+
+            const applyCustomBtn = document.getElementById('apply-custom-info-btn');
+            if (applyCustomBtn) {
+                applyCustomBtn.addEventListener('click', function () {
+                    applyOwnerLinks();
+                    showToast('✓ Updated your live contact links across the page!');
+                });
+            }
+
+            const downloadHtmlBtn = document.getElementById('download-html-btn');
+            if (downloadHtmlBtn) {
+                downloadHtmlBtn.addEventListener('click', function () {
+                    applyOwnerLinks();
+                    const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+                    const blob = new Blob([fullHtml], { type: 'text/html' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'index.html';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showToast('💾 Downloaded your customized index.html!');
+                });
+            }
+
+            // ----------------------------------------------------------------------
+            // 12. INITIALIZE NON-REPEATING SESSION ON PAGE LOAD
+            // ----------------------------------------------------------------------
+            const startingGames = ['unscramble', 'impostor', 'truths'];
+            switchArcadeTab(startingGames[cryptoRandomInt(startingGames.length)]);
+            loadNewUnscrambleWord();
+            loadNewImpostorChallenge();
+            loadNewTruthsChallenge();
+            loadNewVibeCard();
+            renderReactions();
+        });
+    </script>
+</body>
+</html>
