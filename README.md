@@ -16,4 +16,4 @@ A modern, high-performance, single-file portfolio website built with semantic HT
 - **Interactivity**: Vanilla JavaScript (ES6+, DOM manipulation, Web Crypto API, `localStorage`, Web Speech API)
 
 ## 🚀 Live Demo
-Visit the live portfolio: [Add your Render/Netlify URL here]
+Visit the live portfolio: https://zubair-md-portfolio.onrender.com/
