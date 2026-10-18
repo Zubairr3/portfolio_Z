@@ -808,6 +808,9 @@
         <!-- ==========================================================================
              8. 📬 CONNECT WITH ZUBAIR
              ========================================================================== -->
+       <!-- ==========================================================================
+             8. 📬 CONNECT WITH ZUBAIR (CLEAN PRODUCTION VERSION)
+             ========================================================================== -->
         <section id="connect" class="surface-card rounded-3xl p-6 sm:p-10 text-center space-y-6">
             <div class="max-w-xl mx-auto space-y-2">
                 <span class="font-mono text-xs uppercase tracking-wider accent-text">Direct Channels</span>
@@ -818,14 +821,20 @@
             </div>
 
             <div>
-                <button id="toggle-connect-btn" type="button" aria-expanded="true" class="accent-btn px-7 py-3.5 rounded-2xl text-xs sm:text-sm inline-flex items-center gap-3 cursor-pointer shadow-sm">
+                <button id="toggle-connect-btn"
+                        type="button"
+                        aria-expanded="false"
+                        class="accent-btn px-7 py-3.5 rounded-2xl text-xs sm:text-sm inline-flex items-center gap-3 cursor-pointer shadow-sm">
                     <span>📬 Connect with Zubair — Click to View Contact Details</span>
-                    <span id="connect-chevron" class="transition-transform duration-200" style="transform: rotate(180deg);">▼</span>
+                    <span id="connect-chevron" class="transition-transform duration-200">▼</span>
                 </button>
             </div>
 
-            <div id="connect-details-drawer" class="pt-6 border-t text-left space-y-6" style="border-color: var(--border-subtle);">
+            <!-- Hidden-by-Default Contact Details Drawer -->
+            <div id="connect-details-drawer" class="hidden pt-6 border-t text-left space-y-6" style="border-color: var(--border-subtle);">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                    <!-- Email Card -->
                     <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
                         <div class="flex items-center justify-between">
                             <span class="font-mono text-xs accent-text">✉️ Email</span>
@@ -838,6 +847,7 @@
                         </a>
                     </div>
 
+                    <!-- Phone / WhatsApp Card -->
                     <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
                         <div class="flex items-center justify-between">
                             <span class="font-mono text-xs accent-text">📱 Mobile / WhatsApp</span>
@@ -850,67 +860,37 @@
                         </a>
                     </div>
 
+                    <!-- LinkedIn Card -->
                     <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
                         <div class="flex items-center justify-between">
                             <span class="font-mono text-xs accent-text">💼 LinkedIn</span>
                             <span class="text-xs opacity-60">↗</span>
                         </div>
-                        <a href="https://www.linkedin.com/in/zubair-md" target="_blank" rel="noopener noreferrer" data-sync-linkedin="" class="font-bold text-xs sm:text-sm hover:underline truncate">
-                            linkedin.com/in/zubair-md
+                        <a href="https://www.linkedin.com/in/md-zubair3"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="font-bold text-xs sm:text-sm hover:underline truncate">
+                            linkedin.com/in/md-zubair3
                         </a>
                     </div>
 
+                    <!-- GitHub Card -->
                     <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
                         <div class="flex items-center justify-between">
                             <span class="font-mono text-xs accent-text">💻 GitHub</span>
                             <span class="text-xs opacity-60">↗</span>
                         </div>
-                        <a href="https://github.com/MdZubair3" target="_blank" rel="noopener noreferrer" data-sync-github="" class="font-bold text-xs sm:text-sm hover:underline truncate">
-                            github.com/MdZubair3
+                        <a href="https://github.com/Zubairr3"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="font-bold text-xs sm:text-sm hover:underline truncate">
+                            github.com/Zubairr3
                         </a>
                     </div>
-                </div>
 
-                <div class="pt-2 text-center">
-                    <button id="toggle-customizer-btn" type="button" class="surface-elevated px-4 py-2 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
-                        ⚙️ Owner Setup: Update My Contact Links &amp; Download File
-                    </button>
-                </div>
-
-                <div id="owner-customizer-drawer" class="surface-elevated rounded-2xl p-5 space-y-4 text-xs">
-                    <h3 class="font-bold text-sm">⚙️ Customize Your Contact Info &amp; Download Ready-to-Host File</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div>
-                            <label class="block font-mono text-[11px] mb-1" style="color: var(--text-secondary);">Your Email Address</label>
-                            <input id="custom-email-input" type="email" value="zubairmd.dev@gmail.com" class="w-full surface-card px-3 py-2 rounded-xl focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block font-mono text-[11px] mb-1" style="color: var(--text-secondary);">Your Mobile / WhatsApp</label>
-                            <input id="custom-phone-input" type="text" value="+91 98765 43210" class="w-full surface-card px-3 py-2 rounded-xl focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block font-mono text-[11px] mb-1" style="color: var(--text-secondary);">Your LinkedIn URL</label>
-                            <input id="custom-linkedin-input" type="url" value="https://www.linkedin.com/in/zubair-md" class="w-full surface-card px-3 py-2 rounded-xl focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block font-mono text-[11px] mb-1" style="color: var(--text-secondary);">Your GitHub URL</label>
-                            <input id="custom-github-input" type="url" value="https://github.com/MdZubair3" class="w-full surface-card px-3 py-2 rounded-xl focus:outline-none">
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap items-center gap-3 pt-1">
-                        <button id="apply-custom-info-btn" type="button" class="accent-btn px-4 py-2 rounded-xl font-mono cursor-pointer">
-                            ✓ Apply Changes Live
-                        </button>
-                        <button id="download-html-btn" type="button" class="surface-card px-4 py-2 rounded-xl font-mono cursor-pointer hover:opacity-90">
-                            💾 Download Updated index.html
-                        </button>
-                    </div>
                 </div>
             </div>
         </section>
-
-    </main>
-
     <!-- ==========================================================================
          9. CLEAN PROFESSIONAL FOOTER
          ========================================================================== -->
