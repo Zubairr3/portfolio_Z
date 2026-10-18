@@ -172,7 +172,6 @@
             transform: scale(0.96);
         }
 
-        /* Floating reaction emoji animation */
         @keyframes floatUpFade {
             0% { opacity: 1; transform: translateY(0) scale(0.95); }
             100% { opacity: 0; transform: translateY(-44px) scale(1.25); }
@@ -189,12 +188,10 @@
 <body class="antialiased selection:bg-emerald-500/20">
 
     <!-- ==========================================================================
-         1. STICKY HEADER WITH LINKEDIN & GITHUB LOGOS + SURFACE & AI TWIN TRIGGERS
+         1. STICKY HEADER
          ========================================================================== -->
     <header class="sticky top-0 z-50 surface-glass">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-
-            <!-- Brand Identity -->
             <a href="#top" class="flex items-center gap-2.5 group focus:outline-none">
                 <div class="w-9 h-9 rounded-xl flex items-center justify-center font-mono font-bold text-sm accent-badge group-hover:scale-105 transition-transform">
                     ZM
@@ -205,13 +202,12 @@
                 </div>
             </a>
 
-            <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-5 text-xs font-medium" style="color: var(--text-secondary);">
                 <a href="#projects" class="hover:opacity-100 transition-opacity py-1">Live Projects</a>
-                <a href="#skills" class="hover:opacity-100 transition-opacity py-1">Skills</a>
-                <a href="#spark-lounge" class="hover:opacity-100 transition-opacity py-1 flex items-center gap-1">
+                <a href="#skills" class="hover:opacity-100 transition-opacity py-1">Technical Stack</a>
+                <button type="button" data-open-spark="true" class="hover:opacity-100 transition-opacity py-1 flex items-center gap-1 cursor-pointer">
                     <span>✨ Daily Spark</span>
-                </a>
+                </button>
                 <button type="button" data-open-ai-twin="true" class="hover:opacity-100 transition-opacity py-1 flex items-center gap-1 cursor-pointer font-mono accent-text">
                     <span>🤖 AI Twin</span>
                 </button>
@@ -220,9 +216,7 @@
                 </button>
             </nav>
 
-            <!-- Header Right: LinkedIn & GitHub Official Logos + Theme Surface Switch -->
             <div class="flex items-center gap-2">
-                <!-- LinkedIn Header Icon Button -->
                 <a href="https://www.linkedin.com/in/zubair-md"
                    target="_blank"
                    rel="noopener noreferrer"
@@ -236,7 +230,6 @@
                     <span class="hidden sm:inline">LinkedIn</span>
                 </a>
 
-                <!-- GitHub Header Icon Button -->
                 <a href="https://github.com/MdZubair3"
                    target="_blank"
                    rel="noopener noreferrer"
@@ -250,7 +243,6 @@
                     <span class="hidden sm:inline">GitHub</span>
                 </a>
 
-                <!-- Surface Theme Switcher (Light Black vs Warm Paper) -->
                 <button id="surface-toggle-btn"
                         type="button"
                         class="surface-elevated px-2.5 py-2 rounded-xl text-xs font-mono flex items-center gap-1.5 hover:opacity-90 transition-all cursor-pointer"
@@ -263,14 +255,14 @@
     </header>
 
     <!-- ==========================================================================
-         2. STICKY PERSPECTIVE SWITCHER BAR (RESPECTFUL 3-WAY VIEW SELECTOR)
+         2. PERSPECTIVE SWITCHER BAR
          ========================================================================== -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-5">
         <div class="surface-card rounded-2xl p-2.5 sm:px-4 sm:py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2.5">
             <div class="flex items-center gap-2 text-xs font-medium" style="color: var(--text-secondary);">
                 <span class="w-2 h-2 rounded-full" style="background-color: var(--accent);"></span>
                 <span>Choose reading perspective:</span>
-                <span id="active-mode-caption" class="font-mono text-[11px] hidden md:inline" style="color: var(--text-muted);">
+                <span id="active-mode-caption" class="font-mono text-[11px] hidden md:inline" style="color: var(--text-secondary);">
                     Clear, welcoming &amp; impact-focused
                 </span>
             </div>
@@ -302,13 +294,9 @@
          ========================================================================== -->
     <main id="top" class="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-12">
 
-        <!-- ==========================================================================
-             3A. HERO SECTION (WITH LINKEDIN & GITHUB LOGOS + B.TECH CSE 2025)
-             ========================================================================== -->
+        <!-- 3A. HERO SECTION -->
         <section class="surface-card rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden">
             <div class="max-w-3xl space-y-6">
-
-                <!-- Top Row: Status Pill + Direct LinkedIn & GitHub Profile Buttons -->
                 <div class="flex flex-wrap items-center justify-between gap-3">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono accent-badge">
                         <span class="w-2 h-2 rounded-full animate-pulse" style="background-color: var(--accent);"></span>
@@ -341,7 +329,6 @@
                     </div>
                 </div>
 
-                <!-- Main Headline (Mode-Adaptive) -->
                 <div class="space-y-3">
                     <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mode-text"
                         data-overview="Hi, I’m Zubair MD. I build thoughtful web platforms and intelligent AI assistants that make everyday work simpler."
@@ -358,7 +345,6 @@
                     </p>
                 </div>
 
-                <!-- Education Credential Pill (B.Tech CSE Only) -->
                 <div class="surface-elevated rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div class="flex items-center gap-3">
                         <span class="text-xl" aria-hidden="true">🎓</span>
@@ -372,7 +358,6 @@
                     </span>
                 </div>
 
-                <!-- Primary Call-To-Action Row -->
                 <div class="flex flex-wrap items-center gap-3 pt-1">
                     <a href="#projects" class="accent-btn px-5 py-3 rounded-xl text-xs sm:text-sm inline-flex items-center gap-2">
                         <span>🚀 Explore Live Projects</span>
@@ -380,13 +365,15 @@
                     <button type="button" data-open-ai-twin="true" class="surface-elevated px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-all cursor-pointer">
                         <span>🤖 Open AI Twin</span>
                     </button>
+                    <button type="button" data-open-spark="true" class="surface-elevated px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-all cursor-pointer">
+                        <span>✨ Daily Spark &amp; Quizzes</span>
+                    </button>
                 </div>
-
             </div>
         </section>
 
         <!-- ==========================================================================
-             4. VERIFIED LIVE PROJECTS (ONLY EDULIB HUB & HOSPITAL REVIEW ASSISTANT)
+             4. VERIFIED LIVE PROJECTS
              ========================================================================== -->
         <section id="projects" class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
@@ -403,7 +390,6 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
                 <!-- PROJECT 1: EDULIB HUB -->
                 <article class="surface-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
                     <div class="space-y-4">
@@ -420,18 +406,17 @@
                         <p class="text-xs sm:text-sm leading-relaxed mode-text" style="color: var(--text-secondary);"
                            data-overview="A smart digital library and workspace where users can organize study resources, upload documents and images, and write formatted notes in one clean, secure place."
                            data-candid="Imagine a private library where no book ever goes missing and your notes organize themselves like LEGO bricks snapping into place—complete with cloud uploads and secure login."
-                           data-technical="Full-stack web application engineered with Node.js, Express.js, and MongoDB Atlas. Implements JWT authentication, Multer + Cloudinary media pipelines, Quill.js rich-text editing, and responsive Tailwind CSS views.">
+                           data-technical="Full-stack web application engineered with Node.js, Express.js, and MongoDB Atlas. Implements stateless token authentication, Multer + Cloudinary media pipelines, Quill.js rich-text editing, and responsive Tailwind CSS views.">
                             A smart digital library and workspace where users can organize study resources, upload documents and images, and write formatted notes in one clean, secure place.
                         </p>
 
-                        <!-- Official Documentation Tech Pills -->
                         <div class="flex flex-wrap gap-1.5 pt-1">
                             <a href="https://nodejs.org/docs/latest/api/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Node.js Docs">Node.js ↗</a>
                             <a href="https://expressjs.com/en/4x/api.html" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Express.js Docs">Express.js ↗</a>
                             <a href="https://www.mongodb.com/docs/atlas/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official MongoDB Atlas Docs">MongoDB Atlas ↗</a>
                             <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Tailwind CSS Docs">Tailwind CSS ↗</a>
                             <a href="https://cloudinary.com/documentation" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Cloudinary Docs">Cloudinary ↗</a>
-                            <a href="https://jwt.io/introduction" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official JWT Docs">JWT Auth ↗</a>
+                            <a href="https://datatracker.ietf.org/doc/html/rfc7519" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official IETF RFC 7519 JWT Specification">JWT (RFC 7519) ↗</a>
                             <a href="https://quilljs.com/docs/quickstart" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Quill.js Docs">Quill.js ↗</a>
                         </div>
                     </div>
@@ -452,7 +437,6 @@
                             </button>
                         </div>
 
-                        <!-- Expandable Quick Peek Drawer for EduLib Hub -->
                         <div id="peek-edulib" class="hidden surface-elevated rounded-2xl p-4 space-y-3 text-xs">
                             <div class="flex flex-wrap gap-1.5">
                                 <button type="button" data-lens-target="edulib-lens-text" data-lens-type="edulib-analogy" class="project-lens-btn surface-card px-2.5 py-1 rounded-lg font-mono text-[11px] cursor-pointer">🎬 Real-Life Analogy</button>
@@ -486,7 +470,6 @@
                             An intelligent AI assistant that reads through hundreds of patient hospital reviews and answers your specific questions clearly—saving hours of manual reading.
                         </p>
 
-                        <!-- Official Documentation Tech Pills -->
                         <div class="flex flex-wrap gap-1.5 pt-1">
                             <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official Python Docs">Python ↗</a>
                             <a href="https://python.langchain.com/docs/introduction/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-2.5 py-1 rounded-lg text-[11px] font-mono hover:opacity-80" title="Official LangChain Docs">LangChain ↗</a>
@@ -512,7 +495,6 @@
                             </button>
                         </div>
 
-                        <!-- Expandable Quick Peek Drawer for Hospital Review Assistant -->
                         <div id="peek-hospital" class="hidden surface-elevated rounded-2xl p-4 space-y-3 text-xs">
                             <div class="flex flex-wrap gap-1.5">
                                 <button type="button" data-lens-target="hospital-lens-text" data-lens-type="hospital-analogy" class="project-lens-btn surface-card px-2.5 py-1 rounded-lg font-mono text-[11px] cursor-pointer">🕵️ Detective Analogy</button>
@@ -525,26 +507,24 @@
                         </div>
                     </div>
                 </article>
-
             </div>
         </section>
 
         <!-- ==========================================================================
-             5. SKILLS & OFFICIAL DOCUMENTATION HUB
+             5. TECHNICAL STACK (OFFICIAL DOCUMENTATION LINKS ONLY)
              ========================================================================== -->
         <section id="skills" class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
                 <div>
-                    <span class="font-mono text-xs uppercase tracking-wider accent-text">Verified Official Sources</span>
+                    <span class="font-mono text-xs uppercase tracking-wider accent-text">Verified Official Specifications</span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">Technical Stack</h2>
                 </div>
                 <p class="text-xs sm:text-sm" style="color: var(--text-secondary);">
-                    Every technology badge below links directly to its official specification or documentation.
+                    Every technology badge below links directly to its official documentation.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
                 <!-- Category 1: Programming & Core CS -->
                 <div class="surface-card rounded-3xl p-6 space-y-4">
                     <div class="flex items-center justify-between">
@@ -567,7 +547,7 @@
                     </div>
                 </div>
 
-                <!-- Category 2: Full-Stack Web Engineering -->
+                <!-- Category 2: Full-Stack Web Systems -->
                 <div class="surface-card rounded-3xl p-6 space-y-4">
                     <div class="flex items-center justify-between">
                         <h3 class="font-bold text-base">Full-Stack Web Systems</h3>
@@ -576,7 +556,7 @@
                     <p class="text-xs leading-relaxed mode-text" style="color: var(--text-secondary);"
                        data-overview="Modern web technologies for responsive user interfaces, cloud storage, and secure accounts."
                        data-candid="Everything from the front door a visitor clicks on to the vault in the back that keeps data safe."
-                       data-technical="RESTful API design, server-side routing, NoSQL document modeling, JWT security, and responsive CSS.">
+                       data-technical="RESTful API design, server-side routing, NoSQL document modeling, token security, and responsive CSS.">
                         Modern web technologies for responsive user interfaces, cloud storage, and secure accounts.
                     </p>
                     <div class="flex flex-wrap gap-2 pt-1">
@@ -585,11 +565,12 @@
                         <a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">MongoDB Atlas ↗</a>
                         <a href="https://react.dev/reference/react" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">React ↗</a>
                         <a href="https://tailwindcss.com/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Tailwind CSS ↗</a>
-                        <a href="https://learning.postman.com/docs/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Postman ↗</a>
+                        <a href="https://learning.postman.com/docs/introduction/overview/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Postman ↗</a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">HTML5 &amp; CSS3 ↗</a>
                     </div>
                 </div>
 
-                <!-- Category 3: Applied AI & RAG Systems -->
+                <!-- Category 3: AI & RAG Architecture -->
                 <div class="surface-card rounded-3xl p-6 space-y-4">
                     <div class="flex items-center justify-between">
                         <h3 class="font-bold text-base">AI &amp; RAG Architecture</h3>
@@ -606,56 +587,55 @@
                         <a href="https://huggingface.co/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Hugging Face ↗</a>
                         <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">TF-IDF &amp; Cosine Sim ↗</a>
                         <a href="https://www.gradio.app/docs" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Gradio ↗</a>
-                        <a href="https://github.features.copilot.com/" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">GitHub Copilot ↗</a>
+                        <a href="https://docs.github.com/en/copilot" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">GitHub Copilot ↗</a>
                         <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer" class="surface-elevated px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-85">Git &amp; GitHub ↗</a>
                     </div>
                 </div>
-
             </div>
         </section>
 
         <!-- ==========================================================================
-             6. ✨ THE DAILY SPARK LOUNGE (HIDDEN BY DEFAULT WITH ATTRACTIVE CALLOUT)
+             6. ✨ THE DAILY SPARK LOUNGE (HIDDEN BY DEFAULT — MAGNETIC CLICK-TO-PLAY)
              ========================================================================== -->
-        <section id="spark-lounge" class="surface-card rounded-3xl p-6 sm:p-10 text-center space-y-6">
-            <div class="max-w-xl mx-auto space-y-2">
-                <span class="font-mono text-xs uppercase tracking-wider accent-text">Interactive Lounge</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">The Daily Spark Lounge</h2>
-                <p class="text-xs sm:text-sm" style="color: var(--text-secondary);">
-                    Take a 30-second break! Play quick humor &amp; tech brainteasers to boost your mood and test your wit.
+        <section id="spark-lounge" class="surface-card rounded-3xl p-6 sm:p-10 text-center space-y-5">
+            <div class="max-w-2xl mx-auto space-y-2">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono accent-badge">
+                    <span>🎁 30-Second Dopamine &amp; Brainteaser Break</span>
+                    <span>·</span>
+                    <span id="spark-mode-indicator">✨ Overview Pack</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Need a Quick Laugh or Brain Spark?</h2>
+                <p class="text-xs sm:text-sm mode-text" style="color: var(--text-secondary);"
+                   data-overview="Take a 30-second break! Play quick word puzzles, spot-the-impostor, and bite-sized tech trivia that never repeat—guaranteed to make you smile and learn something cool."
+                   data-candid="Scrolling resumes all day is exhausting. Click below to unlock developer comedy, IT plot-twist quizzes, and brainteasers that never repeat twice!"
+                   data-technical="Test your intuition on Full-Stack architecture, SQL/NoSQL, Python RAG pipelines, and CS trivia with a persistent Fisher-Yates non-repeating deck engine.">
+                    Take a 30-second break! Play quick word puzzles, spot-the-impostor, and bite-sized tech trivia that never repeat—guaranteed to make you smile and learn something cool.
                 </p>
             </div>
 
-            <!-- Attractive Click-to-Open Trigger Button -->
-            <div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button id="toggle-spark-btn"
                         type="button"
                         aria-expanded="false"
                         class="accent-btn px-7 py-3.5 rounded-2xl text-xs sm:text-sm inline-flex items-center gap-3 cursor-pointer shadow-sm">
-                    <span>✨ Play Daily Spark Lounge — Click to Open Games &amp; Trivia</span>
+                    <span>✨ Play Daily Spark Lounge — Boost Your Mood &amp; Wit</span>
                     <span id="spark-chevron" class="transition-transform duration-200">▼</span>
                 </button>
+                <span class="text-[11px] font-mono px-3 py-1.5 rounded-xl surface-elevated" style="color: var(--text-secondary);">
+                    😄 90+ Unseen Challenges · Zero Repeats
+                </span>
             </div>
 
             <!-- Hidden-by-Default Lounge Drawer -->
             <div id="spark-drawer" class="hidden pt-6 border-t text-left space-y-8" style="border-color: var(--border-subtle);">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b pb-6" style="border-color: var(--border-subtle);">
-                    <div class="space-y-1.5">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono accent-badge">
-                            <span>✨ Interactive Break · Perspective-Synced Engine</span>
-                            <span>·</span>
-                            <span id="spark-mode-indicator">✨ Overview Pack</span>
-                        </div>
-                        <h3 class="text-xl font-bold">Games, Quizzes &amp; Good Vibes</h3>
-                        <p class="text-xs sm:text-sm mode-text" style="color: var(--text-secondary);"
-                           data-overview="Enjoy perspective-aware mini-games, design tips, and fun interactive activities."
-                           data-candid="Because reading technical specs all day is exhausting. Enjoy funny developer reality checks and witty mini-games!"
-                           data-technical="Client-side state machine testing algorithms, database logic, and RAG architectures through interactive challenges.">
-                            Enjoy perspective-aware mini-games, design tips, and fun interactive activities.
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b pb-5" style="border-color: var(--border-subtle);">
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-bold">Interactive Games, Tech Wit &amp; Good Vibes</h3>
+                        <p class="text-xs" style="color: var(--text-secondary);">
+                            Switch reading perspectives at the top anytime to unlock different challenge packs!
                         </p>
                     </div>
 
-                    <!-- Streak + Shuffle All Button + Share Button -->
                     <div class="flex flex-wrap items-center gap-2.5">
                         <div class="surface-elevated px-3.5 py-2 rounded-xl text-xs font-mono flex items-center gap-2">
                             <span>🔥 Streak:</span>
@@ -664,7 +644,7 @@
                         <button id="shuffle-entire-lounge-btn"
                                 type="button"
                                 class="accent-btn px-4 py-2 rounded-xl text-xs font-mono inline-flex items-center gap-1.5 cursor-pointer">
-                            <span>🎲 Deal Fresh Unseen Set</span>
+                            <span>🎲 Deal Next Unseen Set</span>
                         </button>
                         <button id="share-lounge-btn"
                                 type="button"
@@ -674,13 +654,9 @@
                     </div>
                 </div>
 
-                <!-- Lounge Grid: Left (3 Mini-Games) | Right (Spin a Good Vibe + Reactions) -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-                    <!-- LEFT 7 COLS: 3 SWITCHABLE PERSPECTIVE-SYNCED MINI-GAMES -->
+                    <!-- LEFT 7 COLS: 3 SWITCHABLE MINI-GAMES -->
                     <div class="lg:col-span-7 surface-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-5">
-
-                        <!-- Game Switcher Tabs -->
                         <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3" style="border-color: var(--border-subtle);">
                             <div class="flex flex-wrap gap-1.5" role="tablist">
                                 <button type="button" data-arcade-tab="unscramble" class="arcade-tab-btn mode-pill-active px-3 py-1.5 rounded-xl text-xs font-mono cursor-pointer">
@@ -694,11 +670,11 @@
                                 </button>
                             </div>
                             <span id="unseen-counter-badge" class="font-mono text-[11px]" style="color: var(--text-muted);">
-                                Active Mode Pack Loaded
+                                Non-Repeating Deck Active
                             </span>
                         </div>
 
-                        <!-- MINI-GAME 1: PERSPECTIVE-SYNCED WORD UNSCRAMBLE -->
+                        <!-- MINI-GAME 1: WORD UNSCRAMBLE -->
                         <div id="arcade-panel-unscramble" class="space-y-4">
                             <div class="flex items-center justify-between gap-2">
                                 <span id="unscramble-category" class="font-mono text-xs accent-text">Category: Core Values</span>
@@ -708,19 +684,13 @@
                                         💡 Hint
                                     </button>
                                     <button id="unscramble-skip-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
-                                        ↻ New Word
+                                        ↻ Next Unseen Word
                                     </button>
                                 </div>
                             </div>
 
-                            <p id="unscramble-clue" class="text-xs sm:text-sm font-medium leading-relaxed">
-                                Tap the scrambled letter tiles below to form the word:
-                            </p>
-
-                            <!-- Answer Slots -->
+                            <p id="unscramble-clue" class="text-xs sm:text-sm font-medium leading-relaxed"></p>
                             <div id="unscramble-answer-slots" class="flex flex-wrap gap-2 min-h-[44px] p-3 rounded-xl surface-card items-center justify-center"></div>
-
-                            <!-- Scrambled Letter Tiles -->
                             <div id="unscramble-letter-tiles" class="flex flex-wrap gap-2 justify-center pt-1"></div>
 
                             <div class="flex items-center justify-between pt-2">
@@ -731,12 +701,12 @@
                             </div>
                         </div>
 
-                        <!-- MINI-GAME 2: PERSPECTIVE-SYNCED SPOT THE IMPOSTOR -->
+                        <!-- MINI-GAME 2: SPOT THE IMPOSTOR -->
                         <div id="arcade-panel-impostor" class="hidden space-y-4">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="font-mono text-xs accent-text">🕵️ 3 Belong Together · 1 is the Impostor</span>
                                 <button id="impostor-next-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
-                                    ↻ Next Case
+                                    ↻ Next Unseen Case
                                 </button>
                             </div>
                             <p id="impostor-prompt" class="text-xs sm:text-sm font-medium"></p>
@@ -744,32 +714,29 @@
                             <p id="impostor-feedback" class="text-xs font-mono leading-relaxed min-h-[24px]" style="color: var(--text-secondary);"></p>
                         </div>
 
-                        <!-- MINI-GAME 3: PERSPECTIVE-SYNCED 2 TRUTHS & 1 LIE -->
+                        <!-- MINI-GAME 3: 2 TRUTHS & 1 LIE -->
                         <div id="arcade-panel-truths" class="hidden space-y-4">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="font-mono text-xs accent-text">⚡ Spot the 1 Lie Out of 3 Statements</span>
                                 <button id="truths-next-btn" type="button" class="surface-card px-2.5 py-1 rounded-lg text-xs font-mono hover:opacity-90 cursor-pointer">
-                                    ↻ Next Round
+                                    ↻ Next Unseen Round
                                 </button>
                             </div>
                             <p id="truths-topic" class="text-xs sm:text-sm font-medium"></p>
                             <div id="truths-options" class="space-y-2.5"></div>
                             <p id="truths-feedback" class="text-xs font-mono leading-relaxed min-h-[24px]" style="color: var(--text-secondary);"></p>
                         </div>
-
                     </div>
 
                     <!-- RIGHT 5 COLS: SPIN A GOOD VIBE + QUICK REACTIONS -->
                     <div class="lg:col-span-5 flex flex-col justify-between gap-6">
-
-                        <!-- 🎡 SPIN A GOOD VIBE -->
                         <div class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-4">
                             <div class="flex items-center justify-between gap-2">
                                 <h3 class="font-bold text-base">🎡 Spin a Good Vibe</h3>
                                 <div class="flex gap-1">
                                     <button type="button" data-vibe-cat="smile" class="vibe-cat-btn mode-pill-active px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">😊 Smile</button>
-                                    <button type="button" data-vibe-cat="thought" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">💡 Thought</button>
-                                    <button type="button" data-vibe-cat="trivia" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">⚡ Trivia</button>
+                                    <button type="button" data-vibe-cat="thought" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">💡 Insight</button>
+                                    <button type="button" data-vibe-cat="trivia" class="vibe-cat-btn surface-card px-2.5 py-1 rounded-lg text-[11px] font-mono cursor-pointer">⚡ Tech Quiz</button>
                                 </div>
                             </div>
 
@@ -788,7 +755,6 @@
                             </button>
                         </div>
 
-                        <!-- 👏 LEAVE A QUICK REACTION -->
                         <div class="surface-elevated rounded-2xl p-5 sm:p-6 space-y-3">
                             <div class="flex items-center justify-between">
                                 <div>
@@ -799,15 +765,13 @@
                             </div>
                             <div id="reaction-buttons-grid" class="grid grid-cols-2 gap-2.5"></div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </section>
 
         <!-- ==========================================================================
-             7. 🤖 ZUBAIR'S AI TWIN & ROLE FIT STUDIO (HIDDEN UNLESS CLICKED)
+             7. 🤖 ZUBAIR'S AI TWIN & ROLE FIT STUDIO
              ========================================================================== -->
         <section id="ai-studio" class="surface-card rounded-3xl p-6 sm:p-10 text-center space-y-5">
             <div class="max-w-xl mx-auto space-y-2">
@@ -823,7 +787,6 @@
                 </p>
             </div>
 
-            <!-- Click-to-Open Trigger Button -->
             <div>
                 <button id="toggle-ai-twin-btn"
                         type="button"
@@ -834,7 +797,6 @@
                 </button>
             </div>
 
-            <!-- Hidden-by-Default AI Twin Drawer -->
             <div id="ai-studio-drawer" class="hidden pt-6 border-t text-left space-y-6" style="border-color: var(--border-subtle);">
                 <div class="flex flex-wrap items-center justify-between gap-3">
                     <div class="flex items-center gap-2 font-mono text-xs" style="color: var(--text-secondary);">
@@ -849,8 +811,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-                    <!-- Left 7 Cols: Interactive Q&A + Voice Readout -->
                     <div class="lg:col-span-7 surface-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-4">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between gap-2">
@@ -863,7 +823,6 @@
                                 </button>
                             </div>
 
-                            <!-- 1-Click Question Chips -->
                             <div class="flex flex-wrap gap-2">
                                 <button type="button" data-ai-topic="tour" class="ai-prompt-chip surface-card px-3 py-1.5 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
                                     🚀 45s Tour of Live Apps
@@ -879,7 +838,6 @@
                                 </button>
                             </div>
 
-                            <!-- Response Card -->
                             <div class="surface-card rounded-2xl p-4 sm:p-5 min-h-[140px] flex items-center">
                                 <p id="ai-twin-response" class="text-xs sm:text-sm leading-relaxed whitespace-pre-line">
                                     👋 Hi! I’m Zubair’s interactive AI Twin. Tap any topic above or ask a question below—my answer automatically adapts to your chosen perspective mode, and you can click “🔊 Listen (Voice)” to hear it read aloud!
@@ -890,7 +848,7 @@
                         <form id="ai-twin-form" class="flex flex-col sm:flex-row gap-2">
                             <input id="ai-twin-input"
                                    type="text"
-                                   placeholder="Ask about EduLib Hub, Hospital Review Bot, Java, Python, or B.Tech CSE..."
+                                   placeholder="Ask about EduLib Hub, Hospital Review Bot, Java, Python, SQL, or B.Tech CSE..."
                                    class="surface-card px-4 py-2.5 rounded-xl text-xs sm:text-sm flex-1 focus:outline-none">
                             <button type="submit" class="accent-btn px-5 py-2.5 rounded-xl text-xs font-mono cursor-pointer shrink-0">
                                 Ask AI Twin ✦
@@ -898,7 +856,6 @@
                         </form>
                     </div>
 
-                    <!-- Right 5 Cols: Instant Role & Project Fit Matcher -->
                     <div class="lg:col-span-5 surface-elevated rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-4">
                         <div class="space-y-3">
                             <h3 class="font-bold text-base">🎯 Instant Role &amp; Project Fit Matcher</h3>
@@ -920,7 +877,7 @@
 
                             <input id="fit-custom-input"
                                    type="text"
-                                   placeholder="Or type role skills (e.g., Node.js, Python, LangChain, SQL)..."
+                                   placeholder="Or type role skills (e.g., Node.js, Python, LangChain, PostgreSQL)..."
                                    class="w-full surface-card px-3.5 py-2.5 rounded-xl text-xs focus:outline-none">
                         </div>
 
@@ -938,13 +895,12 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <!-- ==========================================================================
-             8. 📬 CONNECT WITH ZUBAIR (HIDDEN BY DEFAULT — REVEALS ON CLICK)
+             8. 📬 CONNECT WITH ZUBAIR
              ========================================================================== -->
         <section id="connect" class="surface-card rounded-3xl p-6 sm:p-10 text-center space-y-6">
             <div class="max-w-xl mx-auto space-y-2">
@@ -965,11 +921,8 @@
                 </button>
             </div>
 
-            <!-- Hidden-by-Default Contact Details Drawer -->
             <div id="connect-details-drawer" class="hidden pt-6 border-t text-left space-y-6" style="border-color: var(--border-subtle);">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
-                    <!-- Email Card -->
                     <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
                         <div class="flex items-center justify-between">
                             <span class="font-mono text-xs accent-text">✉️ Email</span>
@@ -982,7 +935,6 @@
                         </a>
                     </div>
 
-                    <!-- Phone / WhatsApp Card -->
                     <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
                         <div class="flex items-center justify-between">
                             <span class="font-mono text-xs accent-text">📱 Mobile / WhatsApp</span>
@@ -995,7 +947,6 @@
                         </a>
                     </div>
 
-                    <!-- LinkedIn Card -->
                     <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
                         <div class="flex items-center justify-between">
                             <span class="font-mono text-xs accent-text">💼 LinkedIn</span>
@@ -1010,7 +961,6 @@
                         </a>
                     </div>
 
-                    <!-- GitHub Card -->
                     <div class="surface-elevated rounded-2xl p-4 flex flex-col justify-between space-y-3">
                         <div class="flex items-center justify-between">
                             <span class="font-mono text-xs accent-text">💻 GitHub</span>
@@ -1024,15 +974,13 @@
                             github.com/MdZubair3
                         </a>
                     </div>
-
                 </div>
 
-                <!-- Owner Customizer & Hosting Guide Toggle -->
                 <div class="pt-2 text-center">
                     <button id="toggle-customizer-btn"
                             type="button"
                             class="surface-elevated px-4 py-2 rounded-xl text-xs font-mono hover:opacity-90 cursor-pointer">
-                        ⚙️ Owner Setup: Update My Contact Links &amp; Free Hosting Guide
+                        ⚙️ Owner Setup: Update My Contact Links &amp; Download File
                     </button>
                 </div>
 
@@ -1064,9 +1012,6 @@
                             💾 Download Updated index.html
                         </button>
                     </div>
-                    <p class="leading-relaxed pt-2 border-t" style="border-color: var(--border-subtle); color: var(--text-secondary);">
-                        <strong>How to publish to www.zubairmd.com in 60 seconds:</strong> Put your downloaded <code>index.html</code> inside an empty folder, drag that folder onto <a href="https://app.netlify.com/drop" target="_blank" rel="noopener noreferrer" class="underline accent-text">app.netlify.com/drop</a> or deploy via Vercel/GitHub Pages, then connect your custom domain in Domain Settings.
-                    </p>
                 </div>
             </div>
         </section>
@@ -1090,7 +1035,6 @@
                 </div>
             </div>
 
-            <!-- Only Official LinkedIn & GitHub Logo Links in Footer -->
             <div class="flex items-center gap-2.5">
                 <a href="https://www.linkedin.com/in/zubair-md"
                    target="_blank"
@@ -1124,7 +1068,7 @@
     </div>
 
     <!-- ==========================================================================
-         10. 100% ERROR-FREE APPLICATION ENGINE
+         10. 100% ERROR-FREE APPLICATION ENGINE (PERSISTENT NON-REPEATING DECKS)
          ========================================================================== -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -1279,158 +1223,119 @@
                 });
             });
 
-            // Fisher-Yates Deck Shuffler
-            function getShuffledDeck(poolKey, poolArray) {
-                const storageKey = 'zubair_deck_v6_' + poolKey + '_' + currentMode;
-                try {
-                    const saved = window.sessionStorage.getItem(storageKey);
-                    if (saved) {
-                        const deck = JSON.parse(saved);
-                        if (deck && deck.length > 0) return deck;
+            // Persistent Cross-Visit Fisher-Yates Non-Repeating Deck Engine
+            function drawFromPersistentDeck(deckKey, poolArray) {
+                if (!poolArray || poolArray.length === 0) return null;
+                const storageKey = 'zubair_unseen_deck_v8_' + deckKey;
+                let remainingIds = safeGetStorage(storageKey, []);
+
+                const validMap = {};
+                poolArray.forEach(function (item) { validMap[item.id] = item; });
+                remainingIds = remainingIds.filter(function (id) { return Boolean(validMap[id]); });
+
+                if (remainingIds.length === 0) {
+                    remainingIds = poolArray.map(function (item) { return item.id; });
+                    for (let i = remainingIds.length - 1; i > 0; i--) {
+                        const j = cryptoRandomInt(i + 1);
+                        const tmp = remainingIds[i];
+                        remainingIds[i] = remainingIds[j];
+                        remainingIds[j] = tmp;
                     }
-                } catch (e) {}
-
-                const deck = poolArray.slice();
-                for (let i = deck.length - 1; i > 0; i--) {
-                    const j = cryptoRandomInt(i + 1);
-                    const temp = deck[i];
-                    deck[i] = deck[j];
-                    deck[j] = temp;
                 }
-                try {
-                    window.sessionStorage.setItem(storageKey, JSON.stringify(deck));
-                } catch (e) {}
-                return deck;
+
+                const nextId = remainingIds.shift();
+                safeSetStorage(storageKey, remainingIds);
+
+                const badge = document.getElementById('unseen-counter-badge');
+                if (badge) {
+                    badge.textContent = remainingIds.length + ' unseen left in deck';
+                }
+
+                return validMap[nextId] || poolArray[0];
             }
 
-            function pickUnseenItem(pool, categoryKey) {
-                if (!pool || pool.length === 0) return null;
-                let deck = getShuffledDeck(categoryKey, pool);
-                if (deck.length === 0) {
-                    window.sessionStorage.removeItem('zubair_deck_v6_' + categoryKey + '_' + currentMode);
-                    deck = getShuffledDeck(categoryKey, pool);
-                }
-                const chosen = deck.shift();
-                try {
-                    window.sessionStorage.setItem('zubair_deck_v6_' + categoryKey + '_' + currentMode, JSON.stringify(deck));
-                } catch (e) {}
-                return chosen;
-            }
-
+            // Rich, Mode-Specific Non-Repeating Pools (90+ Total Items)
             const unscramblePools = {
                 overview: [
                     { id: 'ov1', word: 'CLARITY', cat: 'Design Value', clue: 'Making complex ideas simple and easy to understand at a glance.' },
                     { id: 'ov2', word: 'CREATIVE', cat: 'Everyday Spark', clue: 'Turning a blank page into something genuinely useful and original.' },
                     { id: 'ov3', word: 'LIBRARY', cat: 'EduLib Hub', clue: 'A calm, organized home for books, notes, and knowledge.' },
-                    { id: 'ov4', word: 'TRUSTED', cat: 'Quality', clue: 'Dependable and reliable when it matters most.' },
-                    { id: 'ov5', word: 'INSIGHT', cat: 'Discovery', clue: 'A helpful realization that solves a puzzling question.' }
+                    { id: 'ov4', word: 'TRUSTED', cat: 'Reliability', clue: 'Software that works dependably when people count on it.' },
+                    { id: 'ov5', word: 'INSIGHT', cat: 'Discovery', clue: 'A helpful realization that solves a puzzling question in seconds.' },
+                    { id: 'ov6', word: 'HARMONY', cat: 'User Experience', clue: 'When clean visual design and fast engineering work together smoothly.' },
+                    { id: 'ov7', word: 'EMPATHY', cat: 'Product Mindset', clue: 'Building software by first understanding what the human on the screen needs.' },
+                    { id: 'ov8', word: 'PURPOSE', cat: 'Craftsmanship', clue: 'Writing every line of code with a clear goal and real-world value.' },
+                    { id: 'ov9', word: 'WELCOME', cat: 'First Impression', clue: 'How a calm, well-organized website makes every visitor feel.' },
+                    { id: 'ov10', word: 'QUALITY', cat: 'Engineering Standard', clue: 'Doing the small details right even when nobody is looking.' }
                 ],
                 candid: [
                     { id: 'ca1', word: 'SHERLOCK', cat: 'Bug Detective', clue: 'What every developer becomes when a semicolon goes missing at 2 AM.' },
-                    { id: 'ca2', word: 'DEPLOYED', cat: 'Ship It!', clue: 'When the app leaves the laptop and goes live on the internet without crashing.' },
-                    { id: 'ca3', word: 'DEADLINE', cat: 'IT Life', clue: 'The magical force that turns "someday" into "finished right now".' },
-                    { id: 'ca4', word: 'HOTFIX', cat: 'Pit Crew', clue: 'A Formula-1 speed repair while the application is already running in production.' },
-                    { id: 'ca5', word: 'CAFFEINE', cat: 'Developer Fuel', clue: 'The chemical compound legally required to convert raw coffee into clean code.' }
+                    { id: 'ca2', word: 'DEPLOYED', cat: 'Ship It!', clue: 'When the app leaves the laptop and goes live on the real internet.' },
+                    { id: 'ca3', word: 'DEADLINE', cat: 'IT Reality', clue: 'The magical force that turns "someday" into "finished right now".' },
+                    { id: 'ca4', word: 'HOTFIX', cat: 'Pit Crew', clue: 'A Formula-1 speed repair while the race car is already on the track.' },
+                    { id: 'ca5', word: 'CAFFEINE', cat: 'Developer Fuel', clue: 'The compound legally required to convert morning coffee into clean Java & Python.' },
+                    { id: 'ca6', word: 'WEEKEND', cat: 'Golden Rule', clue: 'Two glorious days that explain why we never push untested code on Friday at 4:59 PM.' },
+                    { id: 'ca7', word: 'CONSOLE', cat: 'Best Friend', clue: 'Where developers print "HERE 123" when debugging a mysterious loop.' },
+                    { id: 'ca8', word: 'DARKMODE', cat: 'Eye Saver', clue: 'Because bright white screens at midnight feel like staring into the sun.' },
+                    { id: 'ca9', word: 'RUBBER', cat: 'Duck Debugging', clue: 'The famous bath toy you explain your code to until you realize your own mistake.' },
+                    { id: 'ca10', word: 'MERGED', cat: 'Git Victory', clue: 'The happiest word on GitHub when there are zero merge conflicts.' }
                 ],
                 technical: [
-                    { id: 'te1', word: 'MONGODB', cat: 'NoSQL Database', clue: 'Document database powering EduLib Hub cloud storage.' },
+                    { id: 'te1', word: 'MONGODB', cat: 'NoSQL Database', clue: 'Cloud document database powering EduLib Hub storage.' },
                     { id: 'te2', word: 'PYTHON', cat: 'AI & Backend', clue: 'Core language behind the Hospital Review RAG pipeline.' },
-                    { id: 'te3', word: 'EXPRESS', cat: 'Node.js Framework', clue: 'Fast minimalist web framework used for robust REST APIs.' },
+                    { id: 'te3', word: 'EXPRESS', cat: 'Node.js Framework', clue: 'Fast minimalist web framework used for RESTful APIs.' },
                     { id: 'te4', word: 'VECTOR', cat: 'RAG Retrieval', clue: 'Mathematical representation used in TF-IDF and Cosine Similarity.' },
-                    { id: 'te5', word: 'GRADIO', cat: 'AI Interface', clue: 'Python framework hosting the interactive Hospital Review Bot.' }
+                    { id: 'te5', word: 'GRADIO', cat: 'AI Interface', clue: 'Python UI framework hosting the live Hospital Review Bot.' },
+                    { id: 'te6', word: 'POSTGRES', cat: 'Relational DB', clue: 'Enterprise-grade open-source relational database system.' },
+                    { id: 'te7', word: 'POSTMAN', cat: 'API Testing', clue: 'Essential tool for validating GET, POST, and PATCH REST endpoints.' },
+                    { id: 'te8', word: 'INDEXING', cat: 'Query Speed', clue: 'Database optimization that turns a slow table scan into a fast lookup.' },
+                    { id: 'te9', word: 'PROMISE', cat: 'Async JS', clue: 'JavaScript object representing the eventual completion of an async operation.' },
+                    { id: 'te10', word: 'RECURSION', cat: 'Core CS & DSA', clue: 'When a function solves a problem by calling a smaller version of itself.' }
                 ]
             };
 
             const impostorPools = {
                 overview: [
-                    {
-                        id: 'imp_ov1',
-                        prompt: 'Three of these are real features of Zubair’s live projects. Spot the 1 impostor:',
-                        options: ['Digital Note & Media Library', 'Instant Hospital Review Q&A', 'Cloud Document Organization', 'Submarine Sonar Radar'],
-                        impostorIndex: 3,
-                        explanation: 'Submarine Sonar Radar is the impostor! Zubair built EduLib Hub and the Hospital Review Assistant.'
-                    },
-                    {
-                        id: 'imp_ov2',
-                        prompt: 'Three of these make a website great for recruiters. Spot the 1 impostor:',
-                        options: ['Fast Loading Speed', 'Clear Plain-English Copy', 'Mobile-Friendly Layout', '47 Pop-up Ads Per Minute'],
-                        impostorIndex: 3,
-                        explanation: 'Spot on! Pop-up ads ruin the experience—clean, calm design always wins.'
-                    }
+                    { id: 'imp_ov1', prompt: 'Three of these are real features of Zubair’s live projects. Spot the 1 impostor:', options: ['Digital Note & Media Library', 'Instant Hospital Review Q&A', 'Cloud Document Organization', 'Submarine Sonar Radar'], impostorIndex: 3, explanation: 'Submarine Sonar Radar is the impostor! Zubair built EduLib Hub and the Hospital Review Assistant.' },
+                    { id: 'imp_ov2', prompt: 'Three of these make a web app great for users. Spot the 1 impostor:', options: ['Fast Loading Speed', 'Clear Plain-English Copy', 'Mobile-Friendly Layout', '47 Pop-up Ads Per Minute'], impostorIndex: 3, explanation: 'Spot on! Pop-up ads ruin the experience—clean, calm design always wins.' },
+                    { id: 'imp_ov3', prompt: 'Three of these belong to Zubair’s verified background. Spot the 1 impostor:', options: ['B.Tech CSE (JNTU Kakinada)', 'Graduated April 2025', 'Full-Stack & AI Applications', '19th-Century Steam Locomotive Repair'], impostorIndex: 3, explanation: 'Correct! Steam locomotives are cool, but Zubair engineers modern Full-Stack & AI software.' },
+                    { id: 'imp_ov4', prompt: 'Three of these are benefits of an AI RAG Assistant. Spot the 1 impostor:', options: ['Saves hours of manual reading', 'Answers based on real reviews', 'Finds relevant facts in seconds', 'Bakes sourdough bread in your kitchen'], impostorIndex: 3, explanation: 'Correct! RAG grounds AI in real documents, though fresh bread would be a nice bonus.' },
+                    { id: 'imp_ov5', prompt: 'Three of these are perspective modes on this portfolio. Spot the 1 impostor:', options: ['✨ Overview Mode', '🎭 Candid Mode', '⚙️ Technical Specs Mode', '🏴‍☠️ 17th-Century Pirate Mode'], impostorIndex: 3, explanation: 'Haha, no Pirate Mode here—just Overview, Candid, and Technical Specs!' }
                 ],
                 candid: [
-                    {
-                        id: 'imp_ca1',
-                        prompt: 'Three of these are classic developer debugging steps. Spot the impostor:',
-                        options: ['Read the error message carefully', 'Check the line number in logs', 'Test with a clean input', 'Blame Mercury being in retrograde'],
-                        impostorIndex: 3,
-                        explanation: 'Haha, blaming the planets is tempting, but real debugging is Sherlock-style detective work!'
-                    },
-                    {
-                        id: 'imp_ca2',
-                        prompt: 'Three of these happen in a real software sprint. Spot the impostor:',
-                        options: ['Code Review on GitHub', 'Deploying to Render Cloud', 'Writing Automated Logic', 'Training Carrier Pigeons for Wi-Fi'],
-                        impostorIndex: 3,
-                        explanation: 'Carrier pigeons have terrible ping times! Cloud deployment is much faster.'
-                    }
+                    { id: 'imp_ca1', prompt: 'Three of these are classic developer debugging steps. Spot the impostor:', options: ['Read the error message carefully', 'Check the line number in logs', 'Test with a clean input', 'Blame Mercury being in retrograde'], impostorIndex: 3, explanation: 'Blaming the planets is tempting, but real debugging is Sherlock-style detective work!' },
+                    { id: 'imp_ca2', prompt: 'Three of these happen in a real software sprint. Spot the impostor:', options: ['Code Review on GitHub', 'Deploying to Render Cloud', 'Testing APIs in Postman', 'Training Carrier Pigeons for Wi-Fi'], impostorIndex: 3, explanation: 'Carrier pigeons have terrible ping times! Cloud deployment is much faster.' },
+                    { id: 'imp_ca3', prompt: 'Three of these are real reasons developers love dark mode. Spot the impostor:', options: ['Easier on the eyes at night', 'Syntax highlighting pops cleanly', 'Looks sleek and modern', 'It makes the laptop 2 kilograms lighter'], impostorIndex: 3, explanation: 'Haha! Dark pixels weigh the exact same as light pixels, even if they feel lighter.' },
+                    { id: 'imp_ca4', prompt: 'Three of these are valid ways to name a variable. Spot the impostor:', options: ['userAccountList', 'isAuthenticated', 'maxRetryCount', 'x_thingy_do_not_touch_final_v99'], impostorIndex: 3, explanation: 'Future teammates will thank you for never naming a variable "x_thingy_final_v99"!' },
+                    { id: 'imp_ca5', prompt: 'Three of these are real HTTP status codes. Spot the funny impostor:', options: ['200 OK', '404 Not Found', '500 Internal Server Error', '499 Developer Needs Coffee'], impostorIndex: 3, explanation: 'While RFC 2324 actually has "418 I’m a teapot", 499 Developer Needs Coffee is our impostor!' }
                 ],
                 technical: [
-                    {
-                        id: 'imp_te1',
-                        prompt: 'Three of these are used in the Hospital Review RAG Pipeline. Spot the impostor:',
-                        options: ['Python & LangChain', 'TF-IDF & Cosine Similarity', 'Gradio Interactive UI', 'COBOL Mainframe Punchcards'],
-                        impostorIndex: 3,
-                        explanation: 'Correct! The Hospital Review Assistant runs on Python, LangChain, TF-IDF, Cosine Similarity, and Gradio.'
-                    },
-                    {
-                        id: 'imp_te2',
-                        prompt: 'Three of these power EduLib Hub’s architecture. Spot the impostor:',
-                        options: ['Node.js & Express.js', 'MongoDB Atlas & JWT', 'Cloudinary + Multer', 'Floppy Disk Storage Array'],
-                        impostorIndex: 3,
-                        explanation: 'Spot on! EduLib Hub uses Cloudinary and MongoDB Atlas for cloud storage.'
-                    }
+                    { id: 'imp_te1', prompt: 'Three of these are used in the Hospital Review RAG Pipeline. Spot the impostor:', options: ['Python & LangChain', 'TF-IDF & Cosine Similarity', 'Gradio Interactive UI', 'COBOL Mainframe Punchcards'], impostorIndex: 3, explanation: 'Correct! The Hospital Review Assistant runs on Python, LangChain, TF-IDF, Cosine Similarity, and Gradio.' },
+                    { id: 'imp_te2', prompt: 'Three of these power EduLib Hub’s architecture. Spot the impostor:', options: ['Node.js & Express.js', 'MongoDB Atlas & JWT', 'Cloudinary + Multer', 'Floppy Disk Storage Array'], impostorIndex: 3, explanation: 'Spot on! EduLib Hub uses Cloudinary and MongoDB Atlas for cloud storage.' },
+                    { id: 'imp_te3', prompt: 'Three of these are relational SQL concepts. Spot the impostor:', options: ['Primary & Foreign Keys', 'INNER & LEFT JOINs', 'ACID Transactions', 'CSS Flexbox Margin Collapse'], impostorIndex: 3, explanation: 'Correct! CSS Flexbox is for frontend layout, while Keys, JOINs, and ACID are core SQL concepts.' },
+                    { id: 'imp_te4', prompt: 'Three of these are core Java OOP principles. Spot the impostor:', options: ['Encapsulation', 'Polymorphism', 'Inheritance', 'Photosynthesis'], impostorIndex: 3, explanation: 'Photosynthesis is for plants! Encapsulation, Polymorphism, Inheritance, and Abstraction are Java OOP.' },
+                    { id: 'imp_te5', prompt: 'Three of these are valid HTTP request methods tested in Postman. Spot the impostor:', options: ['GET & POST', 'PUT & PATCH', 'DELETE', 'PLEASE_WORK'], impostorIndex: 3, explanation: 'As much as we wish HTTP had a PLEASE_WORK method, GET/POST/PUT/PATCH/DELETE do the job!' }
                 ]
             };
 
             const truthsPools = {
                 overview: [
-                    {
-                        id: 'tr_ov1',
-                        topic: 'About Zubair’s Live Portfolio Projects:',
-                        statements: [
-                            'EduLib Hub lets users organize study materials and rich-text notes online.',
-                            'Hospital Review Assistant helps summarize real patient feedback in seconds.',
-                            'Both apps require you to mail a physical floppy disk to try them.'
-                        ],
-                        lieIndex: 2,
-                        explanation: 'You nailed it! Both apps are 100% live in the cloud—no floppy disks required.'
-                    }
+                    { id: 'tr_ov1', topic: 'About Zubair’s Live Portfolio Projects:', statements: ['EduLib Hub lets users organize study materials and rich-text notes online.', 'Hospital Review Assistant helps summarize real patient feedback in seconds.', 'Both apps require you to mail a physical floppy disk to try them.'], lieIndex: 2, explanation: 'You nailed it! Both apps are 100% live in the cloud—no floppy disks required.' },
+                    { id: 'tr_ov2', topic: 'About Zubair’s Education & Focus:', statements: ['He graduated with a B.Tech in Computer Science & Engineering in April 2025.', 'He studied at JNTU Kakinada.', 'He only builds websites that work on 1998 flip phones.'], lieIndex: 2, explanation: 'Correct! Every project is responsive across modern phones, tablets, and desktops.' },
+                    { id: 'tr_ov3', topic: 'About Great Software Design:', statements: ['Clear navigation helps visitors find proof of work in seconds.', ' official documentation links verify technical accuracy.', 'Making text invisible on the background improves reading speed.'], lieIndex: 2, explanation: 'Spot on! High contrast and clean typography are essential for readability.' },
+                    { id: 'tr_ov4', topic: 'About This Portfolio’s Interactive Features:', statements: ['You can switch between Light Black and Warm Paper themes anytime.', 'The AI Twin can read responses aloud using browser voice synthesis.', 'Clicking a button orders a pizza to your house automatically.'], lieIndex: 2, explanation: 'Haha, no automatic pizza delivery yet—just instant themes and voice-enabled AI Twin!' }
                 ],
                 candid: [
-                    {
-                        id: 'tr_ca1',
-                        topic: 'Behind the Scenes of Software Engineering:',
-                        statements: [
-                            'Naming variables clearly saves hours of confusion next month.',
-                            'Good error handling prevents midnight surprises.',
-                            'Typing louder on the mechanical keyboard makes the code run 40% faster.'
-                        ],
-                        lieIndex: 2,
-                        explanation: 'As fun as loud keyboards are, clean algorithms are what actually make code fast!'
-                    }
+                    { id: 'tr_ca1', topic: 'Behind the Scenes of Software Engineering:', statements: ['Naming variables clearly saves hours of confusion next month.', 'Good error handling prevents midnight surprises.', 'Typing louder on the mechanical keyboard makes the code run 40% faster.'], lieIndex: 2, explanation: 'As fun as loud keyboards are, clean algorithms are what actually make code fast!' },
+                    { id: 'tr_ca2', topic: 'The Laws of Debugging:', statements: ['90% of bugs disappear the moment you ask a senior engineer to look at your screen.', 'A missing environment variable can make a working app look haunted.', 'Deleting the error log automatically fixes the bug in production.'], lieIndex: 2, explanation: 'Hiding the logs never fixes the bug—reading them carefully is how we win!' },
+                    { id: 'tr_ca3', topic: 'Developer Coffee & Productivity:', statements: ['Taking a 5-minute walk often solves a bug faster than staring at the screen for 2 hours.', 'Git commits let you travel back in time if an experiment goes sideways.', 'Adding more RGB lights to your mouse automatically writes unit tests.'], lieIndex: 2, explanation: 'RGB lights look cool, but we still have to write and verify our own tests!' },
+                    { id: 'tr_ca4', topic: 'API Testing Reality:', statements: ['Testing endpoints in Postman catches payload mismatches early.', 'Clear status codes make frontend-backend integration smooth.', 'If an API returns 500, shaking your monitor fixes the JSON format.'], lieIndex: 2, explanation: 'Put the monitor down gently—Postman and server logs will show the exact JSON fix!' }
                 ],
                 technical: [
-                    {
-                        id: 'tr_te1',
-                        topic: 'Technical Architecture Verification:',
-                        statements: [
-                            'Hospital Review Assistant uses TF-IDF & Cosine Similarity to retrieve relevant context before generation.',
-                            'EduLib Hub uses JWT for stateless authentication and Cloudinary for media storage.',
-                            'MongoDB Atlas is a strictly punch-card-only assembly compiler.'
-                        ],
-                        lieIndex: 2,
-                        explanation: 'Correct! MongoDB Atlas is a cloud-native NoSQL document database.'
-                    }
+                    { id: 'tr_te1', topic: 'Technical Architecture Verification:', statements: ['Hospital Review Assistant uses TF-IDF & Cosine Similarity to retrieve relevant context before generation.', 'EduLib Hub uses JWT for stateless authentication and Cloudinary for media storage.', 'MongoDB Atlas is a strictly punch-card-only assembly compiler.'], lieIndex: 2, explanation: 'Correct! MongoDB Atlas is a cloud-native NoSQL document database.' },
+                    { id: 'tr_te2', topic: 'Data Structures & Algorithms:', statements: ['A Hash Map provides O(1) average-case time complexity for lookups.', 'Binary Search requires the input array to be sorted first.', 'Bubble Sort is the fastest known O(1) algorithm for sorting 10 billion records.'], lieIndex: 2, explanation: 'Caught it! Bubble Sort is O(n²)—Merge Sort or Quick Sort O(n log n) are vastly faster.' },
+                    { id: 'tr_te3', topic: 'Database & Backend Engineering:', statements: ['PostgreSQL supports ACID transactions and complex relational joins.', 'Express.js middleware functions can validate tokens before a route handler runs.', 'SQL SELECT queries automatically delete the entire operating system.'], lieIndex: 2, explanation: 'Correct! SELECT is a safe read-only query operation in SQL.' },
+                    { id: 'tr_te4', topic: 'Applied AI & RAG Systems:', statements: ['RAG reduces hallucinations by grounding LLM prompts in retrieved documents.', 'Cosine Similarity measures the angle between two high-dimensional vectors.', 'TF-IDF stands for "Too Fast — Ignore Database Files".'], lieIndex: 2, explanation: 'Spot on! TF-IDF stands for Term Frequency–Inverse Document Frequency.' }
                 ]
             };
 
@@ -1438,17 +1343,31 @@
                 smile: [
                     { id: 'vs1', text: 'A great day starts with curiosity: every complex app in the world began as a single empty folder and a good idea.' },
                     { id: 'vs2', text: 'Why do programmers love nature documentaries? Because watching a beaver build a dam with zero syntax errors is pure inspiration.' },
-                    { id: 'vs3', text: 'Friendly reminder: You just navigated a portfolio that adapts to three reading styles—your curiosity is officially top-tier!' }
+                    { id: 'vs3', text: 'Friendly reminder: You just navigated a portfolio that adapts to three reading styles—your curiosity is officially top-tier!' },
+                    { id: 'vs4', text: 'Software engineering rule #1: If it works on the first try, double-check that you actually saved the file.' },
+                    { id: 'vs5', text: 'There are 10 types of people in the world: those who understand binary, and those who were expecting a base-10 joke.' },
+                    { id: 'vs6', text: 'A SQL query walks into a restaurant, walks up to two tables, and asks: "Can I JOIN you?"' },
+                    { id: 'vs7', text: 'Debugging is like being the detective in a mystery movie where you are also the person who left the clues!' },
+                    { id: 'vs8', text: 'Why did the developer go broke? Because he used up all his cache! (Don’t worry, this portfolio caches cleanly).' }
                 ],
                 thought: [
                     { id: 'vt1', text: '“Simplicity is about subtracting the obvious and adding the meaningful.” — John Maeda' },
                     { id: 'vt2', text: 'The best technology doesn’t ask people to think like computers; it teaches computers to be helpful to people.' },
-                    { id: 'vt3', text: 'Clear documentation and clean code are kindness to your future self and every teammate you work with.' }
+                    { id: 'vt3', text: 'Clear documentation and clean code are kindness to your future self and every teammate you work with.' },
+                    { id: 'vt4', text: 'Great products happen at the intersection of dependable backend engineering and calm, intuitive design.' },
+                    { id: 'vt5', text: 'First, solve the problem on paper. Then, write the code so clearly that the solution feels inevitable.' },
+                    { id: 'vt6', text: 'In AI engineering, retrieval quality determines generation quality: grounded data beats guesswork every single time.' },
+                    { id: 'vt7', text: 'Fast software respects the user’s time; accessible software respects the user’s humanity.' }
                 ],
                 trivia: [
                     { id: 'vq1', text: 'What does "RAG" stand for in modern AI systems like Zubair’s Hospital Review Assistant?', answer: 'Retrieval-Augmented Generation — looking up verified facts before answering!' },
                     { id: 'vq2', text: 'Which programming language was named after the British comedy troupe Monty Python rather than a snake?', answer: 'Python!' },
-                    { id: 'vq3', text: 'What mathematical measure checks how closely two text vectors point in the same direction?', answer: 'Cosine Similarity!' }
+                    { id: 'vq3', text: 'In web development, what does "JSON" stand for?', answer: 'JavaScript Object Notation.' },
+                    { id: 'vq4', text: 'What mathematical measure checks how closely two text vectors point in the same direction?', answer: 'Cosine Similarity!' },
+                    { id: 'vq5', text: 'What is the average time complexity of looking up a key in a Hash Table / HashMap?', answer: 'O(1) — Constant Time!' },
+                    { id: 'vq6', text: 'In HTTP status codes, what does a 201 status code specifically indicate?', answer: '201 Created — a new resource was successfully created on the server!' },
+                    { id: 'vq7', text: 'Why did James Gosling originally name Java "Oak" before renaming it to Java?', answer: 'After an oak tree that stood outside his office window (later renamed after Java coffee)!' },
+                    { id: 'vq8', text: 'In SQL, which clause is used to filter grouped records after a GROUP BY aggregation?', answer: 'The HAVING clause!' }
                 ]
             };
 
@@ -1556,8 +1475,8 @@
                     if (attempt === currentWordObj.word) {
                         clearInterval(timerInterval);
                         updateStreak(1);
-                        if (feedbackEl) feedbackEl.textContent = '🎉 Solved! +1 Streak — Loading next word...';
-                        setTimeout(loadNewUnscrambleWord, 1300);
+                        if (feedbackEl) feedbackEl.textContent = '🎉 Solved! +1 Streak — Dealing next unseen word...';
+                        setTimeout(loadNewUnscrambleWord, 1200);
                     } else {
                         if (feedbackEl) feedbackEl.textContent = '🤔 Not quite—tap a letter slot to adjust!';
                     }
@@ -1566,7 +1485,7 @@
 
             function loadNewUnscrambleWord() {
                 const pool = unscramblePools[currentMode] || unscramblePools.overview;
-                currentWordObj = pickUnseenItem(pool, 'unscramble');
+                currentWordObj = drawFromPersistentDeck('unscramble_' + currentMode, pool);
                 if (!currentWordObj) return;
                 scrambledChars = scrambleWordString(currentWordObj.word);
                 selectedIndices = [];
@@ -1617,7 +1536,7 @@
             // Spot the Impostor Engine
             function loadNewImpostorChallenge() {
                 const pool = impostorPools[currentMode] || impostorPools.overview;
-                const item = pickUnseenItem(pool, 'impostor');
+                const item = drawFromPersistentDeck('impostor_' + currentMode, pool);
                 if (!item) return;
 
                 const promptEl = document.getElementById('impostor-prompt');
@@ -1652,7 +1571,7 @@
             // 2 Truths & 1 Lie Engine
             function loadNewTruthsChallenge() {
                 const pool = truthsPools[currentMode] || truthsPools.overview;
-                const item = pickUnseenItem(pool, 'truths');
+                const item = drawFromPersistentDeck('truths_' + currentMode, pool);
                 if (!item) return;
 
                 const topicEl = document.getElementById('truths-topic');
@@ -1709,7 +1628,7 @@
 
             function loadNewVibeCard() {
                 const pool = vibePools[currentVibeCategory] || vibePools.smile;
-                const item = pickUnseenItem(pool, 'vibe');
+                const item = drawFromPersistentDeck('vibe_' + currentVibeCategory, pool);
                 if (!item) return;
 
                 const textEl = document.getElementById('vibe-card-text');
@@ -1754,12 +1673,11 @@
             const shuffleEntireBtn = document.getElementById('shuffle-entire-lounge-btn');
             if (shuffleEntireBtn) {
                 shuffleEntireBtn.addEventListener('click', function () {
-                    window.sessionStorage.clear();
                     loadNewUnscrambleWord();
                     loadNewImpostorChallenge();
                     loadNewTruthsChallenge();
                     loadNewVibeCard();
-                    showToast('🎲 Dealt a fresh unseen deck of challenges!');
+                    showToast('🎲 Dealt your next unseen set of challenges!');
                 });
             }
 
@@ -1849,6 +1767,12 @@
                 });
             }
 
+            document.querySelectorAll('[data-open-spark="true"]').forEach(function (trigger) {
+                trigger.addEventListener('click', function () {
+                    setSparkOpen(true, true);
+                });
+            });
+
             // AI Twin Drawer & Logic
             const toggleAiTwinBtn = document.getElementById('toggle-ai-twin-btn');
             const closeAiTwinBtn = document.getElementById('close-ai-twin-btn');
@@ -1896,7 +1820,7 @@
                 analogy: {
                     overview: '🕵️ Think of Zubair’s approach like a helpful librarian teamed up with a skilled architect: everything is easy to find on the outside and rock-solid on the inside.',
                     candid: '🏎️ Imagine a Formula 1 pit crew teamed up with Sherlock Holmes: the backend database, cloud storage, and AI retrieval work together in milliseconds without drama.',
-                    technical: '⚙️ In systems terms: Zubair pairs deterministic full-stack data modeling (MongoDB/SQL) with grounded statistical retrieval (TF-IDF + Cosine Similarity RAG) to prevent LLM hallucinations.'
+                    technical: '⚙️ In systems terms: Zubair pairs deterministic full-stack data modeling (MongoDB/SQL/PostgreSQL) with grounded statistical retrieval (TF-IDF + Cosine Similarity RAG) to prevent LLM hallucinations.'
                 },
                 architecture: {
                     overview: '🧠 Zubair builds complete applications from end to end—combining clean, mobile-friendly web screens with smart AI tools that search real data accurately.',
