@@ -944,10 +944,7 @@
         </div>
     </footer>
 
-    <!-- Subtle Toast Notification Banner -->
-    <div id="toast-banner" class="fixed bottom-5 right-5 z-50 surface-card px-4 py-3 rounded-2xl text-xs font-mono shadow-lg flex items-center gap-2 border" style="border-color: var(--accent);">
-        <span id="toast-message">✓ Updated your live contact links across the page!</span>
-    </div>
+   
 
     <!-- ==========================================================================
          10. 100% ERROR-FREE APPLICATION ENGINE (PERSISTENT NON-REPEATING DECKS)
@@ -1904,64 +1901,7 @@
                 });
             });
 
-            const toggleCustomizerBtn = document.getElementById('toggle-customizer-btn');
-            const customizerDrawer = document.getElementById('owner-customizer-drawer');
-            if (toggleCustomizerBtn && customizerDrawer) {
-                toggleCustomizerBtn.addEventListener('click', function () {
-                    customizerDrawer.classList.toggle('hidden');
-                });
-            }
-
-            function applyOwnerLinks() {
-                const emailVal = (document.getElementById('custom-email-input') || {}).value || 'zubairmd.dev@gmail.com';
-                const phoneVal = (document.getElementById('custom-phone-input') || {}).value || '+91 98765 43210';
-                const liVal = (document.getElementById('custom-linkedin-input') || {}).value || 'https://www.linkedin.com/in/zubair-md';
-                const ghVal = (document.getElementById('custom-github-input') || {}).value || 'https://github.com/MdZubair3';
-
-                const emailText = document.getElementById('contact-email-text');
-                const emailLink = document.getElementById('contact-email-link');
-                if (emailText) emailText.textContent = emailVal;
-                if (emailLink) emailLink.href = 'mailto:' + emailVal;
-
-                const phoneText = document.getElementById('contact-phone-text');
-                const phoneLink = document.getElementById('contact-phone-link');
-                if (phoneText) phoneText.textContent = phoneVal;
-                if (phoneLink) phoneLink.href = 'tel:' + phoneVal.replace(/\s+/g, '');
-
-                document.querySelectorAll('[data-sync-linkedin]').forEach(function (a) {
-                    a.href = liVal;
-                });
-                document.querySelectorAll('[data-sync-github]').forEach(function (a) {
-                    a.href = ghVal;
-                });
-            }
-
-            const applyCustomBtn = document.getElementById('apply-custom-info-btn');
-            if (applyCustomBtn) {
-                applyCustomBtn.addEventListener('click', function () {
-                    applyOwnerLinks();
-                    showToast('✓ Updated your live contact links across the page!');
-                });
-            }
-
-            const downloadHtmlBtn = document.getElementById('download-html-btn');
-            if (downloadHtmlBtn) {
-                downloadHtmlBtn.addEventListener('click', function () {
-                    applyOwnerLinks();
-                    const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-                    const blob = new Blob([fullHtml], { type: 'text/html' });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'index.html';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                    showToast('💾 Downloaded your customized index.html!');
-                });
-            }
-
+           
             // Initialize Session
             const startingGames = ['unscramble', 'impostor', 'truths'];
             switchArcadeTab(startingGames[cryptoRandomInt(startingGames.length)]);
